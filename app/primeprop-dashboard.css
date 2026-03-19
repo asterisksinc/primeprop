@@ -73,7 +73,11 @@ body {
     align-items: center;
     gap: 10px;
 }
-
+.ppd-map-image-wrap {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
 .ppd-search-box {
     display: flex;
     align-items: center;
@@ -782,7 +786,6 @@ body {
     display: grid;
     grid-template-columns: 1fr 0.8fr 1fr;
     gap: 10px;
-    font-: Inter;
     font-weight: 400;
     font-style: Regular;
     font-size: 12px;

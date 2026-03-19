@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import PrimeSettingsSidebar from "../components/PrimeSettingsSidebar";
-import PrimeSettingsContent from "../components/PrimeSettingsContent";
-import "../settings-dashboard.css";
-import "../primeprop-dashboard.css";
+import PrimeSettingsSidebar from "../../components/PrimeSettingsSidebar";
+import PrimeSettingsContent from "../../components/PrimeSettingsContent";
+import "../../settings-dashboard.css";
+import "../../primeprop-dashboard.css";
+import "../../prime-support-section.css";
+import "../../prime-raise-issue-flow.css";
 
 export default function PrimeSettingsPage() {
   const [activeSection, setActiveSection] = useState("account");

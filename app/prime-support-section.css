@@ -1,0 +1,696 @@
+.prime-support-v1-shell {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #22313f;
+}
+
+.prime-support-v1-card {
+  background: #ffffff;
+  border: 1px solid #e7ecef;
+  border-radius: 14px;
+  box-shadow: 0 1px 0 rgba(16, 24, 40, 0.02);
+}
+
+.prime-support-v1-block {
+  padding: 14px;
+}
+
+.prime-support-v1-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.prime-support-v1-heading {
+  margin: 0;
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 16px;
+line-height: 120%;
+letter-spacing: 0%;
+color: #1F2937;
+}
+
+.prime-support-v1-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.prime-support-v1-btn {
+  height: 32px;
+  border-radius: 8px;
+  padding: 0 14px;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+line-height: 20px;
+letter-spacing: 0%;
+  cursor: pointer;
+  border: 1px solid #277079;
+  transition: 0.2s ease;
+  white-space: nowrap;
+}
+
+.prime-support-v1-btn-light {
+  background: #f9fcfd;
+  color: #277079;
+}
+
+.prime-support-v1-btn-dark {
+  background: #277079;
+  border-color: #277079;
+  color: #fff;
+}
+
+.prime-support-v1-priority-strip {
+  background: #FE59191A;
+  border: 1px solid #FE591933;
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.prime-support-v1-priority-left {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.prime-support-v1-priority-icon {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 6px;
+  background: #FE59191A;
+  color: #ff7e47;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  margin-top: 1px;
+}
+
+.prime-support-v1-priority-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.prime-support-v1-priority-title {
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 14px;
+line-height: 120%;
+letter-spacing: 0%;
+
+  color: #1F2937;
+}
+
+.prime-support-v1-chip {
+  display: inline-flex;
+  align-items: center;
+  height: 18px;
+  padding: 0 7px;
+  border-radius: 48px;
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 12px;
+line-height: 120%;
+letter-spacing: 0%;
+
+  font-weight: 600;
+}
+
+.prime-support-v1-chip-hot {
+  background: #FE5919;
+  color: #fff;
+}
+
+.prime-support-v1-priority-text {
+  margin: 4px 0 0;
+font-weight: 500;
+font-style: Medium;
+font-size: 12px;
+line-height: 140%;
+letter-spacing: 0%;
+
+  line-height: 1.5;
+  color: #6B7280;
+  max-width: 760px;
+}
+
+.prime-support-v1-priority-cta {
+  height: 34px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 8px;
+  background: #FE5919;
+  color: #fff;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+line-height: 20px;
+letter-spacing: 0%;
+
+
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.prime-support-v1-section-title {
+  margin: 0 0 12px;
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 16px;
+line-height: 120%;
+letter-spacing: 0%;
+
+  color: #1F2937;
+}
+
+.prime-support-v1-help-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.prime-support-v1-help-card {
+  border: 1px solid #e7ecef;
+  border-radius: 10px;
+  padding: 14px;
+  background: #fff;
+  min-height: 132px;
+}
+
+.prime-support-v1-help-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+background: #2770791A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.prime-support-v1-help-iconred {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+background: #E6130C1A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  margin-bottom: 10px;
+}.prime-support-v1-help-icono {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+background: #FE59191A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.prime-support-v1-help-icong {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+background: #0AA43E1A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.prime-support-v1-help-iconb {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+background: #0D27D21A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.prime-support-v1-help-title {
+  margin: 0 0 6px;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+line-height: 120%;
+letter-spacing: 0%;
+
+  color: #1F2937;
+}
+
+.prime-support-v1-help-desc {
+  margin: 0 0 8px;
+font-weight: 500;
+font-style: Medium;
+font-size: 12px;
+line-height: 140%;
+letter-spacing: 0%;
+
+  color: #72808c;
+}
+
+.prime-support-v1-help-tags {
+  margin: 0 0 8px;
+font-weight: 500;
+font-style: Medium;
+font-size: 10px;
+line-height: 120%;
+letter-spacing: 0%;
+
+  color: #98a4ad;
+}
+
+.prime-support-v1-help-link {
+  margin-top: auto;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #277079;
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 12px;
+line-height: 120%;
+letter-spacing: 0%;
+
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.prime-support-v1-search-layout {
+  display: grid;
+  grid-template-columns: 1.9fr 0.7fr;
+  gap: 12px;
+}
+
+.prime-support-v1-searchbar {
+  height: 38px;
+  border: 1px solid #e6ecef;
+  border-radius: 10px;
+  background: #fbfcfd;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  margin-bottom: 10px;
+}
+
+.prime-support-v1-search-icon {
+  color: #9aa6af;
+  font-size: 13px;
+}
+
+.prime-support-v1-search-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+font-size: 16px;
+line-height: 20px;
+letter-spacing: 0%;
+  color: #1F2937;
+}
+
+.prime-support-v1-search-input::placeholder,
+.prime-support-v1-case-search-input::placeholder {
+  color: #a0acb5;
+}
+
+.prime-support-v1-article-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.prime-support-v1-article-row {
+  min-height: 58px;
+  border-top: 1px solid #edf1f3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 8px 0 2px;
+}
+
+.prime-support-v1-article-row:first-child {
+  border-top: none;
+}
+
+.prime-support-v1-article-meta-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.prime-support-v1-article-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.prime-support-v1-article-badge {
+  height: 18px;
+  padding: 0 7px;
+  border-radius: 48px;
+  background: #0AA43E1A;
+  color: #0AA43E;
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 12px;
+line-height: 120%;
+letter-spacing: 0%;
+  display: inline-flex;
+  align-items: center;
+}
+
+.prime-support-v1-article-time {
+font-weight: 500;
+font-style: Medium;
+font-size: 12px;
+line-height: 120%;
+letter-spacing: 0%;
+  color: #9ba7b0;
+}
+
+.prime-support-v1-article-title {
+font-weight: 500;
+font-style: Medium;
+font-size: 14px;
+line-height: 120%;
+letter-spacing: 0%;
+  color: #1F2937;
+}
+
+.prime-support-v1-article-arrow {
+  color: #7e8c95;
+  font-size: 16px;
+}
+
+.prime-support-v1-side-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.prime-support-v1-side-card {
+  padding: 14px;
+  min-height: 118px;
+}
+
+.prime-support-v1-side-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #eef7f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.prime-support-v1-side-label {
+  display: block;
+font-weight: 500;
+font-style: Medium;
+font-size: 12px;
+line-height: 140%;
+letter-spacing: 0%;
+  color: #9aa5ae;
+  margin-bottom: 6px;
+}
+
+.prime-support-v1-side-title {
+  margin: 0 0 6px;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+line-height: 120%;
+letter-spacing: 0%;
+
+  color: #1F2937;
+}
+
+.prime-support-v1-side-text {
+  margin: 0;
+font-weight: 500;
+font-style: Medium;
+font-size: 12px;
+line-height: 140%;
+letter-spacing: 0%;
+  color: #7c8993;
+}
+
+.prime-support-v1-tabs {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.prime-support-v1-tab {
+  height: 34px;
+  border: 1px solid transparent;
+  background: #f8fafb;
+  color: #6d7c88;
+  border-radius: 8px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.prime-support-v1-tab-active {
+  background: #e9f0f3;
+  color: #355868;
+  font-weight: 600;
+}
+
+.prime-support-v1-case-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.prime-support-v1-case-search {
+  flex: 1;
+  height: 38px;
+  border: 1px solid #e6ecef;
+  border-radius: 10px;
+  background: #fbfcfd;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+}
+
+.prime-support-v1-case-search-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 12px;
+  color: #334554;
+}
+
+.prime-support-v1-filter-btn {
+  height: 38px;
+  border: 1px solid #cfe0e6;
+  background: #ffffff;
+  color: #447082;
+  border-radius: 8px;
+  padding: 0 14px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.prime-support-v1-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #edf1f3;
+  border-radius: 10px;
+}
+
+.prime-support-v1-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+.prime-support-v1-table thead th {
+  background: #fbfcfd;
+  color: #687784;
+  font-size: 10px;
+  font-weight: 600;
+  text-align: left;
+  padding: 11px 12px;
+  border-bottom: 1px solid #edf1f3;
+}
+
+.prime-support-v1-table tbody td {
+  padding: 13px 12px;
+  border-bottom: 1px solid #edf1f3;
+  font-size: 11px;
+  color: #2c3d49;
+  vertical-align: middle;
+}
+
+.prime-support-v1-status-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 20px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.prime-support-v1-priority-high {
+  background: #ffe6e3;
+  color: #de5545;
+}
+
+.prime-support-v1-priority-medium {
+  background: #fff1df;
+  color: #e38c2f;
+}
+
+.prime-support-v1-priority-low {
+  background: #eef1f4;
+  color: #73808a;
+}
+
+.prime-support-v1-case-in-review {
+  background: #edf1ff;
+  color: #4d63d9;
+}
+
+.prime-support-v1-case-waiting-for-you {
+  background: #fff2df;
+  color: #e08126;
+}
+
+.prime-support-v1-case-resolved {
+  background: #e8f7e8;
+  color: #34a853;
+}
+
+.prime-support-v1-other-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.prime-support-v1-other-card {
+  border: 1px solid #e7ecef;
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.prime-support-v1-other-icon {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 8px;
+  background: #eef7f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.prime-support-v1-other-title {
+  margin: 0 0 6px;
+  font-size: 12px;
+  color: #273844;
+}
+
+.prime-support-v1-other-desc {
+  margin: 0 0 4px;
+  font-size: 10px;
+  color: #7f8c96;
+}
+
+.prime-support-v1-other-link {
+  margin-top: 8px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: #2e7b87;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@media (max-width: 1100px) {
+  .prime-support-v1-help-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .prime-support-v1-search-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .prime-support-v1-side-stack {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .prime-support-v1-topbar,
+  .prime-support-v1-priority-strip,
+  .prime-support-v1-case-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .prime-support-v1-top-actions {
+    width: 100%;
+  }
+
+  .prime-support-v1-btn,
+  .prime-support-v1-priority-cta,
+  .prime-support-v1-filter-btn {
+    width: 100%;
+  }
+
+  .prime-support-v1-help-grid,
+  .prime-support-v1-other-grid,
+  .prime-support-v1-side-stack {
+    grid-template-columns: 1fr;
+  }
+
+  .prime-support-v1-tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

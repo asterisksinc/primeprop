@@ -3,6 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import "../settings-dashboard.css";
+import "../primeprop-dashboard.css";
+import "../prime-support-section.css";
+import "../prime-raise-issue-flow.css";
 const navItems = [
   { label: "Dashboard", href: "/" },
   { label: "Properties", href: "/properties" },

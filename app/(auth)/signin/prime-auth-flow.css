@@ -1,0 +1,459 @@
+.prime-auth-v1-page-shell {
+  width: 100%;
+  min-height: 100vh;
+  background: #08383c00;
+  background-image: url("/lbg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;  padding: 14px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.prime-auth-v1-layout {
+  width: 100%;
+  min-height: calc(100vh - 28px);
+  display: grid;
+  grid-template-columns: 298px 1fr;
+  /* background: #08383c; */
+  overflow: hidden;
+}
+
+.prime-auth-v1-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 360px;
+  min-width: 599px;
+  max-width: 800px;
+  box-sizing: border-box;
+}
+
+.prime-auth-v1-visual-panel {
+  position: relative;
+  overflow: hidden;
+  min-height: 360px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.prime-auth-v1-visual-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+}
+
+.prime-auth-v1-logo-row {
+  margin-bottom: 52px;
+}
+
+.prime-auth-v1-logo {
+  width: 176px;
+  height: auto;
+  display: block;
+}
+
+.prime-auth-v1-title {
+  margin: 0;
+font-weight: 700;
+font-style: Bold;
+font-size: 48px;
+line-height: 120%;
+letter-spacing: 0%;
+
+  color: #1F2937;
+}
+
+.prime-auth-v1-title-small {
+  font-size: 15px;
+  line-height: 1.25;
+}
+
+.prime-auth-v1-subtitle {
+  margin: 8px 0 16px;
+font-weight: 500;
+font-style: Medium;
+font-size: 20px;
+line-height: 120%;
+letter-spacing: 0%;
+
+  color: #6B7280;
+}
+
+.prime-auth-v1-subtitle-tight {
+  margin-bottom: 14px;
+}
+
+.prime-auth-v1-subtitle-email {
+  color: #1e5b63;
+  font-weight: 600;
+}
+
+.prime-auth-v1-field-wrap {
+  margin-bottom: 12px;
+}
+
+.prime-auth-v1-label {
+  display: block;
+  margin-bottom: 6px;
+font-weight: 600;
+font-style: SemiBold;
+font-size: 16px;
+line-height: 120%;
+letter-spacing: 0%;
+
+  color: #1F2937;
+}
+
+.prime-auth-v1-input {
+  width: 100%;
+  height: 56px;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  background: #F8FAFC;
+  padding: 0 11px;
+font-weight: 500;
+font-style: Medium;
+font-size: 14px;
+line-height: 18px;
+letter-spacing: 0%;
+  color: #9BA9BC;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.prime-auth-v1-input::placeholder,
+.prime-auth-v1-textarea::placeholder {
+  color: #a3adb7;
+}
+
+.prime-auth-v1-password-shell {
+  position: relative;
+}
+
+.prime-auth-v1-input-password {
+  padding-right: 32px;
+}
+
+.prime-auth-v1-password-eye {
+  position: absolute;
+  top: 50%;
+  right: 11px;
+  transform: translateY(-50%);
+  color: #8f9ca7;
+  font-size: 11px;
+  pointer-events: none;
+}
+
+.prime-auth-v1-meta-row {
+  margin: 2px 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.prime-auth-v1-checkbox-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+font-weight: 500;
+font-style: Medium;
+font-size: 14px;
+line-height: 120%;
+letter-spacing: 0%;
+  color: #6B7280;
+  cursor: pointer;
+}
+
+.prime-auth-v1-checkbox-row input {
+  width: 10px;
+  height: 10px;
+  accent-color: #2f7b83;
+}
+
+.prime-auth-v1-inline-link,
+.prime-auth-v1-center-link,
+.prime-auth-v1-mini-link {
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: #277079;
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 14px;
+line-height: 120%;
+letter-spacing: 0%;
+
+  cursor: pointer;
+}
+
+.prime-auth-v1-center-link {
+  display: block;
+  margin: 8px auto 0;
+  text-align: center;
+}
+
+.prime-auth-v1-mini-link {
+  display: block;
+  margin: 8px auto 0;
+  text-align: center;
+  font-size: 7px;
+}
+
+.prime-auth-v1-primary-btn {
+  width: 100%;
+  height: 34px;
+  border: none;
+  border-radius: 6px;
+  background: #277079;
+  color: #ffffff;
+font-weight: 600;
+font-size: 16px;
+leading-trim: NONE;
+line-height: 20px;
+letter-spacing: 0%;
+
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+.prime-auth-v1-primary-btn:hover {
+  background: #286d74;
+}
+
+.prime-auth-v1-or-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 12px;
+}
+
+.prime-auth-v1-or-line {
+  flex: 1;
+  height: 1px;
+  background: #ecf0f3;
+}
+
+.prime-auth-v1-or-text {
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+line-height: 20px;
+letter-spacing: 0%;
+  color: #6B7280;
+}
+
+.prime-auth-v1-social-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.prime-auth-v1-secondary-btn {
+  height: 30px;
+  border: 1px solid #E2E8F0;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #253240;
+font-weight: 600;
+font-style: SemiBold;
+font-size: 16px;
+line-height: 20px;
+letter-spacing: 0%;
+padding: 16px 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.prime-auth-v1-provider-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  line-height: 1;
+}
+
+.prime-auth-v1-provider-google {
+  color: #ea4335;
+  font-weight: 700;
+}
+
+.prime-auth-v1-bottom-copy {
+  margin: 18px 0 0;
+  text-align: center;
+font-weight: 500;
+font-style: Medium;
+font-size: 14px;
+line-height: 120%;
+letter-spacing: 0%;
+  color: #6B7280;
+}
+
+.prime-auth-v1-footer-text {
+  margin: auto 0 0;
+  text-align: center;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+line-height: 120%;
+letter-spacing: 0%;
+text-align: center;
+
+  color: #6B7280;
+  padding-top: 16px;
+}
+
+.prime-auth-v1-footer-text-compact {
+  padding-top: 18px;
+}
+
+.prime-auth-v1-otp-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+}
+
+.prime-auth-v1-otp-row-short {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.prime-auth-v1-otp-input {
+  width: 100%;
+  height: 56px;
+  border: 1px solid #E2E8F0;
+  border-radius: 4px;
+  background: #f8fafc;
+  text-align: center;
+  font-size: 18px;
+  color: #9BA9BC;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.prime-auth-v1-strength-wrap {
+  margin-top: 7px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.prime-auth-v1-strength-track {
+  flex: 1;
+  height: 3px;
+  border-radius: 999px;
+  background: #e8edf1;
+  overflow: hidden;
+}
+
+.prime-auth-v1-strength-fill {
+  width: 62%;
+  height: 100%;
+  background: #2f7b83;
+}
+
+.prime-auth-v1-strength-text {
+  font-size: 7px;
+  color: #6b7b85;
+}
+
+.prime-auth-v1-password-rules {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 4px 0 12px;
+}
+
+.prime-auth-v1-password-rule {
+  font-size: 7px;
+  line-height: 1.4;
+  color: #75828c;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.prime-auth-v1-password-rule-ok {
+  color: #32444f;
+}
+
+.prime-auth-v1-success-shell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 48px;
+  padding-bottom: 26px;
+}
+
+.prime-auth-v1-success-icon {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  background: #2f7b83;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.prime-auth-v1-success-title {
+  margin: 0 0 8px;
+  font-size: 21px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #253041;
+}
+
+.prime-auth-v1-success-text {
+  margin: 0 0 14px;
+  font-size: 10px;
+  line-height: 1.5;
+  color: #7b8892;
+}
+
+@media (max-width: 900px) {
+  .prime-auth-v1-layout {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .prime-auth-v1-card {
+    max-width: 100%;
+  }
+
+  .prime-auth-v1-visual-panel {
+    min-height: 280px;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 520px) {
+  .prime-auth-v1-page-shell {
+    padding: 10px;
+  }
+
+  .prime-auth-v1-card {
+    padding: 16px 14px;
+  }
+
+  .prime-auth-v1-social-row {
+    grid-template-columns: 1fr;
+  }
+}
+body{
+  padding: 0px;
+}

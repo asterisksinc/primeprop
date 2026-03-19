@@ -1,0 +1,444 @@
+.prm-issueflow-btn-dark {
+  height: 32px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid #3e6f77;
+  background: #2f7b83;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.prm-issueflow-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 25, 30, 0.48);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 12px 14px;
+  z-index: 9999;
+}
+
+.prm-issueflow-modal {
+  width: 100%;
+  max-width: 390px;
+  height: calc(100vh - 24px);
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #dfe5e8;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.22);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.prm-issueflow-header {
+  min-height: 52px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prm-issueflow-title {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: #273844;
+}
+
+.prm-issueflow-close {
+  border: none;
+  background: transparent;
+  color: #87949d;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.prm-issueflow-divider {
+  height: 1px;
+  background: #edf1f3;
+}
+
+.prm-issueflow-stepbar {
+  padding: 12px 14px 10px;
+  display: grid;
+  grid-template-columns: 34px 1fr 34px 34px 34px;
+  gap: 10px;
+  align-items: center;
+}
+
+.prm-issueflow-stepitem {
+  min-width: 0;
+  border: 1px solid #e8edef;
+  border-radius: 8px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px;
+}
+
+.prm-issueflow-stepitem-active {
+  background: #ffffff;
+}
+
+.prm-issueflow-stepicon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #e8edef;
+  background: #ffffff;
+  color: #91a0a8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.prm-issueflow-stepicon-active {
+  background: #2f7b83;
+  border-color: #2f7b83;
+  color: #ffffff;
+}
+
+.prm-issueflow-steptext {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.prm-issueflow-stepcount {
+  font-size: 8px;
+  font-weight: 700;
+  color: #4da2aa;
+  line-height: 1.1;
+}
+
+.prm-issueflow-stepname {
+  font-size: 9px;
+  font-weight: 700;
+  color: #273844;
+  line-height: 1.1;
+}
+
+.prm-issueflow-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 14px 14px;
+}
+
+.prm-issueflow-panel {
+  padding-top: 4px;
+}
+
+.prm-issueflow-sectiontitle {
+  margin: 0 0 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #293945;
+}
+
+.prm-issueflow-categorygrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.prm-issueflow-categorycard {
+  min-height: 54px;
+  border: 1px solid #e7ecef;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.prm-issueflow-categorycard-active {
+  border-color: #8fb9bf;
+  box-shadow: inset 0 0 0 1px #8fb9bf;
+  background: #fbfefe;
+}
+
+.prm-issueflow-categoryicon {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: #edf7f8;
+  color: #2f7b83;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.prm-issueflow-categorylabel {
+  font-size: 11px;
+  color: #2e3e49;
+  font-weight: 500;
+}
+
+.prm-issueflow-problemlist {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prm-issueflow-problemitem {
+  width: 100%;
+  min-height: 34px;
+  border: 1px solid #e7ecef;
+  border-radius: 6px;
+  background: #ffffff;
+  padding: 0 12px;
+  text-align: left;
+  font-size: 11px;
+  color: #364854;
+  cursor: pointer;
+}
+
+.prm-issueflow-problemitem-active {
+  border-color: #8fb9bf;
+  box-shadow: inset 0 0 0 1px #8fb9bf;
+  background: #fbfefe;
+}
+
+.prm-issueflow-fieldwrap {
+  margin-bottom: 14px;
+}
+
+.prm-issueflow-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 9px;
+  font-weight: 600;
+  color: #40515d;
+}
+
+.prm-issueflow-required {
+  color: #f06945;
+}
+
+.prm-issueflow-input,
+.prm-issueflow-select {
+  width: 100%;
+  height: 34px;
+  border: 1px solid #e3e9ed;
+  border-radius: 6px;
+  background: #ffffff;
+  padding: 0 10px;
+  font-size: 11px;
+  color: #2f3e4a;
+  outline: none;
+}
+
+.prm-issueflow-textarea {
+  width: 100%;
+  min-height: 92px;
+  resize: none;
+  border: 1px solid #e3e9ed;
+  border-radius: 6px;
+  background: #ffffff;
+  padding: 10px;
+  font-size: 11px;
+  color: #2f3e4a;
+  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.prm-issueflow-charcount {
+  margin-top: 4px;
+  text-align: right;
+  font-size: 8px;
+  color: #9aa6af;
+}
+
+.prm-issueflow-uploadbox {
+  min-height: 72px;
+  border: 1px dashed #d5dfe4;
+  border-radius: 8px;
+  background: #fbfcfd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  text-align: center;
+  padding: 10px;
+}
+
+.prm-issueflow-uploadicon {
+  font-size: 14px;
+  color: #7a8d98;
+}
+
+.prm-issueflow-uploadtitle {
+  font-size: 9px;
+  color: #3b4c58;
+  font-weight: 600;
+}
+
+.prm-issueflow-uploadsub {
+  font-size: 8px;
+  color: #8d9aa3;
+}
+
+.prm-issueflow-priorityrow,
+.prm-issueflow-contactrow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.prm-issueflow-prioritybtn,
+.prm-issueflow-contactbtn {
+  height: 34px;
+  border: 1px solid #e3e9ed;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #354651;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.prm-issueflow-prioritybtn-active,
+.prm-issueflow-contactbtn-active {
+  border-color: #78aeb6;
+  background: #f7fcfc;
+  color: #2f7b83;
+  font-weight: 700;
+}
+
+.prm-issueflow-reviewcard {
+  background: #f5f7fa;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 14px;
+}
+
+.prm-issueflow-reviewgrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 18px;
+  margin-bottom: 12px;
+}
+
+.prm-issueflow-reviewlabel {
+  display: block;
+  font-size: 8px;
+  color: #7f8d96;
+  margin-bottom: 4px;
+}
+
+.prm-issueflow-reviewvalue {
+  margin: 0;
+  font-size: 10px;
+  color: #223340;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.prm-issueflow-reviewdesc {
+  font-size: 10px;
+  line-height: 1.6;
+  color: #30424e;
+}
+
+.prm-issueflow-responsebox {
+  background: #e8f0f0;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.prm-issueflow-responseicon {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  border-radius: 50%;
+  background: #2f7b83;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+
+.prm-issueflow-responsetitle {
+  font-size: 10px;
+  font-weight: 700;
+  color: #3d6d72;
+  margin-bottom: 2px;
+}
+
+.prm-issueflow-responsetext {
+  font-size: 8px;
+  color: #69848a;
+}
+
+.prm-issueflow-footer {
+  border-top: 1px solid #edf1f3;
+  padding: 10px 14px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.prm-issueflow-footer-left,
+.prm-issueflow-footer-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.prm-issueflow-btn-secondary,
+.prm-issueflow-btn-outline,
+.prm-issueflow-btn-primary {
+  height: 30px;
+  border-radius: 6px;
+  padding: 0 12px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.prm-issueflow-btn-secondary,
+.prm-issueflow-btn-outline {
+  border: 1px solid #7aaeb6;
+  background: #ffffff;
+  color: #2f7b83;
+}
+
+.prm-issueflow-btn-primary {
+  border: 1px solid #2f7b83;
+  background: #2f7b83;
+  color: #ffffff;
+}
+
+.prm-issueflow-btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 520px) {
+  .prm-issueflow-overlay {
+    padding: 0;
+  }
+
+  .prm-issueflow-modal {
+    max-width: 100%;
+    height: 100vh;
+    border-radius: 0;
+  }
+}

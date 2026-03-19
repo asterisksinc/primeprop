@@ -1,5 +1,7 @@
 "use client";
 
+import PrimeSupportSection from "./PrimeSupportSection";
+
 type ContentProps = {
   sectionRefs: Record<string, React.RefObject<HTMLDivElement | null>>;
 };
@@ -472,66 +474,9 @@ function PreferencesSection() {
 }
 
 function SupportSection() {
-  return (
-    <div className="pps-section-wrap">
-      <div className="pps-card-box">
-        <div className="pps-section-head-flex">
-          <h2 className="pps-section-title">Active Session</h2>
-          <button className="pps-danger-link">Log Out All Other Devices</button>
-        </div>
-
-        <div className="pps-login-row">
-          <div>
-            <div className="pps-login-main">
-              Chrome on Windows <span className="pps-this-device">This Device</span>
-            </div>
-            <div className="pps-security-sub">Mumbai, India - Last Active 2 Minutes Ago</div>
-          </div>
-          <span className="pps-green-badge">Active Now</span>
-        </div>
-
-        <div className="pps-login-row">
-          <div>
-            <div className="pps-login-main">Safari on iphone 15 Pro</div>
-            <div className="pps-security-sub">Delhi, India Last active Oct 24, 2023</div>
-          </div>
-          <button className="pps-danger-link">Terminate</button>
-        </div>
-      </div>
-
-      <div className="pps-card-box pps-danger-card">
-        <h3 className="pps-subsection-title">Account Actions</h3>
-
-        <div className="pps-action-row">
-          <div>
-            <div className="pps-login-main">Download My Data</div>
-            <div className="pps-security-sub">
-              Export all your account data and investment records
-            </div>
-          </div>
-          <button className="pps-btn-outline">Download</button>
-        </div>
-
-        <div className="pps-action-row">
-          <div>
-            <div className="pps-login-main">Deactivate Account Temporarily</div>
-            <div className="pps-security-sub">
-              Pause your account access without closing it
-            </div>
-          </div>
-          <button className="pps-btn-outline">Deactivate</button>
-        </div>
-
-        <div className="pps-action-row pps-action-row-danger">
-          <div>
-            <div className="pps-login-main">Request Account Closure</div>
-            <div className="pps-security-sub">
-              Permanently close your account (requires support review)
-            </div>
-          </div>
-          <button className="pps-btn-danger">Close Account</button>
-        </div>
-      </div>
-    </div>
+  return (<>
+    <PrimeSupportSection />
+    
+    </>
   );
 }

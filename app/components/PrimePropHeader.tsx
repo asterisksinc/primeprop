@@ -2,7 +2,10 @@
 
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-
+import "../settings-dashboard.css";
+import "../primeprop-dashboard.css";
+import "../prime-support-section.css";
+import "../prime-raise-issue-flow.css";
 const routeMap: any = {
   "/": "Dashboard Overview",
   "/properties": "Properties",
