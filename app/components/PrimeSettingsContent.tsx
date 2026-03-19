@@ -1,19 +1,47 @@
+"use client";
+
 type ContentProps = {
-  activeSection: string;
+  sectionRefs: Record<string, React.RefObject<HTMLDivElement | null>>;
 };
 
-export default function PrimeSettingsContent({
-  activeSection,
-}: ContentProps) {
+export default function PrimeSettingsContent({ sectionRefs }: ContentProps) {
   return (
     <section className="pps-content-shell">
-      {activeSection === "account" && <AccountSection />}
-      {activeSection === "security" && <SecuritySection />}
-      {activeSection === "payouts" && <PayoutsSection />}
-      {activeSection === "tax" && <TaxSection />}
-      {activeSection === "notifications" && <NotificationsSection />}
-      {activeSection === "preferences" && <PreferencesSection />}
-      {activeSection === "support" && <SupportSection />}
+      <div ref={sectionRefs.account} id="account" className="pps-scroll-section">
+        <AccountSection />
+      </div>
+
+      <div ref={sectionRefs.security} id="security" className="pps-scroll-section">
+        <SecuritySection />
+      </div>
+
+      <div ref={sectionRefs.payouts} id="payouts" className="pps-scroll-section">
+        <PayoutsSection />
+      </div>
+
+      <div ref={sectionRefs.tax} id="tax" className="pps-scroll-section">
+        <TaxSection />
+      </div>
+
+      <div
+        ref={sectionRefs.notifications}
+        id="notifications"
+        className="pps-scroll-section"
+      >
+        <NotificationsSection />
+      </div>
+
+      <div
+        ref={sectionRefs.preferences}
+        id="preferences"
+        className="pps-scroll-section"
+      >
+        <PreferencesSection />
+      </div>
+
+      <div ref={sectionRefs.support} id="support" className="pps-scroll-section">
+        <SupportSection />
+      </div>
     </section>
   );
 }
@@ -24,7 +52,10 @@ function AccountSection() {
       <div className="pps-card-box">
         <h2 className="pps-section-title">Profile Information</h2>
 
-        <div className="pps-profile-head"  style={{marginTop:'30px', marginBottom:'30px'}}>
+        <div
+          className="pps-profile-head"
+          style={{ marginTop: "30px", marginBottom: "30px" }}
+        >
           <div className="pps-profile-avatar">🧔</div>
 
           <div className="pps-profile-meta">
@@ -39,7 +70,7 @@ function AccountSection() {
 
         <div className="pps-divider-line" />
 
-        <div className="pps-form-grid" style={{marginBottom:'40px',marginTop:'30px'}}>
+        <div className="pps-form-grid" style={{ marginBottom: "40px", marginTop: "30px" }}>
           <div className="pps-field-box">
             <label>Full Name</label>
             <input defaultValue="Ananya Sharma" />
@@ -68,14 +99,13 @@ function AccountSection() {
             </div>
           </div>
         </div>
+
         <div className="pps-divider-line" />
 
-        <div className="pps-action-right"  style={{marginTop:'40px'}}>
+        <div className="pps-action-right" style={{ marginTop: "40px" }}>
           <button className="pps-btn-primary">Save Changes</button>
         </div>
       </div>
-
-   
     </div>
   );
 }
@@ -83,12 +113,14 @@ function AccountSection() {
 function SecuritySection() {
   return (
     <div className="pps-section-wrap">
-   <div className="pps-card-box">
+      <div className="pps-card-box">
         <h3 className="pps-section-title">Security</h3>
 
         <div className="pps-security-box">
           <div className="pps-security-left">
-            <div className="pps-security-icon"><img src="/lock.svg"  /></div>
+            <div className="pps-security-icon">
+              <img src="/lock.svg" />
+            </div>
             <div>
               <div className="pps-security-title">Password</div>
               <div className="pps-security-sub">Last changed 42 days ago</div>
@@ -96,31 +128,34 @@ function SecuritySection() {
           </div>
           <button className="pps-btn-primary">Change Password</button>
         </div>
-<div className="pps-security-box1">
-        <div className="pps-security-box2">
-          <div className="pps-security-left">
-            <div className="pps-security-icon"><img src="/mob.svg"  /></div>
-            <div>
-              <div className="pps-security-title">Two-Factor Authentication</div>
-              <div className="pps-security-sub">
-                Protected with Authenticator app
+
+        <div className="pps-security-box1">
+          <div className="pps-security-box2">
+            <div className="pps-security-left">
+              <div className="pps-security-icon">
+                <img src="/mob.svg" />
+              </div>
+              <div>
+                <div className="pps-security-title">Two-Factor Authentication</div>
+                <div className="pps-security-sub">Protected with Authenticator app</div>
               </div>
             </div>
+            <span className="pps-green-badge">Enabled</span>
           </div>
-          <span className="pps-green-badge">Enabled</span>  </div>
-              <div className="pps-inline-buttons">
-          <button className="pps-btn-outline">Manage 2FA</button>
-          <button className="pps-btn-outline">View Backup Codes</button>
-          <button className="pps-btn-outline">Regenerate Codes</button>
-      
+
+          <div className="pps-inline-buttons">
+            <button className="pps-btn-outline">Manage 2FA</button>
+            <button className="pps-btn-outline">View Backup Codes</button>
+            <button className="pps-btn-outline">Regenerate Codes</button>
+          </div>
         </div>
-</div>
-    
 
         <div className="pps-login-box">
           <div className="pps-login-head">
             <div className="pps-security-left">
-              <div className="pps-security-icon pps-blue-icon"><img src="/cloc.svg"/></div>
+              <div className="pps-security-icon pps-blue-icon">
+                <img src="/cloc.svg" />
+              </div>
               <div>
                 <div className="pps-security-title">Login Activity</div>
                 <div className="pps-security-sub">Recent login sessions</div>
@@ -129,26 +164,39 @@ function SecuritySection() {
           </div>
 
           <div className="pps-login-row">
-            <div style={{display:'flex', gap:'12px', alignItems:'center'}}>
-                <img src="/lap.svg" alt="" /><div>
-              <div className="pps-login-main">Mar 16, 2026 &nbsp; -- &nbsp;  <span className="pps-security-sub" style={{fontSize:'12px'}}>Ahmedabad, India</span> </div>
-              <div className="pps-security-sub">Chrome on Windows</div></div>
+            <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
+              <img src="/lap.svg" alt="" />
+              <div>
+                <div className="pps-login-main">
+                  Mar 16, 2026 &nbsp; -- &nbsp;
+                  <span className="pps-security-sub" style={{ fontSize: "12px" }}>
+                    Ahmedabad, India
+                  </span>
+                </div>
+                <div className="pps-security-sub">Chrome on Windows</div>
+              </div>
             </div>
             <span className="pps-green-badge">Current session</span>
           </div>
 
           <div className="pps-login-row">
-            <div style={{display:'flex', gap:'12px', alignItems:'center'}}>
-                <img src="/ph.svg" alt="" /><div>
-              <div className="pps-login-main">Mar 12, 2026 &nbsp; -- &nbsp; <span className="pps-security-sub" style={{fontSize:'12px'}}> Mumbai, India</span></div>
-              <div className="pps-security-sub">Safari on iPhone</div>
-            </div></div>
+            <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
+              <img src="/ph.svg" alt="" />
+              <div>
+                <div className="pps-login-main">
+                  Mar 12, 2026 &nbsp; -- &nbsp;
+                  <span className="pps-security-sub" style={{ fontSize: "12px" }}>
+                    {" "}
+                    Mumbai, India
+                  </span>
+                </div>
+                <div className="pps-security-sub">Safari on iPhone</div>
+              </div>
+            </div>
             <span className="pps-gray-text">Successful login</span>
           </div>
         </div>
       </div>
-
-     
     </div>
   );
 }
@@ -159,17 +207,17 @@ function PayoutsSection() {
       <div className="pps-card-box">
         <h2 className="pps-section-title">Payout Methods</h2>
 
-        <div className="pps-bank-card" style={{marginTop:'30px'}}>
+        <div className="pps-bank-card" style={{ marginTop: "30px" }}>
           <div className="pps-bank-top">
-            
-                      <div style={{display:'flex', gap:'15px'}}>
-                          <div className="pps-security-icon"><img src="/lock.svg" /></div>
-                          <div>
-                              <div className="pps-security-title">HDFC Bank</div>
-                              <div className="pps-security-sub">John Doe</div>
-                          </div>
-
-                      </div>
+            <div style={{ display: "flex", gap: "15px" }}>
+              <div className="pps-security-icon">
+                <img src="/lock.svg" />
+              </div>
+              <div>
+                <div className="pps-security-title">HDFC Bank</div>
+                <div className="pps-security-sub">John Doe</div>
+              </div>
+            </div>
             <span className="pps-green-badge">Primary Payout Method</span>
           </div>
 
@@ -185,10 +233,18 @@ function PayoutsSection() {
           </div>
 
           <div className="pps-inline-buttons">
-            <button className="pps-btn-outline" style={{flex:'auto'}}>Edit Details</button>
-            <button className="pps-btn-outline" style={{flex:'auto'}}>Re-Verify</button>
-            <button className="pps-btn-outline" style={{flex:'auto'}}>+ Add Account</button>
-            <button className="pps-btn-outline" style={{flex:'auto'}}>Set Priority</button>
+            <button className="pps-btn-outline" style={{ flex: "auto" }}>
+              Edit Details
+            </button>
+            <button className="pps-btn-outline" style={{ flex: "auto" }}>
+              Re-Verify
+            </button>
+            <button className="pps-btn-outline" style={{ flex: "auto" }}>
+              + Add Account
+            </button>
+            <button className="pps-btn-outline" style={{ flex: "auto" }}>
+              Set Priority
+            </button>
           </div>
         </div>
       </div>
@@ -234,43 +290,53 @@ function TaxSection() {
             </div>
           </div>
         </div>
+
         <div className="pps-divider-line" />
 
-            <div className="pps-tax-block">
-            <h3 className="pps-subsection-title">Investor Tax Forms</h3>
-            <div style={{display:'flex',  flexWrap: 'wrap'}}>
-          <div className="pps-doc-card" style={{width: '47%', marginRight:'20px', marginBottom:'20px'}}>
-            <div>
-              <div className="pps-login-main">PAN Declaration</div>
-              <div className="pps-security-sub">Last updated: Feb 28, 2026</div>
+        <div className="pps-tax-block">
+          <h3 className="pps-subsection-title">Investor Tax Forms</h3>
+          <div style={{ display: "flex", flexWrap: "wrap" }}>
+            <div
+              className="pps-doc-card"
+              style={{ width: "47%", marginRight: "20px", marginBottom: "20px" }}
+            >
+              <div>
+                <div className="pps-login-main">PAN Declaration</div>
+                <div className="pps-security-sub">Last updated: Feb 28, 2026</div>
+              </div>
+              <div className="pps-doc-actions">
+                <span className="pps-green-badge">Submitted</span>
+                <button className="pps-btn-link">View</button>
+              </div>
             </div>
-            <div className="pps-doc-actions">
-              <span className="pps-green-badge">Submitted</span>
-              <button className="pps-btn-link">View</button>
-            </div>
-          </div>
 
-          <div className="pps-doc-card" style={{width: '47%', marginRight:'20px', marginBottom:'20px'}}>
-            <div>
-              <div className="pps-login-main">Tax Residency Self-Certification</div>
-              <div className="pps-security-sub">Last updated: Feb 28, 2026</div>
+            <div
+              className="pps-doc-card"
+              style={{ width: "47%", marginRight: "20px", marginBottom: "20px" }}
+            >
+              <div>
+                <div className="pps-login-main">Tax Residency Self-Certification</div>
+                <div className="pps-security-sub">Last updated: Feb 28, 2026</div>
+              </div>
+              <div className="pps-doc-actions">
+                <span className="pps-green-badge">Submitted</span>
+                <button className="pps-btn-link">View</button>
+              </div>
             </div>
-            <div className="pps-doc-actions">
-              <span className="pps-green-badge">Submitted</span>
-              <button className="pps-btn-link">View</button>
-            </div>
-          </div>
 
-          <div className="pps-doc-card" style={{width: '47%', marginRight:'20px', marginBottom:'20px'}}>
-            <div>
-              <div className="pps-login-main">Annual Tax Statement Preference</div>
-              <div className="pps-security-sub">Last updated: Mar 01, 2026</div>
+            <div
+              className="pps-doc-card"
+              style={{ width: "47%", marginRight: "20px", marginBottom: "20px" }}
+            >
+              <div>
+                <div className="pps-login-main">Annual Tax Statement Preference</div>
+                <div className="pps-security-sub">Last updated: Mar 01, 2026</div>
+              </div>
+              <div className="pps-doc-actions">
+                <span className="pps-green-badge">Configured</span>
+                <button className="pps-btn-link">View</button>
+              </div>
             </div>
-            <div className="pps-doc-actions">
-              <span className="pps-green-badge">Configured</span>
-              <button className="pps-btn-link">View</button>
-            </div>
-          </div>
           </div>
         </div>
       </div>
@@ -307,7 +373,6 @@ function NotificationsSection() {
                 <strong>{row}</strong>
                 <small>Monthly yields and dividend announcements</small>
               </div>
-              
             </div>
           ))}
         </div>
@@ -348,40 +413,54 @@ function PreferencesSection() {
             </select>
           </div>
         </div>
+
         <div className="pps-divider-line" />
 
         <h3 className="pps-subsection-title pps-sub-top">Accessibility</h3>
 
-              <div className="pps-toggle-grid">
-                  <div className="pps-toggle-card">
-                    <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
-                        <div>
-                      <div className="pps-toggle-title">High Contrast Mode</div>
-                      <div className="pps-security-sub">Increase color contrast for better visibility</div></div>
-                      <label className="toggle-switch">
-                          <input type="checkbox" />
-                          <span className="toggle-slider"></span>
-                      </label>          </div>
-                      </div>
-                  <div className="pps-toggle-card">
-                                        <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
-  <div>
-                      <div className="pps-toggle-title">Reduce Motion</div>
-                      <div className="pps-security-sub">Minimize animations and transitions</div></div>
-                      <label className="toggle-switch">
-                          <input type="checkbox" />
-                          <span className="toggle-slider"></span>
-                      </label>       </div>         </div>
-                  <div className="pps-toggle-card">
-                                                        <div style={{display:'flex' , justifyContent:'space-between', alignItems:'center'}}>
-  <div>
-                      <div className="pps-toggle-title">Larger Text Size</div>
-                      <div className="pps-security-sub">Increase default text size</div></div>
-                      <label className="toggle-switch">
-                          <input type="checkbox" />
-                          <span className="toggle-slider"></span>
-                      </label>  </div>          </div>
+        <div className="pps-toggle-grid">
+          <div className="pps-toggle-card">
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div>
+                <div className="pps-toggle-title">High Contrast Mode</div>
+                <div className="pps-security-sub">
+                  Increase color contrast for better visibility
+                </div>
               </div>
+              <label className="toggle-switch">
+                <input type="checkbox" />
+                <span className="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div className="pps-toggle-card">
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div>
+                <div className="pps-toggle-title">Reduce Motion</div>
+                <div className="pps-security-sub">Minimize animations and transitions</div>
+              </div>
+              <label className="toggle-switch">
+                <input type="checkbox" />
+                <span className="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <div className="pps-toggle-card">
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div>
+                <div className="pps-toggle-title">Larger Text Size</div>
+                <div className="pps-security-sub">Increase default text size</div>
+              </div>
+              <label className="toggle-switch">
+                <input type="checkbox" />
+                <span className="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
         <div className="pps-divider-line" />
 
         <div className="pps-action-right">
@@ -395,7 +474,7 @@ function PreferencesSection() {
 function SupportSection() {
   return (
     <div className="pps-section-wrap">
- <div className="pps-card-box">
+      <div className="pps-card-box">
         <div className="pps-section-head-flex">
           <h2 className="pps-section-title">Active Session</h2>
           <button className="pps-danger-link">Log Out All Other Devices</button>
@@ -420,15 +499,15 @@ function SupportSection() {
         </div>
       </div>
 
-     
-
       <div className="pps-card-box pps-danger-card">
         <h3 className="pps-subsection-title">Account Actions</h3>
 
         <div className="pps-action-row">
           <div>
             <div className="pps-login-main">Download My Data</div>
-            <div className="pps-security-sub">Export all your account data and investment records</div>
+            <div className="pps-security-sub">
+              Export all your account data and investment records
+            </div>
           </div>
           <button className="pps-btn-outline">Download</button>
         </div>
@@ -436,7 +515,9 @@ function SupportSection() {
         <div className="pps-action-row">
           <div>
             <div className="pps-login-main">Deactivate Account Temporarily</div>
-            <div className="pps-security-sub">Pause your account access without closing it</div>
+            <div className="pps-security-sub">
+              Pause your account access without closing it
+            </div>
           </div>
           <button className="pps-btn-outline">Deactivate</button>
         </div>
@@ -444,7 +525,9 @@ function SupportSection() {
         <div className="pps-action-row pps-action-row-danger">
           <div>
             <div className="pps-login-main">Request Account Closure</div>
-            <div className="pps-security-sub">Permanently close your account (requires support review)</div>
+            <div className="pps-security-sub">
+              Permanently close your account (requires support review)
+            </div>
           </div>
           <button className="pps-btn-danger">Close Account</button>
         </div>

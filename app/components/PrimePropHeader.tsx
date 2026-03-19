@@ -40,7 +40,7 @@ export default function PrimePropHeader() {
 
       <div className="ppd-hero-building">
         <Image
-          src="/primeprop-building.png"
+          src="/bul1.png"
           alt="Building"
           width={250}
           height={200}

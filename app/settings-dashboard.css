@@ -22,11 +22,12 @@ body {
   display: flex;
   gap: 12px;
   align-items: flex-start;
+      margin-top: 15px;
 }
 
 .pps-sidebar-shell {
   width: 240px;
-      height: 100%;
+      height: 100vh;
 
   min-width: 240px;
   background: #ffffff;
@@ -75,14 +76,8 @@ letter-spacing: 0%;
 .pps-sidebar-icon {
   width: 16px;
   height: 17px;
-  filter: invert(40%);
 }
-.pps-sidebar-item-active img {
-  filter: brightness(0) invert(1);
-}
-.pps-sidebar-item-active .pps-sidebar-icon {
-  filter: invert(100%);
-}
+
 .pps-sidebar-icon {
   width: 18px;
   display: inline-flex;
