@@ -1,0 +1,806 @@
+/* RightPanel.module.css - CSS Modules version for Next.js */
+
+/* ========================================
+   RIGHT PANEL CONTAINER
+   ======================================== */
+
+.rightPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 404px;
+  min-height: 1537px;
+  flex: none;
+  order: 1;
+  flex-grow: 1;
+}
+
+/* ========================================
+   INVESTMENT CALCULATOR CARD
+   ======================================== */
+
+.investmentCalculatorCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 18px;
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 13px;
+  box-shadow: 0px 38px 23px rgba(0, 0, 0, 0.01), 
+              0px 17px 17px rgba(0, 0, 0, 0.02), 
+              0px 4px 9px rgba(0, 0, 0, 0.02);
+  flex: none;
+  order: 0;
+  align-self: stretch;
+}
+
+.investmentCalculatorTitle {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 120%;
+  color: #1F2937;
+}
+
+.investmentCalcContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  align-self: stretch;
+}
+
+/* Investment Amount Section */
+
+.investmentAmountInput {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  align-self: stretch;
+}
+
+.investmentAmountLabel {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120%;
+  color: #1F2937;
+}
+
+.investmentAmountValue {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+  color: #277079;
+}
+
+.investmentAmountRange {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 120%;
+  color: #6B7280;
+}
+
+/* Slider */
+
+.sliderContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: #EAEEF4;
+  border-radius: 56px;
+  isolation: isolate;
+}
+
+.sliderFill {
+  width: 40%;
+  height: 8px;
+  background: #FE5919;
+  border-radius: 55px;
+  flex: none;
+  z-index: 0;
+}
+
+.sliderThumb {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 40%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #FFFFFF;
+  border: 4px solid #FE5919;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+/* Ownership Box */
+
+.ownershipBox {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+  background: #F3F4F6;
+  border-radius: 12px;
+}
+
+.ownershipLabel {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120%;
+  color: #1F2937;
+}
+
+.ownershipValue {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+  color: #277079;
+}
+
+/* Returns Grid */
+
+.returnsGrid {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  width: 100%;
+  align-self: stretch;
+}
+
+.returnCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  padding: 16px;
+  background: rgba(254, 89, 25, 0.1);
+  border: 1px solid #FEE2E2;
+  border-radius: 12px;
+}
+
+.returnCard.teal {
+  background: rgba(39, 112, 121, 0.1);
+  border-color: #E0E7FF;
+}
+
+.returnCardLabel {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120%;
+  color: #1F2937;
+}
+
+.returnCardValue {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+  color: #FE5919;
+}
+
+.returnCard.teal .returnCardValue {
+  color: #277079;
+}
+
+.returnCardSubtitle {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 120%;
+  color: #6B7280;
+}
+
+/* Scenario Analysis */
+
+.scenarioAnalysis {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.scenarioTitle {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120%;
+  color: #1F2937;
+}
+
+.scenarioButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  width: 100%;
+}
+
+.scenarioButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 8px;
+  gap: 6px;
+  height: 53px;
+  background: #F8FAFC;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.scenarioButton.active {
+  background: #277079;
+  border-color: #277079;
+  color: #FFFFFF;
+}
+
+.scenarioButtonLabel {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 120%;
+  color: #6B7280;
+}
+
+.scenarioButton.active .scenarioButtonLabel {
+  color: #FFFFFF;
+}
+
+.scenarioButtonValue {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 120%;
+  color: #1F2937;
+}
+
+.scenarioButton.active .scenarioButtonValue {
+  color: #FFFFFF;
+}
+
+/* Action Buttons */
+
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.primaryButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 14px;
+  gap: 10px;
+  width: 100%;
+  height: 44px;
+  background: #277079;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.primaryButton:hover {
+  background-color: #0D655E;
+}
+
+.secondaryButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 14px;
+  gap: 10px;
+  width: 100%;
+  height: 44px;
+  background: #FFFFFF;
+  color: #277079;
+  border: 1px solid #277079;
+  border-radius: 8px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.secondaryButton:hover {
+  background-color: #F0FDFA;
+}
+
+/* Investment Footer */
+
+.investmentFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid rgba(31, 41, 55, 0.1);
+  width: 100%;
+  margin-top: 4px;
+}
+
+.footerStat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.footerStat.right {
+  align-items: flex-end;
+}
+
+.footerLabel {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 120%;
+  color: #6B7280;
+}
+
+.footerValue {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 120%;
+  color: #1F2937;
+}
+
+.footerValue.green {
+  color: #0AA43E;
+}
+
+/* ========================================
+   FUNDING STATUS CARD
+   ======================================== */
+
+.fundingStatusCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 18px;
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 13px;
+  box-shadow: 0px 38px 23px rgba(0, 0, 0, 0.01), 
+              0px 17px 17px rgba(0, 0, 0, 0.02), 
+              0px 4px 9px rgba(0, 0, 0, 0.02);
+  flex: none;
+  order: 1;
+  align-self: stretch;
+}
+
+.fundingStatusTitle {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 120%;
+  color: #1F2937;
+}
+
+.fundingProgressInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  align-self: stretch;
+}
+
+.fundingProgressHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.fundingPercentage {
+  margin: 0 auto;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120%;
+  color: #1F2937;
+}
+
+.fundingInvestorsCount {
+  margin: 0 auto;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 120%;
+  color: #6B7280;
+}
+
+/* Progress Bar */
+
+.progressBar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  height: 12px;
+  background: #EAEEF4;
+}
+
+.progressFill {
+  width: 65%;
+  height: 12px;
+  background: linear-gradient(90deg, #0F766E 0%, #0AA43E 100%);
+  border-radius: 62px;
+}
+
+/* Funding Status Items */
+
+.fundingStatusItems {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  align-self: stretch;
+}
+
+.statusCardsRow {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  width: 100%;
+  align-self: stretch;
+}
+
+.statusCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px;
+  gap: 12px;
+  flex: 1;
+  background: rgba(254, 89, 25, 0.1);
+  border-radius: 8px;
+}
+
+.statusCard.teal {
+  background: rgba(39, 112, 121, 0.1);
+}
+
+.statusIconCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: #FE5919;
+  border-radius: 79px;
+  color: #FFFFFF;
+  flex-shrink: 0;
+}
+
+.statusIconCircle.teal {
+  background: #277079;
+}
+
+.statusCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.statusCardLabel {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 120%;
+  color: #6B7280;
+}
+
+.statusCardValue {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 120%;
+  color: #1F2937;
+}
+
+/* Status Card Full Width */
+
+.statusCardFull {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px;
+  gap: 12px;
+  width: 100%;
+  background: rgba(39, 112, 121, 0.1);
+  border-radius: 8px;
+  align-self: stretch;
+}
+
+/* Alert Card */
+
+.alertCard {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  padding: 12px;
+  width: 100%;
+  background: #FFF7ED;
+  border: 1px solid #FFEDD5;
+  border-radius: 8px;
+  align-self: stretch;
+}
+
+.alertIcon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: #FE5919;
+}
+
+.alertContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.alertTitle {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 120%;
+  color: #FE5919;
+}
+
+.alertMessage {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 120%;
+  color: #6B7280;
+}
+
+/* ========================================
+   PROPERTY ACTIVITY CARD
+   ======================================== */
+
+.propertyActivityCard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 13px;
+  box-shadow: 0px 38px 23px rgba(0, 0, 0, 0.01), 
+              0px 17px 17px rgba(0, 0, 0, 0.02), 
+              0px 4px 9px rgba(0, 0, 0, 0.02);
+  flex: none;
+  order: 2;
+  align-self: stretch;
+}
+
+.activityHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  align-self: stretch;
+}
+
+.activityTitle {
+  margin: 0 auto;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 120%;
+  color: #1F2937;
+}
+
+.activityViewAllLink {
+  margin: 0 auto;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 120%;
+  color: #277079;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: text-decoration 0.2s ease;
+}
+
+.activityViewAllLink:hover {
+  text-decoration: underline;
+}
+
+/* Activity List */
+
+.activityList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  position: relative;
+  align-self: stretch;
+}
+
+.activityTimelineLine {
+  position: absolute;
+  left: 15px;
+  top: 16px;
+  bottom: 16px;
+  width: 2px;
+  background: #E5E7EB;
+}
+
+.activityItem {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  width: 100%;
+  align-self: stretch;
+  position: relative;
+  z-index: 10;
+}
+
+.activityIconContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30px;
+  height: 63px;
+  flex: none;
+}
+
+.activityIconCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: #277079;
+  border-radius: 48px;
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.activityIconDot {
+  width: 4px;
+  height: 4px;
+  background: #FFFFFF;
+  border-radius: 50%;
+}
+
+.activityCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12px;
+  gap: 8px;
+  flex: 1;
+  background: rgba(39, 112, 121, 0.1);
+  border: 1px solid rgba(39, 112, 121, 0.2);
+  border-radius: 8px;
+}
+
+.activityCard.light {
+  background: #F8FAFC;
+  border-color: rgba(31, 41, 55, 0.2);
+}
+
+.activityCardHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  align-self: stretch;
+  margin-bottom: 4px;
+}
+
+.activityEventTitle {
+  margin: 0 auto;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 120%;
+  color: #1F2937;
+}
+
+.activityTimestamp {
+  margin: 0 auto;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 120%;
+  color: #6B7280;
+}
+
+.activityDescription {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 120%;
+  color: #6B7280;
+}
+
+/* ========================================
+   UTILITIES
+   ======================================== */
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(31, 41, 55, 0.1);
+  flex: none;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .rightPanel {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .investmentCalculatorCard,
+  .fundingStatusCard,
+  .propertyActivityCard {
+    padding: 12px;
+  }
+
+  .returnsGrid {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .statusCardsRow {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .statusCard {
+    width: 100%;
+  }
+
+  .activityHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
