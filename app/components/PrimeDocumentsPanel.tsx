@@ -167,21 +167,28 @@ const recentActivity = [
     title: "Portfolio Statement Q1 2026 generated",
     tag: "Portfolio Wide",
     date: "Apr 18, 2026",
+    icon: "/fil.svg",
   },
   {
     title: "Annual Tax Certificate FY 2025-26 added",
     tag: "JVC Tower SPV",
     date: "Apr 12, 2026",
+        icon: "/tik.svg",
+
   },
   {
     title: "Q1 Distribution Receipt uploaded",
     tag: "JVC Tower SPV",
     date: "Apr 10, 2026",
+        icon: "/bu.svg",
+
   },
   {
     title: "Share Certificate issued",
     tag: "JVC Tower SPV",
     date: "Apr 02, 2026",
+        icon: "/atax.svg",
+
   },
 ];
 
@@ -360,7 +367,7 @@ export default function PrimeDocumentsPanel() {
       {!dismissBanner && (
         <div className="ppdocs-alertbar">
           <div className="ppdocs-alertbar-left">
-            <div className="ppdocs-alert-icon">△</div>
+            <div className="ppdocs-alert-icon"><img src="/war.svg" alt="" /></div>
             <div>
               <strong>2 Documents Awaiting Your Signature</strong>
               <p>2 documents are waiting for your signature to complete investment processing.</p>
@@ -368,10 +375,10 @@ export default function PrimeDocumentsPanel() {
           </div>
 
           <div className="ppdocs-alert-actions">
-            <button className="ppdocs-btn ppdocs-btn-light" onClick={() => setDismissBanner(true)}>
+            <button className="ppdocs-btn ppdocs-btn-lighto" onClick={() => setDismissBanner(true)}>
               Dismiss
             </button>
-            <button className="ppdocs-btn ppdocs-btn-primary">Review Now</button>
+            <button className="ppdocs-btn ppdocs-btn-primaryo">Review Now</button>
           </div>
         </div>
       )}
@@ -469,13 +476,14 @@ export default function PrimeDocumentsPanel() {
               ))}
             </select>
           </div>
+        <div className="pps-divider-line" />
 
           <div className="ppdocs-sidebar-actions">
-            <button className="ppdocs-btn ppdocs-btn-primary ppdocs-btn-full">
+            <button className="ppdocs-btn ppdocs-btn-primaryo ppdocs-btn-full">
               Apply Filters
             </button>
             <button
-              className="ppdocs-btn ppdocs-btn-light ppdocs-btn-full"
+              className="ppdocs-btn ppdocs-btn-lighto ppdocs-btn-full"
               onClick={clearAllFilters}
             >
               Clear All
@@ -486,7 +494,7 @@ export default function PrimeDocumentsPanel() {
         <div className="ppdocs-content">
           <div className="ppdocs-table-toolbar">
             <div className="ppdocs-searchbox">
-              <span className="ppdocs-search-icon">⌕</span>
+              <span className="ppdocs-search-icon"><img src="/search1.svg" alt="" /></span>
               <input
                 type="text"
                 placeholder="Search by payout ID, property, quarter"
@@ -561,7 +569,7 @@ export default function PrimeDocumentsPanel() {
                       </td>
                       <td>{item.size}</td>
                       <td>
-                        <button className="ppdocs-download-btn">⇩</button>
+                        <button className="ppdocs-download-btn"><img src="/od.svg" alt="" /></button>
                       </td>
                     </tr>
                   ))
@@ -581,7 +589,8 @@ export default function PrimeDocumentsPanel() {
       <div className="ppdocs-bottom-grid">
         <div className="ppdocs-insight-card">
           <div className="ppdocs-insight-head">
-            <span className="ppdocs-insight-icon">◉</span>
+            <span className="bo">            <img src="/light.svg" alt="" />
+</span>
             <strong>Document Insight</strong>
           </div>
 
@@ -591,7 +600,7 @@ export default function PrimeDocumentsPanel() {
           </p>
 
           <div className="ppdocs-tax-ready-box">
-            <div className="ppdocs-tax-ready-icon">▣</div>
+            <div className="ppdocs-tax-ready-icon"><img src="/doc.svg" alt="" /></div>
             <div>
               <strong>Tax Filing Ready</strong>
               <p>Download your FY 2025-26 tax pack before filing deadlines.</p>
@@ -599,8 +608,8 @@ export default function PrimeDocumentsPanel() {
           </div>
 
           <div className="ppdocs-insight-actions">
-            <button className="ppdocs-btn ppdocs-btn-light">Review Pending Files</button>
-            <button className="ppdocs-btn ppdocs-btn-primary">Download Tax Pack</button>
+            <button className="ppdocs-btn ppdocs-btn-lighto">Review Pending Files</button>
+            <button className="ppdocs-btn ppdocs-btn-primaryo">Download Tax Pack</button>
           </div>
         </div>
 
@@ -613,7 +622,7 @@ export default function PrimeDocumentsPanel() {
           <div className="ppdocs-activity-list">
             {recentActivity.map((item) => (
               <div key={item.title} className="ppdocs-activity-item">
-                <div className="ppdocs-activity-icon">◔</div>
+                <div className="ppdocs-activity-icon"><img src={item.icon} alt="" /></div>
                 <div className="ppdocs-activity-content">
                   <div className="ppdocs-activity-top">
                     <h4>{item.title}</h4>

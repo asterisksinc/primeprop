@@ -48,25 +48,25 @@ const activityItems = [
     title: "Transfer initiated for JVC Tower SPV Q1 distribution",
     tag: "JVC Tower SPV",
     date: "Apr 14, 2026",
-    icon: "◔",
+    icon: "/mon.svg",
   },
   {
     title: "Q1 payout approved after reconciliation",
     tag: "JVC Tower SPV",
     date: "Apr 12, 2026",
-    icon: "◉",
+    icon: "/tik.svg",
   },
   {
     title: "Fee reconciliation completed",
     tag: "JVC Tower SPV",
     date: "Apr 10, 2026",
-    icon: "◧",
+    icon: "/fil.svg",
   },
   {
     title: "Rental income posted",
     tag: "JVC Tower SPV",
     date: "Apr 02, 2026",
-    icon: "▥",
+    icon: "/bu.svg",
   },
 ];
 
@@ -149,7 +149,7 @@ export default function PrimeDistributionOverview() {
 
           <div className="prime-db-v1-payment-box">
             <div className="prime-db-v1-payment-top">
-              <div className="prime-db-v1-payment-icon">▣</div>
+              <div className="prime-db-v1-payment-icon"><img src="/one.svg" alt=""  /></div>
               <div>
                 <div className="prime-db-v1-payment-label">Payout Method</div>
                 <div className="prime-db-v1-payment-title">Verified Bank Account</div>
@@ -231,7 +231,7 @@ export default function PrimeDistributionOverview() {
             className="prime-db-v1-search-input"
             placeholder="Search by payout ID, property, quarter"
           />
-           <button style={{width:'100px', marginLeft:'10px'}} className="prime-db-v1-filter-btn">☷ Filter</button>
+           <button style={{width:'123px', marginLeft:'10px'}} className="prime-db-v1-filter-btn">☷ Filter</button>
         </div>
 
         <div className="prime-db-v1-table-wrap">
@@ -270,7 +270,7 @@ export default function PrimeDistributionOverview() {
                       {row.status}
                     </span>
                   </td>
-                  <td>⇩</td>
+                  <td><img src="/dload.svg" alt="" /></td>
                 </tr>
               ))}
             </tbody>
@@ -287,7 +287,7 @@ export default function PrimeDistributionOverview() {
 
             <div className="prime-db-v1-bank-card">
               <div className="prime-db-v1-bank-head">
-                <div className="prime-db-v1-bank-icon">▣</div>
+                <div className="prime-db-v1-bank-icon"><img src="/bank1.svg" alt="" /></div>
                 <div>
                   <div className="prime-db-v1-bank-type">Payout Method</div>
                   <div className="prime-db-v1-bank-name">Bank Transfer</div>
@@ -348,7 +348,7 @@ export default function PrimeDistributionOverview() {
               {taxDocs.map((doc, index) => (
                 <div key={index} className="prime-db-v1-doc-item">
                   <div className="prime-db-v1-doc-left">
-                    <div className="prime-db-v1-doc-icon">▤</div>
+                    <div className="prime-db-v1-doc-icon"><img src="/doc1.svg" alt="" /></div>
                     <div>
                       <div className="prime-db-v1-doc-title">{doc.title}</div>
                       <div className="prime-db-v1-doc-meta">
@@ -356,14 +356,14 @@ export default function PrimeDistributionOverview() {
                       </div>
                     </div>
                   </div>
-                  <button className="prime-db-v1-doc-download">⇩</button>
+                  <button className="prime-db-v1-doc-download"><img src="/expo.svg" alt="" /></button>
                 </div>
               ))}
             </div>
 
             <div className="prime-db-v1-tax-ready-box">
-              <div className="prime-db-v1-tax-ready-title">Tax Season Ready</div>
-              <div className="prime-db-v1-tax-ready-sub">
+              <div className="prime-db-v1-tax-ready-title ml-3 text-bold" style={{display:'flex'}}> <img className="mr-2" src="/doc1.svg" alt="" /> Tax Season Ready</div>
+              <div className="prime-db-v1-tax-ready-sub ml-9">
                 All documents are formatted and include necessary details for filing returns.
               </div>
             </div>
@@ -384,7 +384,7 @@ export default function PrimeDistributionOverview() {
       <div key={index} className="prime-db-v1-activity-row">
         <div className="prime-db-v1-activity-icon-wrap">
           <span className="prime-db-v1-activity-icon">
-            {item.icon || "◔"}
+            <img src={item.icon} alt="" />
           </span>
         </div>
 
@@ -433,11 +433,13 @@ export default function PrimeDistributionOverview() {
 
       <div className="prime-db-v1-insight-shell">
         <div className="prime-db-v1-insight-top">
-          <div>
+          <div style={{display:'flex', gap:'10px', alignItems:'center'}}>
+            <div className="bo"><img src="/light.svg" alt="" /></div>
+            <div>
             <div className="prime-db-v1-insight-title">Distribution Insight</div>
             <div className="prime-db-v1-insight-sub">
               Your realized net payout increased by 3.2% compared with last quarter due to higher occupancy and stable operating costs.
-            </div>
+            </div></div>
           </div>
           <button className="prime-db-v1-download-btn">Download Tax Pack</button>
         </div>
@@ -457,9 +459,16 @@ export default function PrimeDistributionOverview() {
           </div>
         </div>
 
-        <div className="prime-db-v1-note-row">
-          <span className="prime-db-v1-safe-icon">▣</span>
+        <div className="prime-db-v1-note-row" style={{padding:'15px'}}>
+                  <div className="prime-db-v1-doc-left">
+                    <div className=""><img src="/doc1.svg" alt="" /></div>
+                    <div>
+                      <div className="prime-db-v1-doc-title">Tax Documents Available</div>
+                      <div className="prime-db-v1-doc-meta">
           Tax Documents Available Tax documents for FY 2025-26 are now ready for download.
+                      </div>
+                    </div>
+                  </div>
         </div>
       </div>
     </section>

@@ -9,7 +9,7 @@ type SidebarProps = {
 };
 
 const menuItems = [
-  { id: "account", label: "Account", icon: "/user.svg", activeIcon: "/auser.svg" },
+  { id: "account", label: "Account", icon: "/use.svg", activeIcon: "/ause.svg" },
   { id: "security", label: "Security", icon: "/security.svg", activeIcon: "/asecurity.svg" },
   { id: "payouts", label: "Payouts", icon: "/payout.svg", activeIcon: "/apayout.svg" },
   { id: "tax", label: "Tax Information", icon: "/tax.svg", activeIcon: "/atax.svg" },
