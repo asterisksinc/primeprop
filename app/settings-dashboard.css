@@ -11,24 +11,19 @@ body {
 
 .pps-page-shell {
   width: 100%;
-    max-height: 681px;
-    height: 681px;
-      background: #f5f7f8;
+  background: #f5f7f8;
   padding: 8px;
 }
 
 .pps-page-container {
-  height: 100%;
   display: flex;
   gap: 12px;
   align-items: flex-start;
-      margin-top: 15px;
+  margin-top: 12px;
 }
 
 .pps-sidebar-shell {
   width: 240px;
-      height: 100vh;
-
   min-width: 240px;
   background: #ffffff;
   border: 1px solid #e5e9ee;
@@ -89,16 +84,12 @@ letter-spacing: 0%;
   display: flex;
   flex-direction: column;
   gap: 12px;
-      height: 100%;
-
 }
 
 .pps-section-wrap {
   display: flex;
   flex-direction: column;
   gap: 12px;
-      height: 100%;
-
 }
 
 .pps-card-box {
@@ -106,8 +97,6 @@ letter-spacing: 0%;
   border: 1px solid #e5e9ee;
   border-radius: 16px;
   padding: 16px;
-      height: 100%;
-
 }
 
 .pps-section-title {
