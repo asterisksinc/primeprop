@@ -1,6 +1,5 @@
 "use client";
-
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BarChart3, ShieldCheck, Banknote, CheckSquare, Clock, Check, Mail, Phone ,IdCard, MapPin, Camera , CheckCircle2,   FileText, Wallet} from 'lucide-react';
 import { useRouter } from "next/navigation";
 const Step1 = ({ nextStep }: any) => {
@@ -48,7 +47,7 @@ const Step1 = ({ nextStep }: any) => {
             </span>
           </div>
 
-          <div className="grid grid-cols-3 gap-4 mt-12 p-6 rounded-2xl border border-gray-100 bg-gray-50/50">
+          <div className="grid grid-cols-3 gap-4 mt-12 p-6 rounded-2xl border border-gray-100 bg-[#F8FAFC] ">
             <div className="flex flex-col items-center text-center gap-3">
               <div className="w-12 h-12 rounded-full bg-[#277079]/10 flex items-center justify-center">
                 <BarChart3 className="w-5 h-5 text-[#277079]" />
@@ -633,6 +632,15 @@ const StepPlaceholder = ({ step, prevStep, nextStep }: any) => (
 
 export default function Onboarding() {
   const [currentStep, setCurrentStep] = useState(1);
+  useEffect(() => {
+    // remove global padding
+    document.body.style.padding = "0px";
+
+    return () => {
+      // restore when leaving page
+      document.body.style.padding = "20px";
+    };
+  }, []);
 
   const nextStep = () => setCurrentStep((prev) => Math.min(prev + 1, 6));
   const prevStep = () => setCurrentStep((prev) => Math.max(prev - 1, 1));

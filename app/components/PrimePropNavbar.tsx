@@ -54,8 +54,8 @@ export default function PrimePropNavbar() {
           <Image
             src="/bell.svg"
             alt="Bell"
-            width={24}
-            height={24}
+            width={20}
+            height={20}
             priority
           />
         </button>
@@ -63,8 +63,8 @@ export default function PrimePropNavbar() {
         <Image
           src="/user.svg"
           alt="User"
-          width={50}
-          height={50}
+          width={42}
+          height={42}
           className="ppd-user-avatar"
           priority
         />

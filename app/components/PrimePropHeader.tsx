@@ -1,11 +1,12 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname ,useRouter } from "next/navigation";
 import Image from "next/image";
 import "../settings-dashboard.css";
 import "../primeprop-dashboard.css";
 import "../prime-support-section.css";
 import "../prime-raise-issue-flow.css";
+import { ArrowBigLeft, ArrowLeft } from "lucide-react";
 const routeMap: any = {
   "/": "Dashboard Overview",
   "/properties": "Properties",
@@ -16,12 +17,40 @@ const routeMap: any = {
 };
 
 export default function PrimePropHeader() {
+ 
+ 
+  const formatSlugToTitle = (slug: string) => {
+    if (!slug) return "";
+    return slug
+      .split("-")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
   const pathname = usePathname();
+  const router = useRouter();
 
-  const title = routeMap[pathname] || "Dashboard";
+  // Split the pathname to determine if we are on a nested "slug" page
+  const segments = pathname.split("/").filter(Boolean);
+  const isSlugPage = segments.length > 1;
 
+  let title = "Dashboard";
+  let parentTitle = "";
+
+  // Determine Titles dynamically based on URL depth
+  if (segments.length === 0) {
+    title = routeMap["/"] || "Dashboard Overview";
+  } else if (!isSlugPage) {
+    title = routeMap[pathname] || formatSlugToTitle(segments[0]);
+  } else {
+    // For nested pages like /properties/[slug]
+    const parentPath = `/${segments[0]}`;
+    parentTitle = routeMap[parentPath] || formatSlugToTitle(segments[0]);
+    // Format the last segment (the slug) as the main title
+    title = formatSlugToTitle(segments[segments.length - 1]);
+  }
+  
   return (
-    <section className="ppd-hero-banner">
+    <section className="ppd-hero-banner" style={{ position: "relative" }}>
       <div className="ppd-hero-left">
         <div className="ppd-logo-row">
           <Image
@@ -33,15 +62,41 @@ export default function PrimePropHeader() {
           />
         </div>
 
-        <div className="ppd-breadcrumbs">
-          PrimeProp &nbsp;/&nbsp;
-          <span style={{ color: "#1F2937" }}>{title}</span>
-        </div>
+        {isSlugPage ? (
+          <>
+            {/* Multi-level Breadcrumb for Slug Pages */}
+            <div className="ppd-breadcrumbs text-[#6B7280] text-[12px] mb-1">
+              PrimeProp &nbsp;/&nbsp; {parentTitle} &nbsp;/&nbsp;{" "}
+              <span style={{ color: "#111827" }}>Details</span>
+            </div>
+            
+            <div className="flex items-center gap-[12px] mt-[4px]">
+              <button 
+                onClick={() => router.back()} 
+                className="text-[#111827] cursor-pointer hover:bg-gray-100 p-1 rounded-full transition-colors"
+                aria-label="Go back"
+              >
+                <ArrowLeft className="w-6 h-6" />
+              </button>
+              <div className="text-[#111827] text-[24px] font-bold">{title}</div>
+            </div>
+          </>
+        ) : (
+          <>
+            {/* Standard Breadcrumb for Top-Level Pages */}
+            <div className="ppd-breadcrumbs text-sm text-gray-400 mb-2">
+              PrimeProp &nbsp;/&nbsp;
+              <span className="text-[#1F2937]">{title}</span>
+            </div>
 
-        <h1 className="ppd-main-title">{title}</h1>
+            <div className="flex items-center gap-2 text-[24px] font-bold text-[#111827]">
+              {title}
+            </div>
+          </>
+        )}
       </div>
 
-      <div className="ppd-hero-building">
+      <div className="absolute right-[660px] bottom-0 h-full flex items-end">
         <Image
           src="/bul1.png"
           alt="Building"
@@ -51,10 +106,15 @@ export default function PrimePropHeader() {
         />
       </div>
 
-      <div className="ppd-hero-actions">
-        <button className="ppd-filter-btn">All Property</button>
-        <button className="ppd-refresh-btn">
-          <span>↻</span> Refresh
+      <div className="absolute right-[24px] bottom-[24px] flex gap-[12px]">
+        {pathname !== "/properties" && (
+          <button className="ppd-filter-btn">All Property</button>
+        )}
+        <button className="bg-[#2C7A7B] text-white px-[16px] py-[8px] rounded-[6px] text-[14px] font-medium flex items-center gap-[8px] hover:bg-[#236363] transition-colors">
+          <svg className="w-[14px] h-[14px]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+          </svg>
+          Refresh
         </button>
       </div>
     </section>

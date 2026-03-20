@@ -13,7 +13,7 @@ body {
     width: 100%;
     /* min-height: 100vh; */
     background: #f3f5f7;
-    padding: 6px;
+    padding: 10px 12px 14px;
 }
 
 .ppd-page-wrap {
@@ -25,18 +25,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
+    gap: 12px;
     background: #f3f5f7;
-    /* border: 1px solid #dde3e8; */
     border-bottom: none;
-    padding: 10px 14px 0 14px;
+    padding: 10px 18px 4px 18px;
 }
 
 .ppd-navbar-left {
     display: flex;
     align-items: center;
     gap: 8px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    min-width: 0;
+    overflow-x: auto;
 }
 
 .flex-col {
@@ -48,10 +49,13 @@ body {
     background: #fff;
     font-weight: 500;
     color: #1f2937;
-    font-size: 16px;
-    padding: 12px 16px;
-    border-radius: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 10px 14px;
+    border-radius: 8px;
     cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
     box-shadow: 0px 4px 9px 0px #00000005;
 
     box-shadow: 0px 17px 17px 0px #00000005;
@@ -71,7 +75,8 @@ body {
 .ppd-navbar-right {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    flex-shrink: 0;
 }
 .ppd-map-image-wrap {
   width: 100%;
@@ -81,11 +86,12 @@ body {
 .ppd-search-box {
     display: flex;
     align-items: center;
-    width: 320px;
+    width: 240px;
+    min-width: 220px;
     background: #f7f7f7;
-    padding: 0 14px;
-    border-radius: 10px;
-    height: 44px;
+    padding: 0 12px;
+    border-radius: 8px;
+    height: 40px;
     box-shadow: 0 7px 18px rgba(12, 27, 54, 0.05);
 }
 
@@ -94,7 +100,7 @@ body {
     outline: none;
     background: transparent;
     width: 100%;
-    font-size: 14px;
+    font-size: 13px;
     color: #475569;
 }
 
@@ -107,43 +113,44 @@ body {
 }
 
 .ppd-bell-btn {
-    width: 50px;
-    padding: 10px 14px;
-    height: 50px;
+    width: 42px;
+    height: 42px;
     border: none;
-    border-radius: 12px;
+    border-radius: 10px;
     background: #ffffff;
     cursor: pointer;
     box-shadow: 0 7px 18px rgba(12, 27, 54, 0.06);
-    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .ppd-user-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 12px;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 7px 18px rgba(12, 27, 54, 0.06);
 }
 
 .ppd-user-avatar img {
-    width: 50px;
-    height: 50px;
-    border-radius: 12px;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 7px 18px rgba(12, 27, 54, 0.06);
 }
 
 .ppd-hero-banner {
-    margin-top: 8px;
+    margin-top: 12px;
     position: relative;
     min-height: 168px;
     background: #FFFFFF;
   background: #fff url("/bg1.svg") no-repeat center/cover;
     /* border: 1px solid #dde3e8; */
     border-top: none;
-    border-radius: 0 0 16px 16px;
-    padding: 22px 28px;
+    border-radius: 16px;
+    padding: 24px 30px;
     overflow: hidden;
     box-shadow: 0px 4px 9px 0px #00000005;
 
@@ -268,8 +275,8 @@ body {
 .ppd-dashboard-grid {
     display: grid;
     grid-template-columns: 2.25fr 1.55fr 1.3fr;
-    gap: 8px;
-    margin-top: 8px;
+    gap: 12px;
+    margin-top: 12px;
 }
 
 .ppd-left-column,
@@ -277,7 +284,7 @@ body {
 .ppd-right-column {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
 }
 
 .ppd-card {
@@ -431,7 +438,7 @@ body {
 }
 
 .height {
-    height: 360px;
+    height: auto;
 }
 
 .ppd-chart-months {
@@ -604,11 +611,11 @@ body {
 }
 
 .ppd-earnings-card {
-    height: 40%;
+    height: auto;
 }
 
 .ppd-performance-card {
-    height: 60%;
+    height: auto;
 }
 
 .ppd-earnings-card,
@@ -946,6 +953,10 @@ body {
 }
 
 @media (max-width: 768px) {
+    .ppd-page-shell {
+        padding: 8px;
+    }
+
     .ppd-navbar-shell {
         flex-direction: column;
         align-items: stretch;
