@@ -8,7 +8,7 @@ import "../primeprop-dashboard.css";
 import "../prime-support-section.css";
 import "../prime-raise-issue-flow.css";
 const navItems = [
-  { label: "Dashboard", href: "/" },
+  { label: "Dashboard", href: "/dashboard" },
   { label: "Properties", href: "/properties" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Distributions", href: "/distributions" },

@@ -1,0 +1,1111 @@
+.prime-db-v1-shell {
+  width: 100%;
+  padding: 8px;
+  background: #f6f7f8;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #29353f;
+  box-sizing: border-box;
+}
+
+.prime-db-v1-top-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.prime-db-v1-stat-card,
+.prime-db-v1-card {
+  background: #ffffff;
+  border: 1px solid #e6eaed;
+  border-radius: 10px;
+  box-shadow: 0 1px 0 rgba(12, 24, 36, 0.03);
+}
+.car{
+      background: #ffffff;
+  border: 1px solid #e6eaed;
+  border-radius: 10px;
+  box-shadow: 0 1px 0 rgba(12, 24, 36, 0.03);
+}
+.prime-db-v1-stat-card {
+  padding: 10px 12px;
+  min-height: 72px;
+}
+
+.prime-db-v1-stat-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.prime-db-v1-stat-label {
+font-weight: 500;
+font-style: Medium;
+font-size: 14px;
+line-height: 120%;
+letter-spacing: 0%;
+  color: #1F2937;
+  line-height: 1.3;
+}
+
+.prime-db-v1-stat-chip {
+  min-height: 16px;
+  padding: 0 6px;
+  border-radius: 41px;
+font-weight: 500;
+font-style: Medium;
+font-size: 12px;
+line-height: 120%;
+letter-spacing: 0%;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.prime-db-v1-stat-chip-green {
+  background: #0AA43E1A;
+  color: #0AA43E;
+}
+
+.prime-db-v1-stat-chip-orange {
+  background: #FE59191A;
+  color: #FE5919;
+}
+
+.prime-db-v1-stat-value {
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 24px;
+line-height: 120%;
+letter-spacing: 0%;
+  color: #1F2937;
+}
+
+.prime-db-v1-stat-sub {
+font-weight: 500;
+font-style: Medium;
+font-size: 12px;
+line-height: 120%;
+letter-spacing: 0%;
+  color: #6B7280;
+  margin-top: 4px;
+}
+
+.prime-db-v1-summary-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.prime-db-v1-next-card,
+.prime-db-v1-progress-card,
+.prime-db-v1-table-card,
+.prime-db-v1-method-card,
+.prime-db-v1-tax-card,
+.prime-db-v1-activity-card,
+.prime-db-v1-statements-card {
+  padding: 10px;
+}
+
+.prime-db-v1-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.prime-db-v1-section-title {
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 16px;
+line-height: 120%;
+letter-spacing: 0%;
+
+  margin: 0;
+  color: #1F2937;
+}
+
+.prime-db-v1-next-amount-label {
+font-weight: 500;
+font-style: Medium;
+font-size: 14px;
+line-height: 120%;
+letter-spacing: 0%;
+  color: #1F2937;
+  margin-bottom: 4px;
+}
+
+.prime-db-v1-next-amount {
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 28px;
+line-height: 120%;
+letter-spacing: 0%;
+
+  color: #277079;
+}
+
+.prime-db-v1-next-property {
+font-weight: 500;
+font-style: Medium;
+font-size: 12px;
+line-height: 120%;
+letter-spacing: 0%;
+  color: #6B7280;
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
+
+.prime-db-v1-mini-table {
+  border-top: 1px solid #edf1f3;
+  border-bottom: 1px solid #edf1f3;
+  margin-bottom: 10px;
+}
+
+.prime-db-v1-mini-row {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+font-weight: 500;
+font-style: Medium;
+font-size: 14px;
+line-height: 120%;
+letter-spacing: 0%;
+
+  color: #6B7280;
+  border-bottom: 1px solid #edf1f3;
+}
+
+.prime-db-v1-mini-row:last-child {
+  border-bottom: none;
+}
+
+.prime-db-v1-mini-row strong {
+  font-size: 14px;
+  color: #2c3741;
+}
+
+.prime-db-v1-mini-row-final strong {
+  font-size: 24px;
+}
+
+.prime-db-v1-green-text {
+  color: #2e9d54 !important;
+}
+
+.prime-db-v1-teal-text {
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 18px;
+line-height: 120%;
+letter-spacing: 0%;
+
+  color: #277079 !important;
+}
+
+.prime-db-v1-orange-text {
+  color: #f07d33 !important;
+}
+
+.prime-db-v1-payment-box {
+  border: 1px solid #e8edef;
+  border-radius: 8px;
+  padding: 21px;
+  background: #fbfcfc;
+}
+.prime-db-v1-activity-card {
+  background: #ffffff;
+  border: 1px solid #e3e7eb;
+  border-radius: 8px;
+  padding: 10px 12px 24px;
+  box-sizing: border-box;
+}
+
+.prime-db-v1-activity-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8px;
+}
+
+.prime-db-v1-section-title {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.prime-db-v1-text-link {
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f7a83;
+  cursor: pointer;
+}
+
+.prime-db-v1-activity-list {
+  position: relative;
+  padding-top: 2px;
+}
+
+.prime-db-v1-activity-line {
+  position: absolute;
+  left: 16px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  background: #dfe5e8;
+}
+
+.prime-db-v1-activity-row {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  z-index: 1;
+}
+
+.prime-db-v1-activity-row:last-child {
+  margin-bottom: 0;
+}
+
+.prime-db-v1-activity-icon-wrap {
+  width: 32px;
+  min-width: 32px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.prime-db-v1-activity-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #1f7a83;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 700;
+  box-shadow: 0 0 0 4px #ffffff;
+}
+
+.prime-db-v1-activity-box {
+  flex: 1;
+  background: #f9fbfc;
+  border: 1px solid #d8dee3;
+  border-radius: 6px;
+  padding: 12px 14px 10px;
+  box-sizing: border-box;
+}
+
+.prime-db-v1-activity-box-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.prime-db-v1-activity-title {
+  flex: 1;
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 14px;
+line-height: 120%;
+letter-spacing: 0%;
+
+  color: #1F2937;
+}
+
+.prime-db-v1-activity-date {
+  white-space: nowrap;
+font-weight: 500;
+font-style: Medium;
+font-size: 12px;
+line-height: 120%;
+letter-spacing: 0%;
+
+  color: #6B7280;
+}
+
+.prime-db-v1-activity-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #d9ecef;
+  color: #2f6f79;
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 12px;
+line-height: 120%;
+letter-spacing: 0%;
+
+}
+.prime-db-v1-payment-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.prime-db-v1-payment-icon,
+.prime-db-v1-doc-icon,
+.prime-db-v1-bank-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: #ecf8f0;
+  color: #2d8d52;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.prime-db-v1-payment-label,
+.prime-db-v1-bank-type {
+font-weight: 500;
+font-style: Medium;
+font-size: 12px;
+line-height: 120%;
+letter-spacing: 0%;
+  color: #6B7280;
+}
+
+.prime-db-v1-payment-title,
+.prime-db-v1-bank-name {
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+line-height: 120%;
+letter-spacing: 0%;
+
+  color: #1F2937;
+  margin-top: 2px;
+}
+
+.prime-db-v1-payment-sub {
+font-weight: 500;
+font-style: Medium;
+font-size: 12px;
+line-height: 120%;
+letter-spacing: 0%;
+  color: #6B7280;
+  margin-top: 2px;
+}
+
+.prime-db-v1-payment-badge,
+.prime-db-v1-bank-status {
+  margin-left: auto;
+  background: #edf9ef;
+  color: #2e9d54;
+  border-radius: 999px;
+  min-height: 18px;
+  padding: 0 7px;
+font-weight: 500;
+font-style: Medium;
+font-size: 12px;
+line-height: 120%;
+letter-spacing: 0%;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.prime-db-v1-button-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.prime-db-v1-button-row-2 {
+  grid-template-columns: 1fr 1fr;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.prime-db-v1-btn,
+.prime-db-v1-filter-btn,
+.prime-db-v1-statement-btn,
+.prime-db-v1-download-btn {
+  height: 32px;
+  border-radius: 6px;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+line-height: 20px;
+letter-spacing: 0%;
+
+  cursor: pointer;
+}
+
+.prime-db-v1-btn-solid,
+.prime-db-v1-download-btn {
+  background: #277079;
+  border: 1px solid #277079;
+  color: #fff;
+}
+
+.prime-db-v1-btn-outline,
+.prime-db-v1-filter-btn,
+.prime-db-v1-statement-btn {
+  background: #fff;
+  border: 1px solid #277079;
+  color: #2f7a82;
+}
+
+.prime-db-v1-btn-outline-orange {
+  background: #fff;
+  border: 1px solid #FE5919;
+  color: #FE5919;
+  height: 32px;
+  border-radius: 6px;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+line-height: 20px;
+letter-spacing: 0%;
+
+  cursor: pointer;
+}
+
+.prime-db-v1-schedule-tag {
+font-weight: 500;
+font-style: Medium;
+font-size: 12px;
+line-height: 120%;
+letter-spacing: 0%;
+  color: #FE5919;
+  background-color: #FE59191A;
+  padding: 3px 6px;
+  border-radius: 41px;
+}
+
+.prime-db-v1-progress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 4px 0 2px;
+}
+
+.prime-db-v1-progress-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 10px;
+  color: #32404a;
+}
+
+.prime-db-v1-progress-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid #d7e1e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  margin-top: -1px;
+  box-sizing: border-box;
+}
+
+.prime-db-v1-progress-item-done .prime-db-v1-progress-dot {
+  background: #1f7c86;
+  color: #fff;
+  border-color: #1f7c86;
+}
+
+.prime-db-v1-progress-item-current .prime-db-v1-progress-dot {
+  background: #e9f4f6;
+  color: #1f7c86;
+  border-color: #1f7c86;
+}
+
+.prime-db-v1-progress-dot-empty {
+  background: transparent;
+}
+
+.prime-db-v1-progress-title {
+font-weight: 500;
+font-style: Medium;
+font-size: 14px;
+line-height: 120%;
+letter-spacing: 0%;
+  color: #1F2937;
+}
+
+.prime-db-v1-progress-sub {
+font-weight: 500;
+font-style: Medium;
+font-size: 12px;
+line-height: 120%;
+letter-spacing: 0%;
+  color: #277079;
+  margin-top: 2px;
+}
+
+.prime-db-v1-table-card {
+  margin-bottom: 8px;
+}
+
+.prime-db-v1-search-wrap {
+  margin-bottom: 8px;
+}
+
+.prime-db-v1-search-input {
+  width: 100%;
+  height: 32px;
+  border: 1px solid #e5eaed;
+  border-radius: 6px;
+  background: #fbfcfc;
+  padding: 0 10px;
+font-weight: 400;
+font-style: Regular;
+font-size: 16px;
+line-height: 20px;
+letter-spacing: 0%;
+
+  color: #33424d;
+  box-sizing: border-box;
+}
+
+.prime-db-v1-table-wrap {
+  overflow-x: auto;
+}
+
+.prime-db-v1-table {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: collapse;
+}
+
+.prime-db-v1-table th {
+  text-align: left;
+font-weight: 500;
+font-style: Medium;
+font-size: 14px;
+line-height: 120%;
+letter-spacing: 0%;
+
+  color: #1F2937;
+  padding: 8px 6px;
+  border-bottom: 1px solid #edf1f3;
+  background: #fbfcfc;
+}
+
+.prime-db-v1-table td {
+font-weight: 500;
+font-style: Medium;
+font-size: 14px;
+line-height: 120%;
+letter-spacing: 0%;
+  color: #1F2937;
+  padding: 10px 6px;
+  border-bottom: 1px solid #edf1f3;
+  vertical-align: middle;
+}
+
+.prime-db-v1-net-col {
+  color: #277079 !important;
+  font-weight: 500;
+}
+
+.prime-db-v1-status-pill {
+  min-height: 18px;
+  padding: 0 7px;
+  border-radius: 42px;
+  display: inline-flex;
+  align-items: center;
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 12px;
+line-height: 120%;
+letter-spacing: 0%;
+}
+
+.prime-db-v1-status-processing {
+  background: #2770791A;
+  color: #277079;
+}
+
+.prime-db-v1-status-paid {
+  background: #0AA43E1A;
+  color: #0AA43E;
+}
+
+.prime-db-v1-lower-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.prime-db-v1-left-column,
+.prime-db-v1-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prime-db-v1-bank-card {
+background: linear-gradient(106.71deg, #0F766E 30.65%, #0F7643 96.3%);
+  border-radius: 10px;
+  padding: 12px;
+  color: #fff;
+}
+
+.prime-db-v1-bank-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.prime-db-v1-bank-head .prime-db-v1-bank-icon {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+.prime-db-v1-bank-type {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.prime-db-v1-bank-name {
+  color: #fff;
+}
+
+.prime-db-v1-bank-status {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+}
+
+.prime-db-v1-bank-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 20px;
+}
+
+.prime-db-v1-bank-grid span {
+  display: block;
+font-weight: 500;
+font-style: Medium;
+font-size: 14px;
+line-height: 120%;
+letter-spacing: 0%;
+  color: #FFFFFF;
+  margin-bottom: 3px;
+}
+
+.prime-db-v1-bank-grid strong {
+  font-size: 11px;
+  color: #fff;
+}
+
+.prime-db-v1-safe-note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-size: 8px;
+  color: #7b8792;
+}
+
+.prime-db-v1-safe-icon {
+  color: #1F2937;
+font-weight: 500;
+font-style: Medium;
+font-size: 12px;
+line-height: 120%;
+letter-spacing: 0%;
+}
+.prime-db-v1-progress-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-top: 10px;
+  height: 382px;
+  padding: 14px 16px;
+  box-sizing: border-box;
+}
+
+.prime-db-v1-section-head {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #edf0f2;
+  margin-bottom: 8px;
+}
+
+.prime-db-v1-section-title {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #2f3a45;
+}
+
+.prime-db-v1-progress-list {
+  position: relative;
+  padding-top: 8px;
+  padding-left: 0;
+}
+
+.prime-db-v1-progress-line {
+  position: absolute;
+  left: 12px;
+  top: 18px;
+  bottom: 22px;
+  width: 2px;
+  background: #e6e8eb;
+}
+
+.prime-db-v1-progress-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: 48px;
+  padding: 10px 0 12px 0;
+  z-index: 1;
+}
+
+.prime-db-v1-progress-dot {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1f7a83;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+.prime-db-v1-progress-content {
+  padding-top: 1px;
+}
+
+.prime-db-v1-progress-title {
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 500;
+  color: #2f3a45;
+}
+
+.prime-db-v1-progress-sub {
+  font-size: 14px;
+  line-height: 1.2;
+  color: #2a8ca0;
+  margin-top: 2px;
+}
+
+.prime-db-v1-progress-item-current .prime-db-v1-progress-dot {
+  background: #1f7a83;
+  font-size: 12px;
+}
+
+.prime-db-v1-progress-dot-empty {
+  background: #ffffff;
+  border: 2px solid #e1e3e6;
+}
+
+.prime-db-v1-progress-item-pending .prime-db-v1-progress-title {
+  color: #2f3a45;
+}
+.prime-db-v1-doc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.prime-db-v1-doc-item {
+  height: 50px;
+  border: 1px solid #e7ecef;
+  border-radius: 8px;
+  background: #fff;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prime-db-v1-doc-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.prime-db-v1-doc-title {
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 14px;
+line-height: 18px;
+letter-spacing: 0%;
+
+  color: #1F2937;
+}
+
+.prime-db-v1-doc-meta {
+font-weight: 500;
+font-style: Medium;
+font-size: 12px;
+line-height: 120%;
+letter-spacing: 0%;
+  color: #8b97a1;
+  margin-top: 2px;
+}
+
+.prime-db-v1-doc-download {
+  border: none;
+  background: transparent;
+  color: #2f7a82;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.prime-db-v1-tax-ready-box {
+  border: 1px solid #f0f2f4;
+  background: #fbfcfc;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.prime-db-v1-tax-ready-title {
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+line-height: 120%;
+letter-spacing: 0%;
+
+  color: #1F2937;
+  margin-bottom: 4px;
+}
+
+.prime-db-v1-tax-ready-sub {
+font-weight: 500;
+font-style: Medium;
+font-size: 12px;
+line-height: 120%;
+letter-spacing: 0%;
+  color: #8a97a1;
+  line-height: 1.5;
+}
+
+.prime-db-v1-text-link {
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: #2f7a82;
+  font-size: 9px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.prime-db-v1-activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prime-db-v1-activity-item {
+  min-height: 56px;
+  border: 1px solid #e8edef;
+  border-radius: 8px;
+  background: #fbfcfc;
+  display: grid;
+  grid-template-columns: 18px 1fr auto;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.prime-db-v1-activity-bullet {
+  color: #2f7a82;
+  font-size: 12px;
+}
+
+.prime-db-v1-activity-title {
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 14px;
+line-height: 120%;
+letter-spacing: 0%;
+  color: #1F2937;
+}
+
+.prime-db-v1-activity-tag {
+  margin-top: 4px;
+  display: inline-flex;
+  min-height: 16px;
+  padding: 0 7px;
+  border-radius: 999px;
+  background: #e9f4f6;
+  color: #2f7a82;
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 12px;
+line-height: 120%;
+letter-spacing: 0%;
+  align-items: center;
+}
+
+.prime-db-v1-activity-date {
+font-weight: 500;
+font-style: Medium;
+font-size: 12px;
+line-height: 120%;
+letter-spacing: 0%;
+  color: #8b97a1;
+  white-space: nowrap;
+}
+
+.prime-db-v1-statement-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.prime-db-v1-statement-btn {
+  width: 100%;
+  text-align: left;
+  padding: 0 12px;
+}
+
+.prime-db-v1-export-title {
+  font-size: 9px;
+  color: #56636d;
+  margin-bottom: 8px;
+}
+
+.prime-db-v1-export-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prime-db-v1-export-item {
+  min-height: 30px;
+  border: 1px solid #f0f2f4;
+  border-radius: 6px;
+  background: #fbfcfc;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+font-weight: 500;
+font-style: Medium;
+font-size: 14px;
+line-height: 18px;
+letter-spacing: 0%;
+  color: #1F2937;
+}
+
+.prime-db-v1-export-item input {
+  accent-color: #2f7a82;
+}
+
+.prime-db-v1-insight-shell {
+  border: 1px solid #f0d9ca;
+  background: #fff6f1;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.prime-db-v1-insight-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.prime-db-v1-insight-title {
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 14px;
+line-height: 120%;
+letter-spacing: 0%;
+
+  color: #FE5919;
+  margin-bottom: 4px;
+}
+
+.prime-db-v1-insight-sub {
+font-weight: 500;
+font-style: Medium;
+font-size: 12px;
+line-height: 140%;
+letter-spacing: 0%;
+  color: #8a776d;
+  line-height: 1.5;
+}
+
+.prime-db-v1-insight-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.prime-db-v1-insight-card {
+  background: #fff;
+  border: 1px solid #f0e2d8;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.prime-db-v1-insight-label {
+font-weight: 500;
+font-style: Medium;
+font-size: 14px;
+line-height: 120%;
+letter-spacing: 0%;
+  color: #1F2937;
+  margin-bottom: 6px;
+}
+
+.prime-db-v1-insight-value {
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 24px;
+line-height: 120%;
+letter-spacing: 0%;
+
+  line-height: 1.1;
+}
+
+.prime-db-v1-note-row {
+  min-height: 30px;
+  border: 1px solid #f0e2d8;
+  background: #fff;
+  border-radius: 8px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+line-height: 120%;
+letter-spacing: 0%;
+  color: #8a776d;
+}
