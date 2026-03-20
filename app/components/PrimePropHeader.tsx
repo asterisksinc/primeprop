@@ -1,11 +1,12 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname ,useRouter } from "next/navigation";
 import Image from "next/image";
 import "../settings-dashboard.css";
 import "../primeprop-dashboard.css";
 import "../prime-support-section.css";
 import "../prime-raise-issue-flow.css";
+import { ArrowBigLeft, ArrowLeft } from "lucide-react";
 const routeMap: any = {
   "/": "Dashboard Overview",
   "/properties": "Properties",
@@ -16,10 +17,38 @@ const routeMap: any = {
 };
 
 export default function PrimePropHeader() {
+ 
+ 
+  const formatSlugToTitle = (slug: string) => {
+    if (!slug) return "";
+    return slug
+      .split("-")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
   const pathname = usePathname();
+  const router = useRouter();
 
-  const title = routeMap[pathname] || "Dashboard";
+  // Split the pathname to determine if we are on a nested "slug" page
+  const segments = pathname.split("/").filter(Boolean);
+  const isSlugPage = segments.length > 1;
 
+  let title = "Dashboard";
+  let parentTitle = "";
+
+  // Determine Titles dynamically based on URL depth
+  if (segments.length === 0) {
+    title = routeMap["/"] || "Dashboard Overview";
+  } else if (!isSlugPage) {
+    title = routeMap[pathname] || formatSlugToTitle(segments[0]);
+  } else {
+    // For nested pages like /properties/[slug]
+    const parentPath = `/${segments[0]}`;
+    parentTitle = routeMap[parentPath] || formatSlugToTitle(segments[0]);
+    // Format the last segment (the slug) as the main title
+    title = formatSlugToTitle(segments[segments.length - 1]);
+  }
+  
   return (
     <section className="ppd-hero-banner" style={{ position: "relative" }}>
       <div className="ppd-hero-left">
@@ -33,30 +62,41 @@ export default function PrimePropHeader() {
           />
         </div>
 
-        {pathname === "/properties" ? (
+        {isSlugPage ? (
           <>
-            <div className="ppd-breadcrumbs text-[#6B7280] text-[12px]">
-              PrimeProp &nbsp;/&nbsp; Properties &nbsp;/&nbsp; <span style={{ color: "#111827" }}>Property Details</span>
+            {/* Multi-level Breadcrumb for Slug Pages */}
+            <div className="ppd-breadcrumbs text-[#6B7280] text-[12px] mb-1">
+              PrimeProp &nbsp;/&nbsp; {parentTitle} &nbsp;/&nbsp;{" "}
+              <span style={{ color: "#111827" }}>Details</span>
             </div>
+            
             <div className="flex items-center gap-[12px] mt-[4px]">
-              <svg className="w-[20px] h-[20px] text-[#111827] cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-              </svg>
-              <div className="text-[#111827] text-[24px] font-bold">Downtown Office SPV</div>
+              <button 
+                onClick={() => router.back()} 
+                className="text-[#111827] cursor-pointer hover:bg-gray-100 p-1 rounded-full transition-colors"
+                aria-label="Go back"
+              >
+                <ArrowLeft className="w-6 h-6" />
+              </button>
+              <div className="text-[#111827] text-[24px] font-bold">{title}</div>
             </div>
           </>
         ) : (
           <>
-            <div className="ppd-breadcrumbs">
+            {/* Standard Breadcrumb for Top-Level Pages */}
+            <div className="ppd-breadcrumbs text-sm text-gray-400 mb-2">
               PrimeProp &nbsp;/&nbsp;
-              <span style={{ color: "#1F2937" }}>{title}</span>
+              <span className="text-[#1F2937]">{title}</span>
             </div>
-            <div className="text-[24px] font-bold text-[#111827]">{title}</div>
+
+            <div className="flex items-center gap-2 text-[24px] font-bold text-[#111827]">
+              {title}
+            </div>
           </>
         )}
       </div>
 
-      <div className="absolute right-[200px] bottom-0 h-full flex items-end">
+      <div className="absolute right-[660px] bottom-0 h-full flex items-end">
         <Image
           src="/bul1.png"
           alt="Building"
