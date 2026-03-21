@@ -8,7 +8,7 @@ export default function MainLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-[#F8FAFC]" >
         <PrimePropNavbar />
         <PrimePropHeader />
         {children}

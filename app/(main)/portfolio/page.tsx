@@ -49,11 +49,11 @@ export default function DashboardComponent() {
       
         return (
           <div className="w-full mx-auto font-sans">
-            <div className="bg-white rounded-[1.25rem] border border-gray-100 p-6 lg:p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.02)]">
+            <div className="bg-white rounded-[13px] border border-gray-100 p-6 lg:p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.02)]">
               
               <div className="flex justify-between items-center mb-3">
                 <h2 className="text-[17px] font-bold text-[#1e293b]">Distribution History</h2>
-                <button className="bg-[#277079] hover:bg-[#1f5a61] text-white px-4 py-2.5 rounded-lg flex items-center gap-2 text-[13px] font-medium transition-colors">
+                <button className="bg-[#EB6601] hover:bg-[#EB6601]/80 text-white px-4 py-2.5 rounded-lg flex items-center gap-2 text-[13px] font-medium transition-colors">
                   <SlidersHorizontal className="w-4 h-4" />
                   Export CSV
                 </button>
@@ -63,19 +63,19 @@ export default function DashboardComponent() {
                 <table className="w-full border-collapse">
                   <thead>
                     <tr>
-                      <th className="text-left py-2 px-2 border-y border-gray-200 bg-[#F8FAFC]  text-[13px] font-medium text-gray-500 first:rounded-tl-lg last:rounded-tr-lg">
+                      <th className="text-left py-2 px-2 border-y border-gray-200 bg-[#F8FAFC]  text-[13px] font-medium text-black  ">
                         Quarter
                       </th>
-                      <th className="  py-2 px-2 border-y border-gray-200 bg-[#F8FAFC] text-[13px] font-medium text-gray-500 text-center">
+                      <th className="  py-2 px-2 border-y border-gray-200 bg-[#F8FAFC] text-[13px] font-medium text-black text-center">
                         Gross Income
                       </th>
-                      <th className="  py-2 px-2 border-y border-gray-200 bg-[#F8FAFC] text-[13px] font-medium text-gray-500 text-center">
+                      <th className="  py-2 px-2 border-y border-gray-200 bg-[#F8FAFC] text-[13px] font-medium text-black text-center">
                         Fees
                       </th>
-                      <th className="  py-2 px-2 border-y border-gray-200 bg-[#F8FAFC] text-[13px] font-medium text-gray-500 text-right">
+                      <th className="  py-2 px-2 border-y border-gray-200 bg-[#F8FAFC] text-[13px] font-medium text-black text-right">
                         Net Payout
                       </th>
-                      <th className="text-left py-2 px-2 border-y border-gray-200 bg-[#F8FAFC] text-[13px] font-medium text-gray-500 pl-8">
+                      <th className="text-left py-2 px-2 border-y border-gray-200 bg-[#F8FAFC] text-[13px] font-medium text-black pl-8">
                         Status
                       </th>
                     </tr>
@@ -97,10 +97,10 @@ export default function DashboardComponent() {
                         </td>
                         <td className="py-4 px-2 border-b border-gray-200    text-[14px] pl-8">
                           <span
-                            className={`inline-block px-3 py-1 rounded-full text-[11px] font-bold ${
+                            className={`inline-block px-[8px] py-[6px] rounded-full text-[12px] leading-[1.2] font-semibold ${
                               row.status === 'Pending'
                                 ? 'bg-[#FE5919]/10 text-[#FE5919]'
-                                : 'bg-emerald-50 text-emerald-500'
+                                : 'bg-[#0AA43E]/10 text-[#0AA43E]'
                             }`}
                           >
                             {row.status}
@@ -119,10 +119,10 @@ export default function DashboardComponent() {
 
     const InvestmentCard = () => {
         return (
-          <div className="bg-white rounded-[1.25rem] border border-gray-100 p-4 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] flex flex-col font-sans">
+          <div className="bg-white rounded-[8px] border border-gray-100 p-2 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] flex flex-col font-sans">
             
             {/* Image Container */}
-            <div className="relative h-44 rounded-xl overflow-hidden mb-4">
+            <div className="relative h-44 rounded-lg overflow-hidden mb-4">
               <img 
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" 
                 alt="JVC Tower" 
@@ -184,14 +184,16 @@ export default function DashboardComponent() {
             </div>
       
             {/* Investors */}
-            <div className="flex items-center gap-1.5 mb-6 text-gray-500">
+            <div className="flex items-center gap-1.5  text-gray-500">
               <Users className="w-4 h-4" />
               <span className="text-[12px] font-medium">20 / 20 Investors</span>
+              
             </div>
-      
+            <div className='h-[1px] bg-gray-200 my-4' ></div>
+
             {/* Action Buttons */}
             <div className="grid grid-cols-2 gap-3 mt-auto">
-              <Link href={"/portfolio/asset-details"} className="bg-[#277079] hover:bg-[#1f5a61] text-white text-[16px] font-medium px-4 py-2.5 rounded-lg transition-colors">
+              <Link href={"/portfolio/asset-details"} className="bg-[#EB6601] hover:bg-[#EB6601]/80 flex justify-center text-white text-[16px] font-medium px-4 py-2.5 rounded-lg transition-colors">
                 View Asset Details
               </Link>
               <button className="border border-[#277079] text-[#277079] hover:bg-[#277079]/5 text-[16px] font-medium py-2.5 rounded-lg transition-colors flex items-center justify-center gap-2">
@@ -203,22 +205,22 @@ export default function DashboardComponent() {
         );
       };
   return (
-    <div className="w-full   mx-auto py-3 font-sans flex flex-col gap-3">
+    <div className="w-full   mx-auto py-2 font-sans flex flex-col gap-2">
       
       {/* Top Stats Row */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-2 ">
         {/* Card 1 */}
         <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)]">
           <div className="flex justify-between items-start mb-2">
-            <span className="text-[14px] font-medium text-gray-600">Total Invested Capital</span>
-            <span className="bg-[#277079]/10 text-[#277079] text-[11px] font-bold px-2 py-0.5 rounded-md">
+            <span className="text-[14px] font-medium leading-[1.2] tracking-[0] text-gray-600">Total Invested Capital</span>
+            <span className="bg-[#0AA43E1A]/90 text-[#0AA43E] text-[12px] font-bold px-2 py-0.5 rounded-full">
               +0.2%
             </span>
           </div>
-          <div className="text-[1.75rem] font-bold text-[#277079] mb-1">
+          <div className="text-[26px] leading-[1.2] tracking-[0] font-semibold text-[#277079] mb-1">
             20.00L <span className="text-xl">AED</span>
           </div>
-          <div className="text-[12px] text-gray-400">
+          <div className="text-[12px] leading-[1.2] tracking-[0] text-gray-400">
             1 active investment
           </div>
         </div>
@@ -226,15 +228,15 @@ export default function DashboardComponent() {
         {/* Card 2 */}
         <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)]">
           <div className="flex justify-between items-start mb-2">
-            <span className="text-[14px] font-medium text-gray-600">Average Net Yield</span>
-            <span className="bg-[#FE5919]/10 text-[#FE5919] text-[11px] font-bold px-2 py-0.5 rounded-md">
+            <span className="text-[14px] font-medium leading-[1.2] tracking-[0] text-gray-600">Average Net Yield</span>
+            <span className="bg-[#FE5919]/10 text-[#FE5919] text-[12px] font-bold px-2 py-0.5 rounded-full">
               +0.8%
             </span>
           </div>
-          <div className="text-[1.75rem] font-bold text-[#FE5919] mb-1">
+          <div className="text-[26px] leading-[1.2] tracking-[0] font-bold text-[#FE5919] mb-1">
             6.4%
           </div>
-          <div className="text-[12px] text-[#277079] font-medium">
+          <div className="text-[12px] leading-[1.2] tracking-[0] text-[#277079] font-medium">
             Outperforming Benchmark by 0.8%
           </div>
         </div>
@@ -242,15 +244,15 @@ export default function DashboardComponent() {
         {/* Card 3 */}
         <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)]">
           <div className="flex justify-between items-start mb-2">
-            <span className="text-[14px] font-medium text-gray-600">Next Payout Date</span>
-            <span className="bg-[#277079]/10 text-[#277079] text-[11px] font-bold px-2 py-0.5 rounded-md">
+            <span className="text-[14px] leading-[1.2] tracking-[0] font-medium text-gray-600">Next Payout Date</span>
+            <span className="bg-[#0AA43E]/10 text-[#0AA43E] text-[12px] font-bold px-2 py-0.5 rounded-full">
               UPI Verified
             </span>
           </div>
-          <div className="text-[1.75rem] font-bold text-[#277079] mb-1">
+          <div className="text-[26px] leading-[1.2] tracking-[0] font-bold text-[#277079] mb-1">
             Apr 15, 2024
           </div>
-          <div className="text-[12px] text-gray-400">
+          <div className="text-[12px] leading-[1.2] tracking-[0] text-gray-400">
             39.2K AED Expected Payout
           </div>
         </div>
@@ -261,71 +263,102 @@ export default function DashboardComponent() {
         
         {/* Left Chart Section (Takes up 2 columns) */}
         <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] lg:col-span-2 flex flex-col">
-          <h3 className="text-[15px] font-bold text-[#1e293b] mb-6">Portfolio Performance</h3>
-          
-          <div className="relative flex-1 min-h-[250px] w-full mt-2">
-            {/* Y-Axis Labels & Grid Lines */}
-            <div className="absolute inset-0 flex flex-col justify-between text-[11px] text-gray-400 font-medium z-0">
-              {[9, 8, 7, 6, 5].map((val, i) => (
-                <div key={val} className="flex items-center w-full h-0">
-                  <span className="w-8 text-right pr-3 -translate-y-1/2">{val}%</span>
-                  <div className="flex-1 border-b border-dashed border-gray-200"></div>
-                </div>
-              ))}
-            </div>
+  <h3 className="text-[15px] font-bold text-[#1e293b] mb-6">Portfolio Performance</h3>
+<div className='bg-[#F8FAFC] p-6 rounded-2xl' >
+  <div className="relative flex-1 min-h-[250px] w-full mt-2">
 
-            {/* Chart Area */}
-            <div className="absolute top-0 bottom-0 right-0 left-8 z-10">
-              <svg viewBox="0 0 1000 240" className="w-full h-full preserve-aspect-ratio-none overflow-visible">
-                {/* Green Line (Investment Value) */}
-                <polyline 
-                  points="0,96 142,48 285,108 428,54 571,96 714,150 857,144 1000,48" 
-                  fill="none" 
-                  stroke="#277079" 
-                  strokeWidth="2" 
-                  vectorEffect="non-scaling-stroke"
-                />
-                
-                {/* Orange Line (Net Earnings) */}
-                <polyline 
-                  points="0,102 142,30 285,132 428,66 571,54 714,102 857,102 1000,48" 
-                  fill="none" 
-                  stroke="#FE5919" 
-                  strokeWidth="2" 
-                  vectorEffect="non-scaling-stroke"
-                />
-              </svg>
-            </div>
-
-            {/* X-Axis Labels */}
-            <div className="absolute bottom-[-24px] right-0 left-8 flex justify-between text-[11px] text-gray-400 font-medium">
-              {['Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7', 'Q8'].map((label) => (
-                <span key={label} className="text-center w-8 -ml-4 first:ml-0 last:mr-0">{label}</span>
-              ))}
-            </div>
-          </div>
-
-          {/* Legend */}
-          <div className="flex justify-center items-center gap-6 mt-10">
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-1.5 rounded-full bg-[#277079]"></div>
-              <span className="text-[12px] font-semibold text-[#1e293b]">Investment Value</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-1.5 rounded-full bg-[#FE5919]"></div>
-              <span className="text-[12px] font-semibold text-[#1e293b]">Net Earnings</span>
-            </div>
-          </div>
+    {/* Y-Axis Labels */}
+    <div className="absolute top-0 bottom-0 left-0 w-8 flex flex-col justify-between text-[11px] text-[#1F2937] font-medium z-10 py-[1px]">
+      {[9, 8, 7, 6, 5].map((val) => (
+        <div key={val} className="flex items-center justify-end pr-2 h-0">
+          <span className="-translate-y-1/2">{val}%</span>
         </div>
+      ))}
+    </div>
+
+    {/* Chart Area */}
+    <div className="absolute top-0 bottom-0 left-8 right-0 bg-[#F8FAFC] border-l border-b border-[#1F29374D] rounded-tr-xl overflow-visible">
+
+      {/* Horizontal Dashed Lines */}
+      <div className="absolute inset-0 flex flex-col justify-between pointer-events-none">
+        {[0, 1, 2, 3, 4].map((i) => (
+          <div
+            key={i}
+            className={`w-full h-[1px] border-b border-dashed border-gray-200 ${i === 0 || i === 4 ? 'opacity-0' : ''}`}
+          />
+        ))}
+      </div>
+
+      {/* Vertical Dashed Lines */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[1, 2, 3, 4, 5, 6].map((i) => (
+          <div
+            key={i}
+            className="absolute top-0 bottom-0 border-l border-dashed border-gray-200"
+            style={{ left: `${(i / 7) * 100}%` }}
+          />
+        ))}
+      </div>
+
+      {/* SVG Lines */}
+      <svg
+        viewBox="0 0 1000 240"
+        className="absolute inset-0 w-full h-full overflow-visible"
+        preserveAspectRatio="none"
+      >
+        {/* Green Line - Investment Value */}
+        <polyline
+          points="0,96 142.86,36 285.71,108 428.57,54 571.43,36 714.29,120 857.14,120 1000,30"
+          fill="none"
+          stroke="#277079"
+          strokeWidth="2"
+          vectorEffect="non-scaling-stroke"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+        />
+        {/* Orange Line - Net Earnings */}
+        <polyline
+          points="0,96 142.86,12 285.71,144 428.57,54 571.43,36 714.29,96 857.14,96 1000,30"
+          fill="none"
+          stroke="#FE5919"
+          strokeWidth="2"
+          vectorEffect="non-scaling-stroke"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+        />
+      </svg>
+    </div>
+
+    {/* X-Axis Labels */}
+    <div className="absolute left-8 right-0 flex justify-between text-[11px] text-[#1F2937] font-medium" style={{ bottom: '-24px' }}>
+      {['Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7', 'Q8'].map((label) => (
+        <span key={label} className="text-center">{label}</span>
+      ))}
+    </div>
+  </div>
+
+  {/* Legend */}
+  <div className="flex justify-center items-center gap-6 mt-10">
+    <div className="flex items-center gap-2">
+      <div className="w-4 h-1.5 rounded-full bg-[#277079]" />
+      <span className="text-[12px] font-semibold text-[#1e293b]">Investment Value</span>
+    </div>
+    <div className="flex items-center gap-2">
+      <div className="w-4 h-1.5 rounded-full bg-[#FE5919]" />
+      <span className="text-[12px] font-semibold text-[#1e293b]">Net Earnings</span>
+    </div>
+  </div>
+  </div>
+</div>
 
         {/* Right Insights Section */}
-        <div className="bg-[#fff9f5] rounded-3xl p-6 border-2 border-[#FE5919]  flex flex-col justify-between">
+        <div className="   rounded-3xl p-6 border-2 border-[#277079]  flex flex-col justify-between">
   
   <div>
     {/* Header */}
     <div className="flex items-start gap-4 mb-5">
-      <div className="w-12 h-12 rounded-full bg-[#FE5919]/10 flex items-center justify-center shrink-0">
-        <Lightbulb className="w-6 h-6 text-[#FE5919]" />
+      <div className="w-12 h-12 rounded-full bg-[#2770791A]  flex items-center justify-center shrink-0">
+        <Lightbulb className="w-6 h-6 text-[#277079]" />
       </div>
 
       <div>
@@ -334,7 +367,7 @@ export default function DashboardComponent() {
             Portfolio Insights
           </h3>
 
-          <span className="bg-[#FE5919] text-white text-[11px] font-bold px-3 py-[3px] rounded-full uppercase">
+          <span className="bg-[#277079] text-white text-[11px] font-bold px-3 py-[3px] rounded-full uppercase">
             NEW
           </span>
         </div>
@@ -355,7 +388,7 @@ export default function DashboardComponent() {
     </div>
 
     {/* Recommendation */}
-    <div className="bg-[#FE59191A] rounded-2xl p-5 mb-6">
+    <div className="bg-[#2770791A]  rounded-2xl p-5 mb-6">
       <h4 className="text-[16px] font-bold text-[#1F2937] mb-2">
         Recommendation
       </h4>
@@ -376,7 +409,7 @@ export default function DashboardComponent() {
 
   <div>
     {/* CTA */}
-    <button className="w-full bg-[#FE5919] hover:bg-[#e04810] text-white font-semibold py-4 rounded-2xl transition-colors flex items-center justify-center gap-2 text-[16px] mb-6">
+    <button className="w-full bg-[#277079] hover:bg-[#277079] text-white font-semibold py-4 rounded-2xl transition-colors flex items-center justify-center gap-2 text-[16px] mb-6">
       Explore Properties
       <ArrowRight className="w-5 h-5" />
     </button>
@@ -387,28 +420,28 @@ export default function DashboardComponent() {
     {/* Stats */}
     <div className="flex justify-between items-center px-2">
       <div className="text-center">
-        <p className="text-[13px] text-[#6B7280] mb-1 font-medium">
+        <p className="text-[12px] text-[#6B7280] mb-1 font-bold">
           Avg. Growth
         </p>
-        <p className="text-[18px] font-bold text-green-600">
+        <p className="text-[14px] leading-[1.2] tracking-[0] font-semibold text-[#0AA43E]">
           +2.4%
         </p>
       </div>
 
       <div className="text-center">
-        <p className="text-[13px] text-[#6B7280] mb-1 font-medium">
+        <p className="text-[12px] text-[#6B7280] mb-1 font-bold">
           Properties Analyzed
         </p>
-        <p className="text-[18px] font-bold text-[#1F2937]">
+        <p className="text-[14px] leading-[1.2] tracking-[0] font-semibold text-[#1F2937]">
           248
         </p>
       </div>
 
       <div className="text-center">
-        <p className="text-[13px] text-[#6B7280] mb-1 font-medium">
+        <p className="text-[12px] text-[#6B7280] mb-1 font-bold">
           Best Opportunity
         </p>
-        <p className="text-[18px] font-bold text-[#FE5919]">
+        <p className="text-[14px] leading-[1.2] tracking-[0] font-semibold text-[#277079]">
           Marina
         </p>
       </div>
@@ -424,14 +457,14 @@ export default function DashboardComponent() {
       {/* Header */}
       <div className="flex justify-between items-center mb-3">
         <h2 className="text-[16px] font-semibold text-[#1e293b]">My Investments</h2>
-        <button className="bg-[#277079] hover:bg-[#1f5a61] text-white px-4 py-2 rounded-lg flex items-center gap-2 text-[13px] font-medium transition-colors">
+        <button className="bg-[#EB6601] hover:bg-[#EB6601]/70 text-white px-4 py-2 rounded-lg flex items-center gap-2 text-[13px] font-medium transition-colors">
           <Filter className="w-4 h-4" />
           Filter
         </button>
       </div>
 
       {/* Investments Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
         <InvestmentCard />
         <InvestmentCard />
         <InvestmentCard />
