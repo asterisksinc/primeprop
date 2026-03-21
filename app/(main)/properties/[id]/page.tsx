@@ -25,7 +25,7 @@ export default function PropertyPage() {
               onClick={() => setActiveTab(tab)}
               className={`flex-1 flex justify-center items-center text-[16px] font-medium transition-colors h-full rounded-[8px] ${
                 activeTab === tab
-                  ? "bg-[#E7F0EF] text-[#0F5F68]"
+                  ? "bg-[#FFF5F0] text-[#EB6601]"
                   : "bg-transparent text-[#374151] hover:bg-[#F9FAFB]"
               }`}
               style={{ lineHeight: "120%", fontWeight: 500 }}

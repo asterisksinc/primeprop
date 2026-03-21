@@ -71,7 +71,7 @@ export function RightPanel() {
         
         <div className="flex flex-col gap-[8px]">
           <div className="text-[13px] text-[#6B7280]">Investment Amount</div>
-          <div className="text-[24px] font-bold text-[#0F766E]">20,00,000 AED</div>
+          <div className="text-[24px] font-bold text-[#EB6601]">20,00,000 AED</div>
           <div className="flex justify-between text-[11px] text-[#9CA3AF]">
             <span>Range: 10L AED &rarr; 50L AED</span>
           </div>
@@ -90,14 +90,14 @@ export function RightPanel() {
 
         {/* Returns Grid */}
         <div className="flex gap-[12px]">
-          <div className="flex-1 bg-[#FEF2F2] rounded-lg p-[16px] flex flex-col gap-[4px] border border-[#FEE2E2]">
+          <div className="flex-1 bg-[#FFF5F0] rounded-lg p-[16px] flex flex-col gap-[4px] border border-[#FFDED1]">
             <div className="text-[13px] text-[#4B5563]">Annual Return</div>
-            <div className="text-[20px] font-bold text-[#DC2626]">128K AED</div>
+            <div className="text-[20px] font-bold text-[#EB6601]">128K AED</div>
             <div className="text-[11px] text-[#6B7280]">6.4% yield</div>
           </div>
           <div className="flex-1 bg-[#EEF2FF] rounded-lg p-[16px] flex flex-col gap-[4px] border border-[#E0E7FF]">
             <div className="text-[13px] text-[#4B5563]">Quarterly Distribut...</div>
-            <div className="text-[20px] font-bold text-[#0F766E]">₹32.0K</div>
+            <div className="text-[20px] font-bold text-[#EB6601]">₹32.0K</div>
             <div className="text-[11px] text-[#6B7280]">Every 3 Months</div>
           </div>
         </div>
@@ -106,11 +106,11 @@ export function RightPanel() {
         <div className="flex flex-col gap-[12px]">
           <div className="text-[13px] font-medium text-[#374151]">Scenario Analysis</div>
           <div className="flex gap-[8px]">
-            <div className="flex-1 bg-[#0F766E] text-white rounded-[6px] py-[8px] flex flex-col items-center justify-center cursor-pointer">
+            <div className="flex-1 bg-[#EB6601] text-white rounded-[6px] py-[8px] flex flex-col items-center justify-center cursor-pointer mb-2">
               <div className="text-[11px] opacity-80">Bear Case</div>
               <div className="text-[14px] font-bold">5.4%</div>
             </div>
-            <div className="flex-1 bg-[#F9FAFB] text-[#374151] rounded-[6px] py-[8px] flex flex-col items-center justify-center border border-[#E5E7EB] cursor-pointer">
+            <div className="flex-1 bg-[#F9FAFB] text-[#374151] rounded-[6px] py-[8px] flex flex-col items-center justify-center border border-[#E5E7EB] cursor-pointer mb-2">
               <div className="text-[11px] text-[#6B7280]">Base Case</div>
               <div className="text-[14px] font-bold">6.4%</div>
             </div>
@@ -125,11 +125,11 @@ export function RightPanel() {
         <div className="flex flex-col gap-[12px] mt-[4px]">
           <button
             onClick={openFlow}
-            className="w-full bg-[#0F766E] text-white font-medium text-[15px] py-[12px] rounded-[8px] hover:bg-[#0D655E] transition-colors"
+            className="w-full bg-[#EB6601] text-white font-medium text-[15px] py-[12px] rounded-[8px] hover:bg-[#d85e01] transition-colors"
           >
             Review Commitment
           </button>
-          <button className="w-full bg-white text-[#0F766E] font-medium text-[15px] py-[12px] rounded-[8px] border border-[#0F766E] hover:bg-[#F0FDFA] transition-colors">
+          <button className="w-full bg-white text-[#374151] font-medium text-[15px] py-[12px] rounded-[8px] border border-[#E5E7EB] hover:bg-slate-50 transition-colors">
             Add to Watchlist
           </button>
         </div>
@@ -174,7 +174,7 @@ export function RightPanel() {
             </div>
           </div>
           <div className="flex-1 bg-[#EEF2FF] rounded-lg p-[12px] flex items-center gap-[12px]">
-            <div className="w-[32px] h-[32px] rounded-full bg-[#0F766E] flex items-center justify-center flex-shrink-0">
+            <div className="w-[32px] h-[32px] rounded-full bg-[#EB6601] flex items-center justify-center flex-shrink-0">
               <svg className="w-[16px] h-[16px] text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -187,7 +187,7 @@ export function RightPanel() {
         </div>
 
         <div className="bg-[#F0FDFA] rounded-lg p-[12px] flex items-center gap-[12px] border border-[#CCFBF1]">
-          <div className="w-[32px] h-[32px] rounded-full bg-[#0F766E] flex items-center justify-center flex-shrink-0">
+          <div className="w-[32px] h-[32px] rounded-full bg-[#EB6601] flex items-center justify-center flex-shrink-0">
             <svg className="w-[16px] h-[16px] text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
             </svg>
@@ -213,7 +213,7 @@ export function RightPanel() {
       <div className="bg-white rounded-[12px] p-[24px] border border-[#E5E7EB] flex flex-col gap-[20px]">
         <div className="flex justify-between items-center">
           <div className="text-[16px] font-semibold text-[#111827]">Property Activity</div>
-          <button className="text-[13px] text-[#0F766E] font-medium hover:underline">View All Activity</button>
+          <button className="text-[13px] text-[#EB6601] font-medium hover:underline">View All Activity</button>
         </div>
         
         <div className="flex flex-col gap-[16px] relative">
@@ -227,7 +227,7 @@ export function RightPanel() {
             { title: "Lease Signed", desc: "New tenant secured - 3 year contract", time: "3 days ago", icon: "doc2" }
           ].map((item, i) => (
             <div key={i} className="flex gap-[16px] relative z-10">
-              <div className="w-[32px] h-[32px] rounded-full bg-[#0F766E] flex items-center justify-center flex-shrink-0 text-white border-2 border-white shadow-sm">
+              <div className="w-[32px] h-[32px] rounded-full bg-[#EB6601] flex items-center justify-center flex-shrink-0 text-white border-2 border-white shadow-sm">
                 {/* Simplified icons for space */}
                 <div className="w-[4px] h-[4px] bg-white rounded-full"></div>
               </div>
@@ -264,7 +264,7 @@ export function RightPanel() {
                 <div className="grid grid-cols-3 gap-4 text-sm">
                   <div>
                     <div className="text-xs text-gray-500 mb-1">Investment</div>
-                    <div className="font-semibold text-[#0F766E]">{investmentAmount}L AED</div>
+                    <div className="font-semibold text-[#EB6601]">{investmentAmount}L AED</div>
                   </div>
                   <div>
                     <div className="text-xs text-gray-500 mb-1">Ownership</div>
@@ -277,7 +277,7 @@ export function RightPanel() {
                 </div>
                 <div className="pt-4 border-t border-gray-200 text-center flex flex-col gap-1">
                   <div className="text-xs text-gray-500">Projected Annual Income</div>
-                  <div className="text-2xl font-bold text-[#0F766E]">{(annualReturn / 100).toFixed(1)}L AED</div>
+                  <div className="text-2xl font-bold text-[#EB6601]">{(annualReturn / 100).toFixed(1)}L AED</div>
                   <div className="text-xs text-gray-500">{scenarioYield[scenario]} net yield</div>
                 </div>
               </div>
@@ -285,15 +285,15 @@ export function RightPanel() {
               <div className="rounded-xl border border-gray-200 bg-white p-5">
                 <div className="text-sm text-gray-900 font-semibold mb-3">What Happens Next?</div>
                 <div className="space-y-3 text-sm text-gray-600">
-                  <div className="flex items-start gap-2"><span className="font-semibold text-[#0F766E]">1.</span> <span>Investment confirmation email within 24 hours.</span></div>
-                  <div className="flex items-start gap-2"><span className="font-semibold text-[#0F766E]">2.</span> <span>Quarterly distributions from Apr 15, 2026.</span></div>
-                  <div className="flex items-start gap-2"><span className="font-semibold text-[#0F766E]">3.</span> <span>Real-time portfolio tracking enabled.</span></div>
+                  <div className="flex items-start gap-2"><span className="font-semibold text-[#EB6601]">1.</span> <span>Investment confirmation email within 24 hours.</span></div>
+                  <div className="flex items-start gap-2"><span className="font-semibold text-[#EB6601]">2.</span> <span>Quarterly distributions from Apr 15, 2026.</span></div>
+                  <div className="flex items-start gap-2"><span className="font-semibold text-[#EB6601]">3.</span> <span>Real-time portfolio tracking enabled.</span></div>
                 </div>
               </div>
 
               <div className="flex justify-between gap-3 pt-4">
-                <button onClick={closeFlow} className="flex-1 px-4 py-2.5 text-sm font-medium rounded-lg border border-[#0F766E] text-[#0F766E] bg-white hover:bg-[#F0FDFA] transition-colors">View Portfolio</button>
-                <button onClick={closeFlow} className="flex-1 px-4 py-2.5 text-sm font-medium rounded-lg bg-[#0F766E] text-white hover:bg-[#0D655E] transition-colors">Go to Dashboard</button>
+                <button onClick={closeFlow} className="flex-1 px-4 py-2.5 text-sm font-medium rounded-lg border border-[#E5E7EB] text-[#374151] bg-white hover:bg-slate-50 transition-colors">View Portfolio</button>
+                <button onClick={closeFlow} className="flex-1 px-4 py-2.5 text-sm font-medium rounded-lg bg-[#EB6601] text-white hover:bg-[#d85e01] transition-colors">Go to Dashboard</button>
               </div>
             </div>
           ) : (
@@ -316,8 +316,8 @@ export function RightPanel() {
                     
                     if (isActive) {
                       return (
-                        <div key={s} className="flex-1 rounded-full border border-gray-200 p-1 flex items-center gap-3 pr-4">
-                          <div className="w-8 h-8 rounded text-white bg-[#0F766E] flex items-center justify-center flex-shrink-0">
+                        <div key={s} className="flex-1 rounded-full border border-[#EB6601]/20 bg-[#FFF5F0] p-1 flex items-center gap-3 pr-4">
+                          <div className="w-8 h-8 rounded text-white bg-[#EB6601] flex items-center justify-center flex-shrink-0">
                             {s === 1 && (
                               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <circle cx="12" cy="12" r="8" strokeWidth={2} />
@@ -341,7 +341,7 @@ export function RightPanel() {
                             )}
                           </div>
                           <div className="flex flex-col">
-                            <span className="text-[10px] font-medium text-[#0F766E]">Step {s}/4</span>
+                            <span className="text-[10px] font-medium text-[#EB6601]">Step {s}/4</span>
                             <span className="text-xs font-semibold text-gray-900">
                               {s === 1 && "Amount"}
                               {s === 2 && "Documents"}
@@ -354,7 +354,7 @@ export function RightPanel() {
                     }
                     
                     return (
-                      <div key={s} className={`w-10 h-10 rounded flex items-center justify-center flex-shrink-0 ${isCompleted ? "bg-[#0F766E] text-white" : "bg-gray-100 text-gray-400"}`}>
+                      <div key={s} className={`w-10 h-10 rounded flex items-center justify-center flex-shrink-0 ${isCompleted ? "bg-[#EB6601] text-white" : "bg-gray-100 text-gray-400"}`}>
                         {isCompleted ? (
                           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -383,7 +383,7 @@ export function RightPanel() {
                     <div>
                       <div className="flex justify-between items-end mb-2">
                         <h3 className="text-sm font-semibold text-gray-900">Investment Amount</h3>
-                        <div className="text-lg font-bold text-[#0F766E]">{investmentAmount}L AED</div>
+                        <div className="text-lg font-bold text-[#EB6601]">{investmentAmount}L AED</div>
                       </div>
                       <input
                         type="range"
@@ -402,7 +402,7 @@ export function RightPanel() {
                     <div className="grid grid-cols-2 gap-4">
                       <div className="rounded-xl border border-gray-200 p-4">
                         <div className="text-xs text-gray-600 mb-2">Your Ownership</div>
-                        <div className="text-xl font-bold text-[#0F766E]">{ownership}%</div>
+                        <div className="text-xl font-bold text-[#EB6601]">{ownership}%</div>
                       </div>
                       <div className="rounded-xl border border-gray-200 p-4">
                         <div className="text-xs text-gray-600 mb-2">Annual Return</div>
@@ -417,7 +417,7 @@ export function RightPanel() {
                           <button
                             key={s}
                             onClick={() => setScenario(s)}
-                            className={`rounded-xl py-3 border text-center transition-colors ${scenario === s ? "bg-[#0F766E] text-white border-[#0F766E]" : "bg-white text-gray-700 border-gray-200 hover:border-gray-300"}`}
+                            className={`rounded-xl py-3 border text-center transition-colors ${scenario === s ? "bg-[#EB6601] text-white border-[#EB6601]" : "bg-white text-gray-700 border-gray-200 hover:border-gray-300"}`}
                           >
                             <div className="text-xs mb-1">{s} Case</div>
                             <div className="text-sm font-bold">{scenarioYield[s]}</div>
@@ -446,8 +446,8 @@ export function RightPanel() {
                     <div>
                       <h3 className="text-sm font-semibold text-gray-900 mb-3">Digital Signature</h3>
                       <div className="grid grid-cols-2 gap-3 mb-3">
-                        <button onClick={() => setSignatureMode("type")} className={`rounded-lg py-2 border text-sm font-medium transition-colors ${signatureMode === "type" ? "bg-[#F0FDFA] border-[#0F766E] text-[#0F766E]" : "bg-white border-gray-200 text-gray-600"}`}>Type Name</button>
-                        <button onClick={() => setSignatureMode("draw")} className={`rounded-lg py-2 border text-sm font-medium transition-colors ${signatureMode === "draw" ? "bg-[#F0FDFA] border-[#0F766E] text-[#0F766E]" : "bg-white border-gray-200 text-gray-600"}`}>Draw Signature</button>
+                        <button onClick={() => setSignatureMode("type")} className={`rounded-lg py-2 border text-sm font-medium transition-colors ${signatureMode === "type" ? "bg-[#FFF5F0] border-[#EB6601] text-[#EB6601]" : "bg-white border-gray-200 text-gray-600"}`}>Type Name</button>
+                        <button onClick={() => setSignatureMode("draw")} className={`rounded-lg py-2 border text-sm font-medium transition-colors ${signatureMode === "draw" ? "bg-[#FFF5F0] border-[#EB6601] text-[#EB6601]" : "bg-white border-gray-200 text-gray-600"}`}>Draw Signature</button>
                       </div>
 
                       {signatureMode === "type" ? (
@@ -455,7 +455,7 @@ export function RightPanel() {
                           value={typedSignature}
                           onChange={(e) => setTypedSignature(e.target.value)}
                           placeholder="Type your full name"
-                          className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm outline-none focus:border-[#0F766E] focus:ring-1 focus:ring-[#0F766E] transition-all"
+                          className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm outline-none focus:border-[#EB6601] focus:ring-1 focus:ring-[#EB6601] transition-all"
                         />
                       ) : (
                         <div className="h-32 rounded-lg border border-dashed border-gray-300 bg-white flex items-center justify-center text-sm text-gray-400">
@@ -469,7 +469,7 @@ export function RightPanel() {
                         type="checkbox"
                         checked={termsAccepted}
                         onChange={(e) => setTermsAccepted(e.target.checked)}
-                        className="mt-0.5 w-4 h-4 rounded border-gray-300 text-[#0F766E] focus:ring-[#0F766E]"
+                        className="mt-0.5 w-4 h-4 rounded border-gray-300 text-[#EB6601] focus:ring-[#EB6601]"
                       />
                       <span className="text-xs text-gray-600 leading-relaxed">I confirm that I have read and agree to the investment terms, fee structure, and risk disclosures.</span>
                     </label>
@@ -491,30 +491,30 @@ export function RightPanel() {
                           <div className="grid grid-cols-2 gap-4">
                             <div className="col-span-1">
                               <label className="text-xs font-medium text-gray-700 mb-1.5 block">Account Holder Name</label>
-                              <input value={accountHolder} onChange={(e) => setAccountHolder(e.target.value)} placeholder="John Doe" className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-[#0F766E] focus:ring-1 focus:ring-[#0F766E] outline-none" />
+                              <input value={accountHolder} onChange={(e) => setAccountHolder(e.target.value)} placeholder="John Doe" className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-[#EB6601] focus:ring-1 focus:ring-[#EB6601] outline-none" />
                             </div>
                             <div className="col-span-1">
                               <label className="text-xs font-medium text-gray-700 mb-1.5 block">Bank Name</label>
-                              <input value={bankName} onChange={(e) => setBankName(e.target.value)} placeholder="HDFC Bank" className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-[#0F766E] focus:ring-1 focus:ring-[#0F766E] outline-none" />
+                              <input value={bankName} onChange={(e) => setBankName(e.target.value)} placeholder="HDFC Bank" className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-[#EB6601] focus:ring-1 focus:ring-[#EB6601] outline-none" />
                             </div>
                             <div className="col-span-1">
                               <label className="text-xs font-medium text-gray-700 mb-1.5 block">Account Number</label>
-                              <input value={accountNumber} onChange={(e) => setAccountNumber(e.target.value)} placeholder="0000 0000 0000" className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-[#0F766E] focus:ring-1 focus:ring-[#0F766E] outline-none" />
+                              <input value={accountNumber} onChange={(e) => setAccountNumber(e.target.value)} placeholder="0000 0000 0000" className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-[#EB6601] focus:ring-1 focus:ring-[#EB6601] outline-none" />
                             </div>
                             <div className="col-span-1">
                               <label className="text-xs font-medium text-gray-700 mb-1.5 block">Confirm Account Number</label>
-                              <input value={confirmAccountNumber} onChange={(e) => setConfirmAccountNumber(e.target.value)} placeholder="0000 0000 0000" className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-[#0F766E] focus:ring-1 focus:ring-[#0F766E] outline-none" />
+                              <input value={confirmAccountNumber} onChange={(e) => setConfirmAccountNumber(e.target.value)} placeholder="0000 0000 0000" className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-[#EB6601] focus:ring-1 focus:ring-[#EB6601] outline-none" />
                             </div>
                             <div className="col-span-2">
                               <label className="text-xs font-medium text-gray-700 mb-1.5 block">IFSC Code</label>
-                              <input value={ifscCode} onChange={(e) => setIfscCode(e.target.value.toUpperCase())} placeholder="HDFC0001234" className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-[#0F766E] focus:ring-1 focus:ring-[#0F766E] outline-none" />
+                              <input value={ifscCode} onChange={(e) => setIfscCode(e.target.value.toUpperCase())} placeholder="HDFC0001234" className="w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:border-[#EB6601] focus:ring-1 focus:ring-[#EB6601] outline-none" />
                             </div>
                           </div>
                           
                           <button
                             onClick={() => setIsBankVerified(true)}
                             disabled={!canVerifyBank}
-                            className="w-full rounded-lg bg-[#0F766E] text-white py-2.5 text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#0D655E] transition-colors"
+                            className="w-full rounded-lg bg-[#EB6601] text-white py-2.5 text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#d85e01] transition-colors"
                           >
                             Verify With 10 AED
                           </button>
@@ -556,7 +556,7 @@ export function RightPanel() {
                         </div>
                         <div>
                           <div className="text-xs text-gray-500 mb-1">Investment Amount</div>
-                          <div className="text-sm font-semibold text-[#0F766E]">{investmentAmount}L AED</div>
+                          <div className="text-sm font-semibold text-[#EB6601]">{investmentAmount}L AED</div>
                         </div>
                         <div>
                           <div className="text-xs text-gray-500 mb-1">Ownership</div>
@@ -599,7 +599,7 @@ export function RightPanel() {
                         <div className="bg-gray-100 h-px w-full my-1"></div>
                         <div className="flex justify-between items-center bg-[#F0FDFA] p-3 rounded-lg border border-[#CCFBF1]">
                           <span className="text-sm font-medium text-gray-700">Total Payable</span>
-                          <span className="text-sm font-bold text-[#0F766E]">{(investmentAmount * 1.03).toFixed(2)}L AED</span>
+                          <span className="text-sm font-bold text-[#EB6601]">{(investmentAmount * 1.03).toFixed(2)}L AED</span>
                         </div>
                       </div>
                     </div>
@@ -607,7 +607,7 @@ export function RightPanel() {
                     {/* Info Cards */}
                     <div className="grid grid-cols-2 gap-4">
                       <div className="bg-[#F0FDFA] border border-[#CCFBF1] rounded-lg p-3">
-                        <div className="text-xs font-semibold text-[#0F766E] mb-1">Secure Transaction</div>
+                        <div className="text-xs font-semibold text-[#EB6601] mb-1">Secure Transaction</div>
                         <div className="text-[10px] text-gray-600 leading-relaxed">Your payment is processed through encrypted channels. All transactions are monitored and comply with RBI regulations.</div>
                       </div>
                       <div className="bg-[#FFF7ED] border border-[#FFEDD5] rounded-lg p-3">
@@ -660,10 +660,10 @@ export function RightPanel() {
                     <div>
                       <h3 className="text-sm font-semibold text-gray-900 mb-3">Payment Method</h3>
                       <div className="flex flex-col gap-2">
-                        <label className={`flex items-center gap-3 rounded-xl border p-3 cursor-pointer ${paymentMethod === "upi" ? "border-[#0F766E] shadow-sm relative overflow-hidden" : "border-gray-200"}`}>
-                          {paymentMethod === "upi" && <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#0F766E]"></div>}
-                          <div className={`w-4 h-4 rounded-full border flex items-center justify-center flex-shrink-0 ${paymentMethod === "upi" ? "border-[#0F766E]" : "border-gray-300"}`}>
-                            {paymentMethod === "upi" && <div className="w-2 h-2 rounded-full bg-[#0F766E]"></div>}
+                        <label className={`flex items-center gap-3 rounded-xl border p-3 cursor-pointer ${paymentMethod === "upi" ? "border-[#EB6601] shadow-sm relative overflow-hidden" : "border-gray-200"}`}>
+                          {paymentMethod === "upi" && <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#EB6601]"></div>}
+                          <div className={`w-4 h-4 rounded-full border flex items-center justify-center flex-shrink-0 ${paymentMethod === "upi" ? "border-[#EB6601]" : "border-gray-300"}`}>
+                            {paymentMethod === "upi" && <div className="w-2 h-2 rounded-full bg-[#EB6601]"></div>}
                           </div>
                           <div className="text-gray-500">
                             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -675,14 +675,14 @@ export function RightPanel() {
                             <div className="text-[11px] text-gray-500">Instant confirmation • Recommended</div>
                           </div>
                           {paymentMethod === "upi" && (
-                            <div className="bg-[#0F766E] text-white text-[10px] px-2 py-0.5 rounded-full font-medium">Fastest</div>
+                            <div className="bg-[#EB6601] text-white text-[10px] px-2 py-0.5 rounded-full font-medium">Fastest</div>
                           )}
                         </label>
 
-                        <label className={`flex items-center gap-3 rounded-xl border p-3 cursor-pointer ${paymentMethod === "bank" ? "border-[#0F766E] shadow-sm relative overflow-hidden" : "border-gray-200"}`}>
-                          {paymentMethod === "bank" && <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#0F766E]"></div>}
-                          <div className={`w-4 h-4 rounded-full border flex items-center justify-center flex-shrink-0 ${paymentMethod === "bank" ? "border-[#0F766E]" : "border-gray-300"}`}>
-                            {paymentMethod === "bank" && <div className="w-2 h-2 rounded-full bg-[#0F766E]"></div>}
+                        <label className={`flex items-center gap-3 rounded-xl border p-3 cursor-pointer ${paymentMethod === "bank" ? "border-[#EB6601] shadow-sm relative overflow-hidden" : "border-gray-200"}`}>
+                          {paymentMethod === "bank" && <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#EB6601]"></div>}
+                          <div className={`w-4 h-4 rounded-full border flex items-center justify-center flex-shrink-0 ${paymentMethod === "bank" ? "border-[#EB6601]" : "border-gray-300"}`}>
+                            {paymentMethod === "bank" && <div className="w-2 h-2 rounded-full bg-[#EB6601]"></div>}
                           </div>
                           <div className="text-gray-500">
                             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -695,10 +695,10 @@ export function RightPanel() {
                           </div>
                         </label>
 
-                        <label className={`flex items-center gap-3 rounded-xl border p-3 cursor-pointer ${paymentMethod === "split" ? "border-[#0F766E] shadow-sm relative overflow-hidden" : "border-gray-200"}`}>
-                          {paymentMethod === "split" && <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#0F766E]"></div>}
-                          <div className={`w-4 h-4 rounded-full border flex items-center justify-center flex-shrink-0 ${paymentMethod === "split" ? "border-[#0F766E]" : "border-gray-300"}`}>
-                            {paymentMethod === "split" && <div className="w-2 h-2 rounded-full bg-[#0F766E]"></div>}
+                        <label className={`flex items-center gap-3 rounded-xl border p-3 cursor-pointer ${paymentMethod === "split" ? "border-[#EB6601] shadow-sm relative overflow-hidden" : "border-gray-200"}`}>
+                          {paymentMethod === "split" && <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#EB6601]"></div>}
+                          <div className={`w-4 h-4 rounded-full border flex items-center justify-center flex-shrink-0 ${paymentMethod === "split" ? "border-[#EB6601]" : "border-gray-300"}`}>
+                            {paymentMethod === "split" && <div className="w-2 h-2 rounded-full bg-[#EB6601]"></div>}
                           </div>
                           <div className="text-gray-500">
                             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -729,7 +729,7 @@ export function RightPanel() {
                 )}
                 
                 {step === 1 && (
-                  <button onClick={() => setStep(2)} className="px-5 py-2 text-sm font-medium rounded-lg bg-[#0F766E] text-white hover:bg-[#0D655E] transition-colors">
+                  <button onClick={() => setStep(2)} className="px-5 py-2 text-sm font-medium rounded-lg bg-[#EB6601] text-white hover:bg-[#d85e01] transition-colors">
                     Review Documents
                   </button>
                 )}
@@ -737,7 +737,7 @@ export function RightPanel() {
                   <button 
                     onClick={() => setStep(3)} 
                     disabled={!canContinueStep2}
-                    className="px-5 py-2 text-sm font-medium rounded-lg bg-[#0F766E] text-white hover:bg-[#0D655E] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-5 py-2 text-sm font-medium rounded-lg bg-[#EB6601] text-white hover:bg-[#d85e01] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     Sign & Continue
                   </button>
@@ -746,13 +746,13 @@ export function RightPanel() {
                   <button 
                     onClick={() => setStep(4)} 
                     disabled={!isBankVerified}
-                    className="px-5 py-2 text-sm font-medium rounded-lg bg-[#0F766E] text-white hover:bg-[#0D655E] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-5 py-2 text-sm font-medium rounded-lg bg-[#EB6601] text-white hover:bg-[#d85e01] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     Continue to Review
                   </button>
                 )}
                 {step === 4 && (
-                  <button onClick={() => setStep("success")} className="px-5 py-2 text-sm font-medium rounded-lg bg-[#0F766E] text-white hover:bg-[#0D655E] transition-colors">
+                  <button onClick={() => setStep("success")} className="px-5 py-2 text-sm font-medium rounded-lg bg-[#EB6601] text-white hover:bg-[#d85e01] transition-colors">
                     Confirm Investment
                   </button>
                 )}
