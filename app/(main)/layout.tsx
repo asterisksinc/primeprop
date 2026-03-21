@@ -11,12 +11,10 @@ export default function MainLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <FilterProvider>
-          <PrimePropNavbar />
-          <PrimePropHeader />
-          {children}
-        </FilterProvider>
+      <body className="bg-[#F8FAFC]" >
+        <PrimePropNavbar />
+        <PrimePropHeader />
+        {children}
       </body>
     </html>
   );
