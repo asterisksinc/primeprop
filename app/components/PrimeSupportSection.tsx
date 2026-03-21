@@ -168,7 +168,7 @@ export default function PrimeSupportSection() {
     <section className="prime-support-v1-shell">
       <div className="prime-support-v1-topbar">
         <div>
-          <h2 className="prime-support-v1-heading">Support Center</h2>
+          <div className="prime-support-v1-heading">Support Center</div>
         </div>
 
         <div className="prime-support-v1-top-actions">
@@ -213,14 +213,14 @@ export default function PrimeSupportSection() {
         </button>
       </div>
 
-      <div className="prime-support-v1-card prime-support-v1-block">
-        <h3 className="prime-support-v1-section-title">How can we help you?</h3>
+      <div className="prime-support-v1-card">
+        <div className="prime-support-v1-section-title">How can we help you?</div>
 
         <div className="prime-support-v1-help-grid">
           {supportCards.map((item) => (
             <div key={item.title} className="prime-support-v1-help-card">
               <div className={`prime-support-v1-help-icon${item.color || ''}`}><img src={item.icon} alt=""  /></div>
-              <h4 className="prime-support-v1-help-title">{item.title}</h4>
+              <div className="prime-support-v1-help-title">{item.title}</div>
               <p className="prime-support-v1-help-desc">{item.desc}</p>
               <p className="prime-support-v1-help-tags">{item.tags}</p>
               <button className="prime-support-v1-help-link">
@@ -233,8 +233,8 @@ export default function PrimeSupportSection() {
       </div>
 
       <div className="prime-support-v1-search-layout">
-        <div className="prime-support-v1-card prime-support-v1-block">
-          <h3 className="prime-support-v1-section-title">Search Help Articles</h3>
+        <div className="prime-support-v1-card">
+          <div className="prime-support-v1-section-title">Search Help Articles</div>
 
           <div className="prime-support-v1-searchbar">
             <span className="prime-support-v1-search-icon"><img src="/ser.svg" alt="" /></span>
@@ -274,9 +274,9 @@ export default function PrimeSupportSection() {
             <span className="prime-support-v1-side-label">
               Most Common Issue This Week
             </span>
-            <h4 className="prime-support-v1-side-title">
+            <div className="prime-support-v1-side-title">
               Payout Processing Timelines
-            </h4>
+            </div>
             <p className="prime-support-v1-side-text">
               Understanding distribution schedules and processing times
             </p>
@@ -287,9 +287,9 @@ export default function PrimeSupportSection() {
             <span className="prime-support-v1-side-label">
               Tax Season Support
             </span>
-            <h4 className="prime-support-v1-side-title">
+            <div className="prime-support-v1-side-title">
               Download FY 2025-26 Tax Pack
-            </h4>
+            </div>
             <p className="prime-support-v1-side-text">
               Get all your tax documents in one place
             </p>
@@ -300,9 +300,9 @@ export default function PrimeSupportSection() {
             <span className="prime-support-v1-side-label">
               Need Urgent Help?
             </span>
-            <h4 className="prime-support-v1-side-title">
+            <div className="prime-support-v1-side-title">
               Contact Priority Support
-            </h4>
+            </div>
             <p className="prime-support-v1-side-text">
               Available 24/7 for Verified Investors
             </p>
@@ -310,8 +310,8 @@ export default function PrimeSupportSection() {
         </div>
       </div>
 
-   <div className="prime-support-v1-card prime-support-v1-block">
-      <h3 className="prime-support-v1-section-title">My Support Cases</h3>
+   <div className="prime-support-v1-card">
+      <div className="prime-support-v1-section-title">My Support Cases</div>
 
       <div className="prime-support-v1-tabs">
         {tabs.map((tab) => (
@@ -400,8 +400,8 @@ export default function PrimeSupportSection() {
       </div>
     </div>
 
-      <div className="prime-support-v1-card prime-support-v1-block">
-        <h3 className="prime-support-v1-section-title">Other Ways to Get Help</h3>
+      <div className="prime-support-v1-card">
+        <div className="prime-support-v1-section-title">Other Ways to Get Help</div>
 
         <div className="prime-support-v1-other-grid">
           {helpWays.map((item) => (
@@ -409,7 +409,7 @@ export default function PrimeSupportSection() {
               <div className={`prime-support-v1-help-icon${item.color}`}><img src={item.icon} alt="" /></div>
 
               <div className="prime-support-v1-other-content">
-                <h4 className="prime-support-v1-other-title">{item.title}</h4>
+                <div className="prime-support-v1-other-title">{item.title}</div>
                 <p className="prime-support-v1-other-desc">○ {item.desc1}</p>
                 <p className="prime-support-v1-other-desc">✓ {item.desc2}</p>
                 <button className="prime-support-v1-other-link">

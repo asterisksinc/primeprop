@@ -99,7 +99,7 @@ export default function DashboardComponent() {
                           <span
                             className={`inline-block px-[8px] py-[6px] rounded-full text-[12px] leading-[1.2] font-semibold ${
                               row.status === 'Pending'
-                                ? 'bg-[#FE5919]/10 text-[#FE5919]'
+                                ? 'bg-[#EB6601]/10 text-[#EB6601]'
                                 : 'bg-[#0AA43E]/10 text-[#0AA43E]'
                             }`}
                           >
@@ -131,7 +131,7 @@ export default function DashboardComponent() {
               
               {/* Top Badges */}
               <div className="absolute top-3 left-3">
-                <span className="bg-[#FE5919] text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+                <span className="bg-[#EB6601] text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
                   9.1% Yield
                 </span>
               </div>
@@ -162,9 +162,9 @@ export default function DashboardComponent() {
                 <p className="text-[11px] text-[#6B7280] font-medium mb-1">Ownership</p>
                 <p className="text-[14px] font-bold text-[#1e293b]">1.00%</p>
               </div>
-              <div className="bg-[#FE5919]/10 p-3 rounded-[0.6rem]">
+              <div className="bg-[#EB6601]/10 p-3 rounded-[0.6rem]">
                 <p className="text-[11px] text-[#6B7280] font-medium mb-1">Annual Income</p>
-                <p className="text-[14px] font-bold text-[#FE5919]">128K AED</p>
+                <p className="text-[14px] font-bold text-[#EB6601]">128K AED</p>
               </div>
               <div className="bg-[#0AA43E1A]/90 p-3 rounded-[0.6rem]">
                 <p className="text-[11px] text-[#6B7280] font-medium mb-1">Next Payout</p>
@@ -229,11 +229,11 @@ export default function DashboardComponent() {
         <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)]">
           <div className="flex justify-between items-start mb-2">
             <span className="text-[14px] font-medium leading-[1.2] tracking-[0] text-gray-600">Average Net Yield</span>
-            <span className="bg-[#FE5919]/10 text-[#FE5919] text-[12px] font-bold px-2 py-0.5 rounded-full">
+            <span className="bg-[#EB6601]/10 text-[#EB6601] text-[12px] font-bold px-2 py-0.5 rounded-full">
               +0.8%
             </span>
           </div>
-          <div className="text-[26px] leading-[1.2] tracking-[0] font-bold text-[#FE5919] mb-1">
+          <div className="text-[26px] leading-[1.2] tracking-[0] font-bold text-[#EB6601] mb-1">
             6.4%
           </div>
           <div className="text-[12px] leading-[1.2] tracking-[0] text-[#277079] font-medium">
@@ -262,10 +262,10 @@ export default function DashboardComponent() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
         
         {/* Left Chart Section (Takes up 2 columns) */}
-        <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] lg:col-span-2 flex flex-col">
-  <h3 className="text-[15px] font-bold text-[#1e293b] mb-6">Portfolio Performance</h3>
-<div className='bg-[#F8FAFC] p-6 rounded-2xl' >
-  <div className="relative flex-1 min-h-[250px] w-full mt-2">
+            <div className="bg-white rounded-2xl px-6 pt-6 pb-3 border border-gray-100 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] lg:col-span-2 flex flex-col h-full">
+  <h3 className="text-[15px] font-bold text-[#1e293b] mb-4">Portfolio Performance</h3>
+        <div className='bg-[#F8FAFC] px-6 pt-6 pb-2 rounded-2xl flex-1 flex flex-col justify-between' >
+          <div className="relative min-h-[250px] flex-1 w-full">
 
     {/* Y-Axis Labels */}
     <div className="absolute top-0 bottom-0 left-0 w-8 flex flex-col justify-between text-[11px] text-[#1F2937] font-medium z-10 py-[1px]">
@@ -320,7 +320,7 @@ export default function DashboardComponent() {
         <polyline
           points="0,96 142.86,12 285.71,144 428.57,54 571.43,36 714.29,96 857.14,96 1000,30"
           fill="none"
-          stroke="#FE5919"
+          stroke="#EB6601"
           strokeWidth="2"
           vectorEffect="non-scaling-stroke"
           strokeLinejoin="round"
@@ -330,7 +330,7 @@ export default function DashboardComponent() {
     </div>
 
     {/* X-Axis Labels */}
-    <div className="absolute left-8 right-0 flex justify-between text-[11px] text-[#1F2937] font-medium" style={{ bottom: '-24px' }}>
+    <div className="absolute left-8 right-0 flex justify-between text-[11px] text-[#1F2937] font-medium" style={{ bottom: '-20px' }}>
       {['Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7', 'Q8'].map((label) => (
         <span key={label} className="text-center">{label}</span>
       ))}
@@ -338,13 +338,13 @@ export default function DashboardComponent() {
   </div>
 
   {/* Legend */}
-  <div className="flex justify-center items-center gap-6 mt-10">
+  <div className="flex justify-center items-center gap-6 mt-6 pb-1">
     <div className="flex items-center gap-2">
       <div className="w-4 h-1.5 rounded-full bg-[#277079]" />
       <span className="text-[12px] font-semibold text-[#1e293b]">Investment Value</span>
     </div>
     <div className="flex items-center gap-2">
-      <div className="w-4 h-1.5 rounded-full bg-[#FE5919]" />
+      <div className="w-4 h-1.5 rounded-full bg-[#EB6601]" />
       <span className="text-[12px] font-semibold text-[#1e293b]">Net Earnings</span>
     </div>
   </div>
@@ -352,7 +352,7 @@ export default function DashboardComponent() {
 </div>
 
         {/* Right Insights Section */}
-        <div className="   rounded-3xl p-6 border-2 border-[#277079]  flex flex-col justify-between">
+        <div className="   rounded-3xl p-6 border-2 border-[#277079]  flex flex-col justify-between h-full">
   
   <div>
     {/* Header */}

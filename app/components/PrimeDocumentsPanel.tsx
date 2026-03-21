@@ -160,6 +160,107 @@ const primeDocumentsData: PrimeDocItem[] = [
     status: "Available",
     size: "3.8 MB",
   },
+  {
+    id: 15,
+    name: "Q3 Distribution Receipt - Backup",
+    category: "Distribution Receipts",
+    property: "Marina Heights SPV",
+    fileType: "PDF",
+    generatedDate: "Oct 02, 2026",
+    status: "Available",
+    size: "0.8 MB",
+  },
+  {
+    id: 16,
+    name: "Semi-Annual Reporting Packet",
+    category: "Statements",
+    property: "Portfolio Wide",
+    fileType: "PDF",
+    generatedDate: "Oct 05, 2026",
+    status: "Available",
+    size: "2.3 MB",
+  },
+  {
+    id: 17,
+    name: "Partner Cap Table Update",
+    category: "Statements",
+    property: "All Properties",
+    fileType: "XLSX",
+    generatedDate: "Oct 08, 2026",
+    status: "Generated",
+    size: "1.2 MB",
+  },
+  {
+    id: 18,
+    name: "Q4 Tax Documents Bundle",
+    category: "Tax Documents",
+    property: "JVC Tower SPV",
+    fileType: "ZIP",
+    generatedDate: "Oct 10, 2026",
+    status: "Available",
+    size: "4.5 MB",
+  },
+  {
+    id: 19,
+    name: "Compliance Audit Report",
+    category: "Compliance Reports",
+    property: "Marina Heights SPV",
+    fileType: "PDF",
+    generatedDate: "Oct 12, 2026",
+    status: "Available",
+    size: "1.8 MB",
+  },
+  {
+    id: 20,
+    name: "Q4 Distribution Receipt",
+    category: "Distribution Receipts",
+    property: "JVC Tower SPV",
+    fileType: "PDF",
+    generatedDate: "Oct 15, 2026",
+    status: "Available",
+    size: "0.9 MB",
+  },
+  {
+    id: 21,
+    name: "Annual Statement FY 2025-26",
+    category: "Statements",
+    property: "Portfolio Wide",
+    fileType: "PDF",
+    generatedDate: "Oct 18, 2026",
+    status: "Generated",
+    size: "2.7 MB",
+  },
+  {
+    id: 22,
+    name: "Investor Correspondence Log",
+    category: "Compliance Reports",
+    property: "All Properties",
+    fileType: "PDF",
+    generatedDate: "Oct 20, 2026",
+    status: "Available",
+    size: "0.95 MB",
+  },
+  {
+    id: 23,
+    name: "Year-End Tax Certificate",
+    category: "Tax Documents",
+    property: "All Properties",
+    fileType: "PDF",
+    generatedDate: "Oct 22, 2026",
+    status: "Pending Signature",
+    size: "1.6 MB",
+  },
+  {
+    id: 24,
+    name: "Investment Summary 2026",
+    category: "Statements",
+    property: "Portfolio Wide",
+    fileType: "PDF",
+    generatedDate: "Oct 25, 2026",
+    status: "Generated",
+    size: "3.2 MB",
+  },
+  
 ];
 
 const recentActivity = [
@@ -386,7 +487,7 @@ export default function PrimeDocumentsPanel() {
       <div className="ppdocs-main-grid">
         <aside className="ppdocs-sidebar">
           <div className="ppdocs-sidebar-block">
-            <h3 className="ppdocs-sidebar-title">Document Categories</h3>
+            <div className="ppdocs-sidebar-title">Document Categories</div>
 
             <div className="ppdocs-category-list">
               {allCategories.map((category) => (
@@ -410,7 +511,7 @@ export default function PrimeDocumentsPanel() {
           </div>
 
           <div className="ppdocs-sidebar-block">
-            <h3 className="ppdocs-sidebar-subtitle">File Type</h3>
+            <div className="ppdocs-sidebar-subtitle">File Type</div>
             <div className="ppdocs-filter-checklist">
               {["PDF", "CSV", "ZIP", "XLSX"].map((type) => (
                 <label key={type} className="ppdocs-check-row">
@@ -428,7 +529,7 @@ export default function PrimeDocumentsPanel() {
           </div>
 
           <div className="ppdocs-sidebar-block">
-            <h3 className="ppdocs-sidebar-subtitle">Status</h3>
+            <div className="ppdocs-sidebar-subtitle">Status</div>
             <div className="ppdocs-filter-checklist">
               {["Signed", "Pending Signature", "Generated", "Available", "Archived"].map(
                 (status) => (
@@ -448,7 +549,7 @@ export default function PrimeDocumentsPanel() {
           </div>
 
           <div className="ppdocs-sidebar-block">
-            <h3 className="ppdocs-sidebar-subtitle">Property</h3>
+            <div className="ppdocs-sidebar-subtitle">Property</div>
             <select
               className="ppdocs-select"
               value={selectedProperty}
@@ -463,7 +564,7 @@ export default function PrimeDocumentsPanel() {
           </div>
 
           <div className="ppdocs-sidebar-block">
-            <h3 className="ppdocs-sidebar-subtitle">Year</h3>
+            <div className="ppdocs-sidebar-subtitle">Year</div>
             <select
               className="ppdocs-select"
               value={selectedYear}
@@ -615,7 +716,7 @@ export default function PrimeDocumentsPanel() {
 
         <div className="ppdocs-activity-card">
           <div className="ppdocs-activity-head">
-            <h3>Recent Document Activity</h3>
+            <div className="ppdocs-activity-head-title">Recent Document Activity</div>
             <button>View All Activity</button>
           </div>
 
@@ -625,7 +726,7 @@ export default function PrimeDocumentsPanel() {
                 <div className="ppdocs-activity-icon"><img src={item.icon} alt="" /></div>
                 <div className="ppdocs-activity-content">
                   <div className="ppdocs-activity-top">
-                    <h4>{item.title}</h4>
+                    <div className="ppdocs-activity-top-title">{item.title}</div>
                     <span>{item.date}</span>
                   </div>
                   <span className="ppdocs-activity-tag">{item.tag}</span>

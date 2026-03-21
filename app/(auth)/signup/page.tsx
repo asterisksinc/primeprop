@@ -13,9 +13,9 @@ const Step1 = ({ nextStep }: any) => {
         <div>
           <img src="/logo.png" alt="PrimeProp Logo" className="h-8 mb-16" />
 
-          <h1 className="text-[48px] font-bold text-[#1e293b] leading-tight mb-3">
+          <div className="text-[48px] font-bold text-[#1e293b] leading-tight mb-3">
             Welcome to PrimeProp
-          </h1>
+          </div>
           <p className="text-gray-500 text-lg mb-10 max-w-md">
             Invest in premium Dubai real estate opportunities with transparent
             passive income.

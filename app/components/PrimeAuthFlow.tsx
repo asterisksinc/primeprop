@@ -57,7 +57,7 @@ export default function PrimeAuthFlow() {
             />
           </div>
 
-          <h1 className="prime-auth-v1-title">Sign In</h1>
+          <div className="prime-auth-v1-title">Sign In</div>
           <p className="prime-auth-v1-subtitle">
             Access your investor dashboard.
           </p>
@@ -159,9 +159,9 @@ export default function PrimeAuthFlow() {
             />
           </div>
 
-          <h1 className="prime-auth-v1-title">
+          <div className="prime-auth-v1-title">
             Verify Your Identity
-          </h1>
+          </div>
           <p className="prime-auth-v1-subtitle prime-auth-v1-subtitle-tight">
             Enter the code sent to your registered email for login.
           </p>
@@ -218,9 +218,9 @@ export default function PrimeAuthFlow() {
             />
           </div>
 
-          <h1 className="prime-auth-v1-title">
+          <div className="prime-auth-v1-title">
             Forgot Password
-          </h1>
+          </div>
           <p className="prime-auth-v1-subtitle prime-auth-v1-subtitle-tight">
             Enter your registered email to receive a secure reset link.
           </p>
@@ -270,9 +270,9 @@ export default function PrimeAuthFlow() {
             />
           </div>
 
-          <h1 className="prime-auth-v1-title">
+          <div className="prime-auth-v1-title">
             Verify Code
-          </h1>
+          </div>
           <p className="prime-auth-v1-subtitle prime-auth-v1-subtitle-tight">
             Enter the 6-digit code sent to your phone or email
             <br />
@@ -337,9 +337,9 @@ export default function PrimeAuthFlow() {
             />
           </div>
 
-          <h1 className="prime-auth-v1-title">
+          <div className="prime-auth-v1-title">
             Create New Password
-          </h1>
+          </div>
           <p className="prime-auth-v1-subtitle prime-auth-v1-subtitle-tight">
             Set a strong password to secure your account.
           </p>
@@ -420,7 +420,7 @@ export default function PrimeAuthFlow() {
 
         <div className="prime-auth-v1-success-shell">
           <div className="prime-auth-v1-success-icon">✓</div>
-          <h1 className="prime-auth-v1-title">Password Updated</h1>
+          <div className="prime-auth-v1-title">Password Updated</div>
           <p className="prime-auth-v1-subtitle prime-auth-v1-subtitle-tight">
             Your password has been reset successfully.
             <br />
