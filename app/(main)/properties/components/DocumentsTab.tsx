@@ -24,7 +24,7 @@ export function DocumentsTab() {
       <div className="bg-white rounded-[8px] p-[16px] border border-[#E5E7EB] flex flex-col gap-[20px]">
         <div className="flex justify-between items-center">
           <div className="text-[18px] font-semibold text-[#111827]">Investment Documents</div>
-          <button className="text-[13px] font-medium text-[#0F766E] hover:underline">Download All</button>
+          <button className="text-[13px] font-medium text-[#EB6601] hover:underline">Download All</button>
         </div>
         <div className="grid grid-cols-2 gap-[16px]">
           {renderDoc("SPV Agreement", "2.1 MB")}
@@ -38,7 +38,7 @@ export function DocumentsTab() {
       <div className="bg-white rounded-[8px] p-[16px] border border-[#E5E7EB] flex flex-col gap-[20px]">
         <div className="flex justify-between items-center">
           <div className="text-[18px] font-semibold text-[#111827]">Compliance & Legal Documents</div>
-          <button className="text-[13px] font-medium text-[#0F766E] hover:underline">Download All</button>
+          <button className="text-[13px] font-medium text-[#EB6601] hover:underline">Download All</button>
         </div>
         <div className="grid grid-cols-2 gap-[16px]">
           {renderDoc("DFSA Registration Certificate", "2.1 MB")}

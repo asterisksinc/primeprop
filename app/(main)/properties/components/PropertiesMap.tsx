@@ -133,7 +133,7 @@ export default function PropertiesMap() {
                   <span className="font-semibold text-[#2B6B6F] text-xs">{hoveredProperty.fundedStr}</span>
                 </div>
               </div>
-              <Link href={`/properties/${hoveredProperty.id}`} className="w-full py-2 bg-[#2B6B6F] hover:bg-[#1f4e52] text-white text-xs font-semibold rounded-lg shadow-sm text-center transition-colors">
+              <Link href={`/properties/${hoveredProperty.id}`} className="w-full py-2 bg-[#EB6601] hover:bg-[#d85e01] text-white text-xs font-semibold rounded-lg shadow-sm text-center transition-colors">
                 View Details
               </Link>
             </div>

@@ -98,7 +98,7 @@ export function PropertyTab() {
               onClick={() => setActiveImage(index)}
               className={`w-[120px] h-[80px] rounded-[8px] flex-shrink-0 cursor-pointer overflow-hidden border-2 transition-all ${
                 activeImage === index
-                  ? "border-[#0F766E] opacity-100"
+                  ? "border-[#EB6601] opacity-100"
                   : "border-transparent opacity-70 hover:opacity-100"
               }`}
               aria-label={`Select ${item.label}`}
@@ -126,8 +126,8 @@ export function PropertyTab() {
         <div className="text-[18px] font-semibold text-[#111827]">Location Intelligence</div>
         <div className="flex gap-[16px]">
           <div className="flex-1 border border-[#E5E7EB] rounded-[8px] p-[16px] flex items-center gap-[16px]">
-             <div className="w-[40px] h-[40px] rounded-full bg-[#F0FDFA] flex items-center justify-center flex-shrink-0">
-               <svg className="w-[20px] h-[20px] text-[#0F766E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+             <div className="w-[40px] h-[40px] rounded-full bg-[#FFF5F0] flex items-center justify-center flex-shrink-0">
+               <svg className="w-[20px] h-[20px] text-[#EB6601]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                </svg>
              </div>
@@ -137,8 +137,8 @@ export function PropertyTab() {
              </div>
           </div>
           <div className="flex-1 border border-[#E5E7EB] rounded-[8px] p-[16px] flex items-center gap-[16px]">
-             <div className="w-[40px] h-[40px] rounded-full bg-[#F0FDFA] flex items-center justify-center flex-shrink-0">
-               <svg className="w-[20px] h-[20px] text-[#0F766E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+             <div className="w-[40px] h-[40px] rounded-full bg-[#FFF5F0] flex items-center justify-center flex-shrink-0">
+               <svg className="w-[20px] h-[20px] text-[#EB6601]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                </svg>
              </div>
@@ -148,8 +148,8 @@ export function PropertyTab() {
              </div>
           </div>
           <div className="flex-1 border border-[#E5E7EB] rounded-[8px] p-[16px] flex items-center gap-[16px]">
-             <div className="w-[40px] h-[40px] rounded-full bg-[#F0FDFA] flex items-center justify-center flex-shrink-0">
-               <svg className="w-[20px] h-[20px] text-[#0F766E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+             <div className="w-[40px] h-[40px] rounded-full bg-[#FFF5F0] flex items-center justify-center flex-shrink-0">
+               <svg className="w-[20px] h-[20px] text-[#EB6601]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
                </svg>
              </div>
@@ -171,7 +171,7 @@ export function PropertyTab() {
             "Covered Parking", "Children's Play Area"
           ].map((amenity, i) => (
             <div key={i} className="flex items-center gap-[8px]">
-              <div className="w-[4px] h-[4px] bg-[#0F766E] rounded-full"></div>
+              <div className="w-[4px] h-[4px] bg-[#EB6601] rounded-full"></div>
               <span className="text-[14px] text-[#4B5563]">{amenity}</span>
             </div>
           ))}
@@ -189,7 +189,7 @@ export function PropertyTab() {
             "Full building amenities including pool, gym, and 24/7 security"
           ].map((item, i) => (
             <div key={i} className="flex items-start gap-[8px]">
-              <div className="w-[4px] h-[4px] bg-[#0F766E] rounded-full mt-[8px]"></div>
+              <div className="w-[4px] h-[4px] bg-[#EB6601] rounded-full mt-[8px]"></div>
               <span className="text-[14px] text-[#4B5563] leading-relaxed">{item}</span>
             </div>
           ))}

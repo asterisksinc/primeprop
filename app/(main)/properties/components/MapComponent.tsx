@@ -39,11 +39,11 @@ export default function MapComponent({
       const markerIcon = L.divIcon({
         html: `
           <div class="relative">
-            <svg class="w-8 h-8 drop-shadow-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[#0F766E]">
+            <svg class="w-8 h-8 drop-shadow-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[#EB6601]">
               <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-[#0F766E] rounded-full"></div>
+            <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-[#EB6601] rounded-full"></div>
           </div>
         `,
         className: "custom-marker",

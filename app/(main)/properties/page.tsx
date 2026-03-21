@@ -36,7 +36,7 @@ export default function PropertiesPage() {
                <h4 className="font-semibold text-slate-800 text-sm m-0">Yield Indicator</h4>
                <div className="flex items-center gap-4">
                  <div className="flex items-center gap-2">
-                   <div className="w-3 h-3 rounded-full bg-[#277079]"></div>
+                   <div className="w-3 h-3 rounded-full bg-[#EB6601]"></div>
                    <span className="text-sm text-slate-500">Standard</span>
                  </div>
                  <div className="flex items-center gap-2">
@@ -71,7 +71,7 @@ export default function PropertiesPage() {
                   <div className="absolute top-3 left-3 bg-[#EB6601] text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm z-20">
                     9.1% Yield
                   </div>
-                  <div className="absolute top-3 right-3 bg-white/90 text-[#277079] text-xs font-bold px-3 py-1 rounded-full shadow-sm z-20">
+                  <div className="absolute top-3 right-3 bg-white/90 text-[#EB6601] text-xs font-bold px-3 py-1 rounded-full shadow-sm z-20">
                     AAA
                   </div>
                   <div className="absolute bottom-3 left-3 bg-white/90 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm z-20">

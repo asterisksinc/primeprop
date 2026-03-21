@@ -37,7 +37,7 @@ export function OverviewTab() {
           
           {/* Bottom Location */}
           <div className="absolute bottom-[16px] left-[16px] bg-white text-[#374151] text-[12px] font-medium px-[12px] py-[6px] rounded-[6px] flex items-center gap-[6px] shadow-sm">
-            <svg className="w-[14px] h-[14px] text-[#0F766E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-[14px] h-[14px] text-[#EB6601]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
@@ -109,7 +109,7 @@ export function OverviewTab() {
               </div>
               <div className="flex flex-col gap-[2px]">
                 <div className="text-[14px] font-semibold text-[#111827]">{profile.name}</div>
-                <div className="text-[12px] text-[#0F766E] font-medium">{profile.role}</div>
+                <div className="text-[12px] text-[#EB6601] font-medium">{profile.role}</div>
                 <div className="text-[11px] text-[#6B7280] truncate max-w-[200px]">{profile.exp}</div>
               </div>
             </div>
