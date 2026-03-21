@@ -239,14 +239,14 @@ export default function AssetDetails() {
           {/* Content */}
           <div className="absolute bottom-6 left-6 right-6">
             <div className="flex items-center gap-2 mb-3">
-              <span className="bg-[#FE5919] text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
+              <span className="bg-[#EB6601] text-white text-[11px] font-bold px-2.5 py-1 rounded-full">
                 9.1% Yield
               </span>
               <span className="bg-white/95 text-[#277079] text-[11px] font-bold px-2.5 py-1 rounded-full">
                 Residential
               </span>
             </div>
-            <h1 className="text-[24px]  font-semibold text-white mb-2">JVC Tower SPV</h1>
+            <div className="text-[24px]  font-semibold text-white mb-2">JVC Tower SPV</div>
             <div className="flex items-center gap-1.5 text-gray-200 text-sm">
               <MapPin className="w-4 h-4" />
               <span>Jumeirah Village Circle, Dubai, UAE</span>
@@ -255,7 +255,7 @@ export default function AssetDetails() {
         </div>
 
         {/* Investment Insight (Right) */}
-        <div className="bg-white   rounded-[1.25rem] p-4 border-2 border-[#FE5919] shadow-sm flex flex-col justify-between">
+        <div className="bg-white   rounded-[1.25rem] p-4 border-2 border-[#EB6601] shadow-sm flex flex-col justify-between">
           <div>
             <h3 className="text-[17px] font-bold text-[#1e293b] mb-3">Investment Insight</h3>
             <p className="text-[13px] text-gray-500 leading-relaxed mb-5">
@@ -277,7 +277,7 @@ export default function AssetDetails() {
               </div>
             </div>
           </div>
-          <button className="w-full bg-[#FE5919] hover:bg-[#e04810] text-white font-semibold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-[14px]">
+          <button className="w-full bg-[#EB6601] hover:bg-[#e04810] text-white font-semibold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2 text-[14px]">
             Explore New Opportunities
             <ArrowRight className="w-4 h-4" />
           </button>
@@ -331,7 +331,7 @@ export default function AssetDetails() {
             </div>
             <div className="md:pl-4">
               <p className="text-[14px] font-medium text-gray-500 mb-1">Actual IRR</p>
-              <p className="text-[1.5rem] font-semibold text-[#FE5919]">12%</p>
+              <p className="text-[1.5rem] font-semibold text-[#EB6601]">12%</p>
             </div>
           </div>
 
@@ -395,7 +395,7 @@ export default function AssetDetails() {
         <polyline
           points="0,96 142.86,12 285.71,144 428.57,54 571.43,36 714.29,96 857.14,96 1000,30"
           fill="none"
-          stroke="#FE5919"
+          stroke="#EB6601"
           strokeWidth="2"
           vectorEffect="non-scaling-stroke"
           strokeLinejoin="round"
@@ -419,7 +419,7 @@ export default function AssetDetails() {
       <span className="text-[12px] font-semibold text-[#1e293b]">Asset Growth</span>
     </div>
     <div className="flex items-center gap-2">
-      <div className="w-4 h-1.5 rounded-full bg-[#FE5919]" />
+      <div className="w-4 h-1.5 rounded-full bg-[#EB6601]" />
       <span className="text-[12px] font-semibold text-[#1e293b]">Investor Income</span>
     </div>
   </div>
@@ -465,7 +465,7 @@ export default function AssetDetails() {
                       <span
                         className={`inline-block px-2.5 py-1 rounded-full text-[10px] font-bold ${
                           row.status === 'Pending'
-                            ? 'bg-[#FE5919]/10 text-[#FE5919]'
+                            ? 'bg-[#EB6601]/10 text-[#EB6601]'
                             : 'bg-emerald-50 text-emerald-500'
                         }`}
                       >

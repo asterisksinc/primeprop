@@ -52,11 +52,11 @@ function AccountSection() {
   return (
     <div className="pps-section-wrap">
       <div className="pps-card-box">
-        <h2 className="pps-section-title">Profile Information</h2>
+        <div className="pps-section-title">Profile Information</div>
 
         <div
           className="pps-profile-head"
-          style={{ marginTop: "30px", marginBottom: "30px" }}
+          style={{ marginBottom: "24px" }}
         >
           <div className="pps-profile-avatar">🧔</div>
 
@@ -72,7 +72,7 @@ function AccountSection() {
 
         <div className="pps-divider-line" />
 
-        <div className="pps-form-grid" style={{ marginBottom: "40px", marginTop: "30px" }}>
+        <div className="pps-form-grid" style={{ marginBottom: "24px", marginTop: "24px" }}>
           <div className="pps-field-box">
             <label>Full Name</label>
             <input defaultValue="Ananya Sharma" />
@@ -104,7 +104,7 @@ function AccountSection() {
 
         <div className="pps-divider-line" />
 
-        <div className="pps-action-right" style={{ marginTop: "40px" }}>
+        <div className="pps-action-right" style={{ marginTop: "24px" }}>
           <button className="pps-btn-primary">Save Changes</button>
         </div>
       </div>
@@ -116,7 +116,7 @@ function SecuritySection() {
   return (
     <div className="pps-section-wrap">
       <div className="pps-card-box">
-        <h3 className="pps-section-title">Security</h3>
+        <div className="pps-section-title">Security</div>
 
         <div className="pps-security-box">
           <div className="pps-security-left">
@@ -207,9 +207,9 @@ function PayoutsSection() {
   return (
     <div className="pps-section-wrap">
       <div className="pps-card-box">
-        <h2 className="pps-section-title">Payout Methods</h2>
+        <div className="pps-section-title">Payout Methods</div>
 
-        <div className="pps-bank-card" style={{ marginTop: "30px" }}>
+        <div className="pps-bank-cards">
           <div className="pps-bank-top">
             <div style={{ display: "flex", gap: "15px" }}>
               <div className="pps-security-icon">
@@ -258,7 +258,7 @@ function TaxSection() {
   return (
     <div className="pps-section-wrap">
       <div className="pps-card-box">
-        <h2 className="pps-section-title">Tax Information</h2>
+        <div className="pps-section-title">Tax Information</div>
 
         <div className="pps-tax-block">
           <div className="pps-section-head-flex">
@@ -359,7 +359,7 @@ function NotificationsSection() {
   return (
     <div className="pps-section-wrap">
       <div className="pps-card-box">
-        <h2 className="pps-section-title">Notification</h2>
+        <div className="pps-section-title">Notification</div>
 
         <div className="pps-table-wrap">
           <div className="pps-table-head">
@@ -387,7 +387,7 @@ function PreferencesSection() {
   return (
     <div className="pps-section-wrap">
       <div className="pps-card-box">
-        <h2 className="pps-section-title">App Preferences</h2>
+        <div className="pps-section-title">App Preferences</div>
 
         <div className="pps-form-grid">
           <div className="pps-field-box">

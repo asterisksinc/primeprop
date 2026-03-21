@@ -107,8 +107,45 @@ export default function PrimePropHeader() {
       </div>
 
       <div className="absolute right-[24px] bottom-[24px] flex gap-[12px] z-50 pointer-events-auto">
-        {pathname !== "/properties" && (
+        {pathname !== "/properties" && pathname !== "/distributions" && pathname !== "/documents" && (
           <button className="ppd-filter-btn">All Property</button>
+        )}
+        {pathname === "/documents" && (
+          <>
+            <button className="w-[34px] h-[34px] bg-white border border-[#E5E7EB] rounded-[6px] flex items-center justify-center cursor-pointer shadow-sm hover:bg-slate-50 transition-colors relative z-50">
+              <svg className="w-[14px] h-[14px]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+            </button>
+            <button className="bg-white border border-[#E5E7EB] text-[#1F2937] px-[16px] py-[8px] rounded-[6px] text-[14px] font-medium flex items-center gap-[8px] hover:bg-slate-50 transition-colors">
+              <svg className="w-[14px] h-[14px]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              Download Selected
+            </button>
+            <button className="bg-[#EB6601] text-white px-[16px] py-[8px] rounded-[6px] text-[14px] font-medium flex items-center gap-[8px] hover:bg-[#d85e01] transition-colors">
+              <svg className="w-[14px] h-[14px]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              Download All Zip
+            </button>
+          </>
+        )}
+        {pathname === "/distributions" && (
+          <>
+            <button className="bg-white border border-[#E5E7EB] text-[#1F2937] px-[16px] py-[8px] rounded-[6px] text-[14px] font-medium flex items-center gap-[8px] hover:bg-slate-50 transition-colors">
+              <svg className="w-[14px] h-[14px]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              Statement
+            </button>
+            <button className="bg-white border border-[#E5E7EB] text-[#1F2937] px-[16px] py-[8px] rounded-[6px] text-[14px] font-medium flex items-center gap-[8px] hover:bg-slate-50 transition-colors">
+              <svg className="w-[14px] h-[14px]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              Export CSV
+            </button>
+          </>
         )}
         {pathname === "/properties" && (
           <button 
@@ -121,12 +158,18 @@ export default function PrimePropHeader() {
             </svg>
           </button>
         )}
-        <button className="bg-[#EB6601] text-white px-[16px] py-[8px] rounded-[6px] text-[14px] font-medium flex items-center gap-[8px] hover:bg-[#d85e01] transition-colors">
-          <svg className="w-[14px] h-[14px]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-          </svg>
-          Refresh
-        </button>
+        {pathname !== "/documents" && (
+          <button className="bg-[#EB6601] text-white px-[16px] py-[8px] rounded-[6px] text-[14px] font-medium flex items-center gap-[8px] hover:bg-[#d85e01] transition-colors">
+            <svg className="w-[14px] h-[14px]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              {pathname === "/settings" ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              )}
+            </svg>
+            {pathname === "/settings" ? "Download Summary" : "Refresh"}
+          </button>
+        )}
       </div>
     </section>
   );

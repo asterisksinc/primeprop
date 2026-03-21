@@ -20,9 +20,9 @@ export default function PropertiesPage() {
       {/* Header Banner */}
       
 
-      <div className="flex gap-6 mt-6 relative">
+      <div className={`flex gap-6 mt-6 relative transition-all ${showPropertyFilter ? 'pr-[30vw]' : ''}`}>
         {/* Left Map Area */}
-        <div className="basis-1/2 relative bg-slate-100 rounded-xl overflow-hidden h-[710px] shadow-sm border border-slate-200">
+        <div className="flex-1 relative bg-slate-100 rounded-xl overflow-hidden h-[710px] shadow-sm border border-slate-200">
           <PropertiesMap />
           
           <div className="absolute inset-x-0 inset-y-0 pointer-events-none"> 
@@ -49,7 +49,7 @@ export default function PropertiesPage() {
         </div>
 
         {/* Right Properties List */}
-        <div className="basis-1/2 bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col gap-4">
+        <div className="flex-1 bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col gap-4">
           <div className="flex items-center justify-between">
             <h3 className="font-semibold text-slate-800 m-0">100 Properties</h3>
             <div className="flex items-center gap-2">
@@ -118,10 +118,9 @@ export default function PropertiesPage() {
           </div>
         </div>
 
-        {/* Filter Modal Overlay */}
+        {/* Filter Modal - Right Sidebar */}
         {showPropertyFilter && (
-          <div className="fixed right-0 top-0 w-full h-screen z-50 flex items-start justify-end pt-[120px] pr-[24px] pointer-events-none">
-            <div className="w-[450px] bg-white rounded-2xl shadow-xl border border-slate-200 flex flex-col max-h-[800px] overflow-hidden pointer-events-auto">
+          <div className="fixed right-0 top-0 h-screen w-[30vw] bg-white shadow-lg border-l border-slate-200 z-50 flex flex-col overflow-hidden pointer-events-auto">
             <div className="flex items-center justify-between p-6 border-b border-slate-100">
               <h3 className="font-bold text-lg text-slate-800 m-0">Filter</h3>
               <button onClick={() => setShowPropertyFilter(false)} className="text-slate-400 hover:text-slate-600 transition-colors">
@@ -129,7 +128,7 @@ export default function PropertiesPage() {
               </button>
             </div>
             
-            <div className="p-6 overflow-y-auto flex flex-col gap-8">
+            <div className="flex-1 p-6 overflow-y-auto flex flex-col gap-8">
               {/* Investment Range */}
               <div className="flex flex-col gap-4">
                 <h4 className="font-medium text-sm text-slate-700 m-0">Investment Range</h4>
@@ -231,7 +230,7 @@ export default function PropertiesPage() {
               </div>
             </div>
 
-            <div className="p-6 border-t border-slate-100 flex items-center justify-between bg-white mt-auto">
+            <div className="p-6 border-t border-slate-100 flex items-center justify-between bg-white">
                 <button 
                   onClick={() => setShowPropertyFilter(false)}
                   className="px-6 py-2.5 border border-slate-200 text-slate-700 font-medium rounded-lg hover:bg-slate-50 transition-colors shadow-sm"
@@ -243,7 +242,6 @@ export default function PropertiesPage() {
                 Apply Filter
               </button>
             </div>
-          </div>
           </div>
         )}
 

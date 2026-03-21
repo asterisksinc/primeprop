@@ -13,8 +13,10 @@ export default function MainLayout({
     <html lang="en">
       <body className="bg-[#F8FAFC]" >
         <PrimePropNavbar />
-        <PrimePropHeader />
-        {children}
+        <FilterProvider>
+          <PrimePropHeader />
+          {children}
+        </FilterProvider>
       </body>
     </html>
   );
