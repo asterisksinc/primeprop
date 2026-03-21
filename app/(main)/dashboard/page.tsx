@@ -109,7 +109,7 @@ export default function HomePage() {
                       <polyline
                         points="20,130 100,120 180,100 260,80 340,60 420,40 500,20"
                         fill="none"
-                        stroke="#138a82"
+                        stroke="#EB6601"
                         strokeWidth="3"
                       />
 
@@ -128,7 +128,7 @@ export default function HomePage() {
                           cy={y}
                           r="5"
                           fill="#fff"
-                          stroke="#138a82"
+                          stroke="#EB6601"
                           strokeWidth="3"
                         />
                       ))}
@@ -243,12 +243,12 @@ export default function HomePage() {
           </div>
         </section>
       </div>
-      <div style={{ display: 'flex', marginTop: '14px', gap: '14px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '3.8fr 1.3fr', gap: '12px', marginTop: '12px' }}>
         <div className="flex-col">
           <div className="ppd-row-two">
             <div className="ppd-card ppd-mini-card">
               <div className="ppd-chart-title">Yield Trend (6M)</div>
-              <div className="ppd-orange-bars">
+              <div className="ppd-yield-trend-bars">
                 {yieldBars.map((h, i) => (
                   <span key={i} style={{ height: `${h + 8}px` }} />
                 ))}
@@ -309,7 +309,7 @@ export default function HomePage() {
               </div>
             </div>
           </div></div>
-        <div className="flex-col" style={{ maxWidth: '461px' }}>
+        <div className="flex-col">
           <div className="ppd-card ppd-activity-card ">
             <div className="ppd-chart-title">Recent Activity</div>
 
@@ -329,7 +329,7 @@ export default function HomePage() {
           </div>
           <div className="ppd-opportunity-box" style={{ marginTop: '14px' }}>
             <div className="ppd-opportunity-top">
-              <div className="ppd-activity-icon ppd-activity-orange">↗</div>
+              <div className="ppd-activity-icon ppd-activity-blue">📈</div>
               <div>
                 <div className="ppd-opportunity-title">Investment Opportunity</div>
                 <div className="ppd-opportunity-desc">

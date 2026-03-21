@@ -1,5 +1,8 @@
+'use client';
+
 import PrimePropNavbar from "../components/PrimePropNavbar";
 import PrimePropHeader from "../components/PrimePropHeader";
+import { FilterProvider } from "../context/FilterContext";
 
 export default function MainLayout({
   children,
@@ -9,9 +12,11 @@ export default function MainLayout({
   return (
     <html lang="en">
       <body>
-        <PrimePropNavbar />
-        <PrimePropHeader />
-        {children}
+        <FilterProvider>
+          <PrimePropNavbar />
+          <PrimePropHeader />
+          {children}
+        </FilterProvider>
       </body>
     </html>
   );

@@ -151,7 +151,7 @@ body {
     border-top: none;
     border-radius: 16px;
     padding: 24px 30px;
-    overflow: hidden;
+    overflow: visible;
     box-shadow: 0px 4px 9px 0px #00000005;
 
     box-shadow: 0px 17px 17px 0px #00000005;
@@ -258,14 +258,14 @@ body {
 }
 
 .ppd-filter-btn {
-    border: 1px solid #0F766E;
-    background: #f8fbfb;
-    color: #0F766E;
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    color: #374151;
 }
 
 .ppd-refresh-btn {
     border: none;
-    background: #0F766E;
+    background: #EB6601;
     color: #ffffff;
     display: flex;
     align-items: center;
@@ -329,8 +329,12 @@ body {
     font-size: 24px;
     line-height: 120%;
     letter-spacing: 0%;
-    color: #0f7f79;
+    color: #EB6601;
     margin-bottom: 8px;
+}
+
+.ppd-big-number-small {
+    color: #1F2937;
 }
 
 
@@ -458,7 +462,7 @@ body {
 .ppd-funding-stick {
     height: 16px;
     border-radius: 1px;
-    background: #11837d;
+    background: #EB6601;
 }
 
 .ppd-mini-row-bottom {
@@ -513,7 +517,7 @@ body {
     min-height: 106px;
 }
 
-.ppd-orange-bars {
+.ppd-yield-trend-bars {
     display: flex;
     align-items: end;
     gap: 7px;
@@ -521,10 +525,10 @@ body {
     margin: 8px 0 10px;
 }
 
-.ppd-orange-bars span {
+.ppd-yield-trend-bars span {
     width: 6px;
     border-radius: 10px;
-    background: #ff660d;
+    background: #277079;
 }
 
 .ppd-green-metric {
@@ -557,7 +561,7 @@ body {
 }
 
 .ppd-download-link {
-    color: #0f7f79;
+    color: #EB6601;
     font-size: 12px;
     font-weight: 600;
     margin-top: 22px;
@@ -606,7 +610,7 @@ body {
 
 .ppd-map-stat strong {
     font-size: 16px;
-    color: #0f7f79;
+    color: #1F2937;
     font-weight: 500;
 }
 
@@ -687,9 +691,9 @@ body {
 }
 
 .ppd-quarter-btn {
-    border: 1px solid #11837d;
-    background: #f8fbfb;
-    color: #0f7f79;
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    color: #374151;
 }
 
 .ppd-performance-labels,
@@ -724,7 +728,7 @@ body {
 }
 
 .ppd-performance-bar-orange {
-    background: #f8a50d;
+    background: #EB6601;
 }
 
 .ppd-performance-values {
@@ -754,7 +758,7 @@ body {
 }
 
 .ppd-dot-orange {
-    background: #f8a50d;
+    background: #EB6601;
 }
 
 .ppd-upi-badge {
@@ -772,7 +776,7 @@ body {
 
 .ppd-date-title {
     margin-top: 8px;
-    color: #0f7f79;
+    color: #EB6601;
     font-weight: 600;
     font-style: Semi Bold;
     font-size: 24px;
@@ -866,7 +870,12 @@ body {
 
 .ppd-activity-orange {
     background: #fff2df;
-    color: #f2a10a;
+    color: #EB6601;
+}
+
+.ppd-activity-blue {
+    background: #e9f0f1;
+    color: #277079;
 }
 
 .ppd-activity-gray {
@@ -918,7 +927,7 @@ body {
 }
 
 .ppd-opportunity-desc span {
-    color: #f39d08;
+    color: #1F2937;
     font-weight: 700;
 }
 
@@ -927,7 +936,7 @@ body {
     height: 34px;
     border: none;
     border-radius: 8px;
-    background: #f8a50d;
+    background: #277079;
     color: white;
     font-size: 14px;
     font-weight: 600;

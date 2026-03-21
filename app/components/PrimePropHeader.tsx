@@ -7,6 +7,7 @@ import "../primeprop-dashboard.css";
 import "../prime-support-section.css";
 import "../prime-raise-issue-flow.css";
 import { ArrowBigLeft, ArrowLeft } from "lucide-react";
+import { usePropertyFilter } from "../context/FilterContext";
 const routeMap: any = {
   "/": "Dashboard Overview",
   "/properties": "Properties",
@@ -17,8 +18,7 @@ const routeMap: any = {
 };
 
 export default function PrimePropHeader() {
- 
- 
+  const { setShowPropertyFilter } = usePropertyFilter();
   const formatSlugToTitle = (slug: string) => {
     if (!slug) return "";
     return slug
@@ -106,11 +106,22 @@ export default function PrimePropHeader() {
         />
       </div>
 
-      <div className="absolute right-[24px] bottom-[24px] flex gap-[12px]">
+      <div className="absolute right-[24px] bottom-[24px] flex gap-[12px] z-50 pointer-events-auto">
         {pathname !== "/properties" && (
           <button className="ppd-filter-btn">All Property</button>
         )}
-        <button className="bg-[#2C7A7B] text-white px-[16px] py-[8px] rounded-[6px] text-[14px] font-medium flex items-center gap-[8px] hover:bg-[#236363] transition-colors">
+        {pathname === "/properties" && (
+          <button 
+            className="w-[34px] h-[34px] bg-white border border-[#E5E7EB] rounded-[6px] flex items-center justify-center cursor-pointer shadow-sm hover:bg-slate-50 transition-colors relative z-50"
+            onClick={() => setShowPropertyFilter(true)}
+            type="button"
+          >
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.75 3.5H12.25M4.08333 7H9.91667M5.83333 10.5H8.16667" stroke="#374151" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+        )}
+        <button className="bg-[#EB6601] text-white px-[16px] py-[8px] rounded-[6px] text-[14px] font-medium flex items-center gap-[8px] hover:bg-[#d85e01] transition-colors">
           <svg className="w-[14px] h-[14px]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
