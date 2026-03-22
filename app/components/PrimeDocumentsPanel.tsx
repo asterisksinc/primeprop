@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { FileText, FileCheck, Award, CircleDollarSign, BarChart3, CalendarDays } from "lucide-react";
 
 type PrimeDocItem = {
   id: number;
@@ -490,7 +491,21 @@ export default function PrimeDocumentsPanel() {
             <div className="ppdocs-sidebar-title">Document Categories</div>
 
             <div className="ppdocs-category-list">
-              {allCategories.map((category) => (
+              {allCategories.map((category) => {
+                const getIcon = (cat: string) => {
+                  switch (cat) {
+                    case "All Documents": return <FileText size={14} />;
+                    case "Investment Agreements": return <FileCheck size={14} />;
+                    case "Share Certificates": return <Award size={14} />;
+                    case "Distribution Receipts": return <CircleDollarSign size={14} />;
+                    case "Tax Documents": return <BarChart3 size={14} />;
+                    case "Compliance Reports": return <FileText size={14} />;
+                    case "Statements": return <CalendarDays size={14} />;
+                    default: return <FileText size={14} />;
+                  }
+                };
+
+                return (
                 <button
                   key={category}
                   className={`ppdocs-category-item ${
@@ -499,14 +514,14 @@ export default function PrimeDocumentsPanel() {
                   onClick={() => setSelectedCategory(category)}
                 >
                   <span className="ppdocs-category-left">
-                    <span className="ppdocs-category-icon">▣</span>
+                    <span className="ppdocs-category-icon">{getIcon(category)}</span>
                     <span>{category}</span>
                   </span>
                   <span className="ppdocs-category-count">
                     {categoryCounts[category]}
                   </span>
                 </button>
-              ))}
+              )})}
             </div>
           </div>
 
@@ -593,96 +608,93 @@ export default function PrimeDocumentsPanel() {
         </aside>
 
         <div className="ppdocs-content">
-          <div className="ppdocs-table-toolbar">
-            <div className="ppdocs-searchbox">
-              <span className="ppdocs-search-icon"><img src="/search1.svg" alt="" /></span>
-              <input
-                type="text"
-                placeholder="Search by payout ID, property, quarter"
-                value={searchText}
-                onChange={(e) => setSearchText(e.target.value)}
-                className="ppdocs-search-input"
-              />
+          <div className="ppdocs-content-inner">
+            <div className="ppdocs-table-toolbar">
+              <div className="ppdocs-searchbox">
+                <span className="ppdocs-search-icon"><img src="/search1.svg" alt="" /></span>
+                <input
+                  type="text"
+                  placeholder="Search by payout ID, property, quarter"
+                  value={searchText}
+                  onChange={(e) => setSearchText(e.target.value)}
+                  className="ppdocs-search-input"
+                />
+              </div>
+
+              <div className="ppdocs-toolbar-right">
+                <select
+                  className="ppdocs-sort-select"
+                  value={sortOption}
+                  onChange={(e) => setSortOption(e.target.value)}
+                >
+                  <option>Newest First</option>
+                  <option>Oldest First</option>
+                  <option>Name A-Z</option>
+                  <option>Name Z-A</option>
+                </select>
+
+                <button className="ppdocs-view-btn">☰</button>
+                <button className="ppdocs-view-btn">▦</button>
+              </div>
             </div>
 
-            <div className="ppdocs-toolbar-right">
-              <select
-                className="ppdocs-sort-select"
-                value={sortOption}
-                onChange={(e) => setSortOption(e.target.value)}
-              >
-                <option>Newest First</option>
-                <option>Oldest First</option>
-                <option>Name A-Z</option>
-                <option>Name Z-A</option>
-              </select>
-
-              <button className="ppdocs-view-btn">☰</button>
-              <button className="ppdocs-view-btn">▦</button>
-            </div>
-          </div>
-
-          <div className="ppdocs-table-wrap">
-            <table className="ppdocs-table">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>Document Name</th>
-                  <th>Category</th>
-                  <th>Property</th>
-                  <th>File Type</th>
-                  <th>Generated Date</th>
-                  <th>Status</th>
-                  <th>Size</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
+            <div className="ppdocs-content-grid">
+              <div className="ppdocs-doc-list-wrap">
                 {filteredDocuments.length > 0 ? (
                   filteredDocuments.map((item) => (
-                    <tr key={item.id}>
-                      <td>
-                        <input type="checkbox" />
-                      </td>
-                      <td className="ppdocs-cell-name">{item.name}</td>
-                      <td>{item.category}</td>
-                      <td>{item.property}</td>
-                      <td>
-                        <span className="ppdocs-filetype-pill">{item.fileType}</span>
-                      </td>
-                      <td>{item.generatedDate}</td>
-                      <td>
-                        <span
-                          className={`ppdocs-status-pill ${
-                            item.status === "Signed"
-                              ? "ppdocs-status-signed"
-                              : item.status === "Pending Signature"
-                              ? "ppdocs-status-pending"
-                              : item.status === "Generated"
-                              ? "ppdocs-status-generated"
-                              : item.status === "Available"
-                              ? "ppdocs-status-available"
-                              : "ppdocs-status-archived"
-                          }`}
-                        >
-                          {item.status}
-                        </span>
-                      </td>
-                      <td>{item.size}</td>
-                      <td>
-                        <button className="ppdocs-download-btn"><img src="/od.svg" alt="" /></button>
-                      </td>
-                    </tr>
+                    <div key={item.id} className="ppdocs-doc-card">
+                      <div className="ppdocs-doc-left">
+                        <div className="ppdocs-doc-icon">
+                          <img src="/fil.svg" alt="doc" />
+                        </div>
+                        <div className="ppdocs-doc-meta">
+                          <div className="ppdocs-doc-title">{item.name}</div>
+                          <div className="ppdocs-doc-sub">{item.size} • Generated {item.generatedDate}</div>
+                        </div>
+                      </div>
+
+                      <div className="ppdocs-doc-actions">
+                        <button className="ppdocs-doc-download" aria-label={`Download ${item.name}`}>
+                          <img src="/od.svg" alt="download" />
+                        </button>
+                      </div>
+                    </div>
                   ))
                 ) : (
-                  <tr>
-                    <td colSpan={9} className="ppdocs-empty-state">
-                      No documents found for the selected filters.
-                    </td>
-                  </tr>
+                  <div className="ppdocs-empty-state">No documents found for the selected filters.</div>
                 )}
-              </tbody>
-            </table>
+
+                <div className="ppdocs-doc-footer">
+                  <div className="ppdocs-tax-ready-box">
+                    <div className="ppdocs-tax-ready-icon"><img src="/doc.svg" alt="" /></div>
+                    <div>
+                      <strong>Tax Season Ready</strong>
+                      <p>All documents are tax-ready and include necessary details for filing returns.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <aside className="ppdocs-exports-panel">
+                <div className="ppdocs-exports-head">
+                  <div className="ppdocs-chart-title">Statements &amp; Exports</div>
+                  <button className="ppdocs-linkish">View All Activity</button>
+                </div>
+
+                <div className="ppdocs-exports-list">
+                  <button className="ppdocs-export-btn"><img src="/dl.svg" alt="" /> Download Annual Statement</button>
+                  <button className="ppdocs-export-btn"><img src="/csv.svg" alt="" /> Download Custom CSV</button>
+                  <button className="ppdocs-export-btn"><img src="/zip.svg" alt="" /> Download All Receipts (ZIP)</button>
+                </div>
+
+                <div className="ppdocs-exports-options">
+                  <div className="ppdocs-exports-subtitle">Export Options</div>
+                  <label className="ppdocs-export-option"><input type="checkbox" /> <span>Include fees breakdown</span></label>
+                  <label className="ppdocs-export-option"><input type="checkbox" /> <span>Include property split</span></label>
+                  <label className="ppdocs-export-option"><input type="checkbox" /> <span>Include tax classification</span></label>
+                </div>
+              </aside>
+            </div>
           </div>
         </div>
       </div>

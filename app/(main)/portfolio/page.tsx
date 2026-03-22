@@ -262,10 +262,11 @@ export default function DashboardComponent() {
               UPI Verified
             </span>
           </div>
-          <div className="text-[26px] leading-[1.2] tracking-[0] font-bold text-[#277079] mb-1">
+          <div className="text-[26px] leading-[1.2] tracking-[0]  font-bold text-[#277079] mb-1">
             Apr 15, 2024
           </div>
-          <div className="text-[12px] leading-[1.2] tracking-[0] text-gray-400">
+           
+          <div className="text-[12px] leading-[1.2] pt-4 tracking-[0] text-gray-400">
             39.2K AED Expected Payout
           </div>
         </div>
