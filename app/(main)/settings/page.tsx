@@ -52,13 +52,15 @@ export default function PrimeSettingsPage() {
   }, []);
 
   return (
-    <div className="pps-page-container">
-      <PrimeSettingsSidebar
-        activeSection={activeSection}
-        setActiveSection={setActiveSection}
-        sectionRefs={sectionRefs}
-      />
-      <PrimeSettingsContent sectionRefs={sectionRefs} />
+    <div className="pp-page-stack">
+      <div className="pps-page-container">
+        <PrimeSettingsSidebar
+          activeSection={activeSection}
+          setActiveSection={setActiveSection}
+          sectionRefs={sectionRefs}
+        />
+        <PrimeSettingsContent sectionRefs={sectionRefs} />
+      </div>
     </div>
   );
 }

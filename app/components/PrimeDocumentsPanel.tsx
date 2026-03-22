@@ -708,6 +708,35 @@ export default function PrimeDocumentsPanel() {
             </div>
           </div>
 
+          <div className="ppdocs-insight-metrics">
+            <div className="ppdocs-insight-metric-card">
+              <span>Fresh Uploads</span>
+              <strong>07</strong>
+              <p>Last 14 days</p>
+            </div>
+            <div className="ppdocs-insight-metric-card">
+              <span>Avg Review Time</span>
+              <strong>1.8d</strong>
+              <p>Across pending files</p>
+            </div>
+            <div className="ppdocs-insight-metric-card">
+              <span>Category Health</span>
+              <strong>92%</strong>
+              <p>Tax + Statements complete</p>
+            </div>
+          </div>
+
+          <div className="ppdocs-insight-checklist">
+            <div className="ppdocs-insight-check-row">
+              <span className="ppdocs-insight-dot" />
+              <p>Q2 Compliance Report draft uploaded and ready for legal review.</p>
+            </div>
+            <div className="ppdocs-insight-check-row">
+              <span className="ppdocs-insight-dot" />
+              <p>One statement needs signer confirmation before quarter close.</p>
+            </div>
+          </div>
+
           <div className="ppdocs-insight-actions">
             <button className="ppdocs-btn ppdocs-btn-lighto">Review Pending Files</button>
             <button className="ppdocs-btn ppdocs-btn-primaryo">Download Tax Pack</button>

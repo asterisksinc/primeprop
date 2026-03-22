@@ -1,6 +1,6 @@
 .prime-db-v1-shell {
   width: 100%;
-  padding: 8px;
+  padding: 16px 0;
   background: #f6f7f8;
   font-family: Arial, Helvetica, sans-serif;
   color: #29353f;
@@ -10,8 +10,8 @@
 .prime-db-v1-top-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 8px;
-  margin-bottom: 8px;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
 .prime-db-v1-stat-card,
@@ -28,7 +28,7 @@
   box-shadow: 0 1px 0 rgba(12, 24, 36, 0.03);
 }
 .prime-db-v1-stat-card {
-  padding: 10px 11px;
+  padding: 16px 20px;
   min-height: 72px;
 }
 
@@ -97,8 +97,8 @@ letter-spacing: 0%;
 .prime-db-v1-middle-grid {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
-  gap: 8px;
-  margin-bottom: 8px;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
 .prime-db-v1-next-card,
@@ -566,7 +566,7 @@ letter-spacing: 0%;
 }
 
 .prime-db-v1-table-card {
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .prime-db-v1-search-wrap {
@@ -658,8 +658,8 @@ letter-spacing: 0%;
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   align-items: stretch;
-  gap: 8px;
-  margin-bottom: 8px;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
 .prime-db-v1-paired-card {

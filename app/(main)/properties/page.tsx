@@ -16,16 +16,17 @@ export default function PropertiesPage() {
   const [showLocationSelect, setShowLocationSelect] = useState(false);
 
   return (
-    <div className="flex flex-col gap-6 w-full font-sans">
+    <div className="flex flex-col gap-4 w-full font-sans py-4">
       {/* Header Banner */}
       
 
-      <div className={`flex gap-6 mt-6 relative transition-all ${showPropertyFilter ? 'pr-[30vw]' : ''}`}>
+      <div className={`flex gap-6 mt-2 relative transition-all ${showPropertyFilter ? 'pr-[30vw]' : ''}`}>
         {/* Left Map Area */}
-        <div className="flex-1 relative bg-slate-100 rounded-xl overflow-hidden h-[710px] shadow-sm border border-slate-200">
-          <PropertiesMap />
+        <div className="flex-1 relative bg-white rounded-xl overflow-hidden h-[710px] shadow-sm border border-slate-200 p-3">
+          <div className="relative w-full h-full rounded-lg overflow-hidden bg-slate-100">
+            <PropertiesMap />
           
-          <div className="absolute inset-x-0 inset-y-0 pointer-events-none"> 
+            <div className="absolute inset-x-0 inset-y-0 pointer-events-none"> 
              {/* Map Expand Button */}
              <div className="absolute top-4 right-4 p-2 bg-white rounded-lg shadow-sm z-10 pointer-events-auto cursor-pointer hover:bg-slate-50 transition-colors">
                <svg className="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" /></svg>
@@ -45,6 +46,7 @@ export default function PropertiesPage() {
                  </div>
                </div>
              </div>
+            </div>
           </div>
         </div>
 
@@ -64,51 +66,61 @@ export default function PropertiesPage() {
 
           <div className="grid grid-cols-2 gap-3">
             {[1, 2, 3, 4].map((i) => (
-              <Link href={`/properties/${i}`} key={i} className="border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all h-[300px] flex flex-col block cursor-pointer group">
-                <div className="relative h-32 bg-blue-100 overflow-hidden">
+              <Link href={`/properties/${i}`} key={i} className="border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all h-[300px] flex flex-col block cursor-pointer group bg-white p-3">
+                <div className="relative h-[122px] bg-blue-100 overflow-hidden shrink-0 rounded-xl">
+                  <img src="/bul1.png" alt="Property image" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   {/* Base overlay for subtle hover effect on image */}
                   <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/5 transition-colors z-10"></div>
-                  <div className="absolute top-3 left-3 bg-[#EB6601] text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm z-20">
+                  <div className="absolute top-2.5 left-2.5 bg-[#EB6601] text-white text-[13px] font-semibold px-2.5 py-0.5 rounded-full shadow-sm z-20">
                     9.1% Yield
                   </div>
-                  <div className="absolute top-3 right-3 bg-white/90 text-[#EB6601] text-xs font-bold px-3 py-1 rounded-full shadow-sm z-20">
+                  <div className="absolute top-2.5 right-2.5 bg-white text-[#277079] text-[13px] font-bold px-3 py-0.5 rounded-full shadow-sm z-20">
                     AAA
                   </div>
-                  <div className="absolute bottom-3 left-3 bg-white/90 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm z-20">
-                    <span className="w-3 h-3 rounded-full border border-current flex items-center justify-center">O</span>
+                  <div className="absolute bottom-2 left-2.5 bg-white/95 text-[#277079] text-[13px] font-medium px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm z-20">
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                     Downtown Dubai
                   </div>
                 </div>
-                <div className="p-3 flex flex-col gap-2 flex-1 overflow-hidden">
-                  <h4 className="font-bold text-slate-800 text-base m-0 truncate">Downtown Office SPV</h4>
+                <div className="pt-3.5 flex flex-col gap-3 flex-1 overflow-hidden">
+                  <h4 className="font-semibold text-[#1f2937] text-[17px] leading-tight m-0 truncate">Downtown Office SPV</h4>
                   
-                  <div className="grid grid-cols-3 gap-1 border-b border-slate-100 pb-2">
-                    <div className="flex flex-col gap-0.5">
-                      <span className="text-[10px] text-slate-500 uppercase">Target Funding</span>
-                      <span className="font-semibold text-slate-800 text-xs">5 CR AED</span>
+                  <div className="grid grid-cols-3 gap-1">
+                    <div className="flex flex-col gap-1">
+                      <span className="text-[13px] text-slate-500 font-medium leading-none">Target Funding</span>
+                      <span className="font-semibold text-[#1f2937] text-[15px] leading-none">5 CR AED</span>
                     </div>
-                    <div className="flex flex-col gap-0.5">
-                      <span className="text-[10px] text-slate-500 uppercase">Gross Yield</span>
-                      <span className="font-semibold text-[#0AA43E] text-xs">9.1%</span>
+                    <div className="flex flex-col gap-1">
+                      <span className="text-[13px] text-slate-500 font-medium leading-none">Gross Yield</span>
+                      <span className="font-bold text-[#16a34a] text-[15px] leading-none">9.1%</span>
                     </div>
-                    <div className="flex flex-col gap-0.5">
-                      <span className="text-[10px] text-slate-500 uppercase">Investors</span>
-                      <span className="font-semibold text-slate-800 text-xs">12/25</span>
+                    <div className="flex flex-col gap-1">
+                      <span className="text-[13px] text-slate-500 font-medium leading-none">Investors</span>
+                      <span className="font-semibold text-[#1f2937] text-[15px] leading-none">12/25</span>
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap items-center gap-2 text-[10px] text-slate-500">
-                    <span className="flex items-center gap-1"><span className="opacity-50">🏢</span> Commercial</span>
-                    <span className="flex items-center gap-1"><span className="opacity-50">💰</span> 30L AED</span>
-                    <span className="flex items-center gap-1"><span className="opacity-50">⏱</span> 21 Days</span>
+                  <div className="flex items-center gap-4 text-[13px] font-medium text-[#1f2937] bg-[#f8fafc] px-3 py-2 rounded-lg -mx-0.5">
+                    <span className="flex items-center gap-1.5">
+                      <svg className="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                      Commercial
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <svg className="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                      30L AED
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <svg className="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                      21 Days
+                    </span>
                   </div>
 
-                  <div className="flex flex-col gap-1 mt-auto">
-                    <div className="flex items-center justify-between text-[10px] text-slate-500">
+                  <div className="flex flex-col gap-2 mt-auto">
+                    <div className="flex items-center justify-between text-[14px] font-medium text-slate-500">
                       <span>65% Funded</span>
                       <span>12 of 25 Investors</span>
                     </div>
-                    <div className="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
+                    <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
                       <div className="h-full bg-[#277079] w-[65%] rounded-full"></div>
                     </div>
                   </div>
@@ -116,6 +128,8 @@ export default function PropertiesPage() {
               </Link>
             ))}
           </div>
+
+         
         </div>
 
         {/* Filter Modal - Right Sidebar */}

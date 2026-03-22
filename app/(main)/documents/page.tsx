@@ -5,5 +5,9 @@ import "../../settings-dashboard.css";
 import "../../prime-support-section.css";
 import "../../prime-raise-issue-flow.css";
 export default function DocumentsPage() {
-  return <PrimeDocumentsPanel />;
+  return (
+    <div className="pp-page-stack">
+      <PrimeDocumentsPanel />
+    </div>
+  );
 }

@@ -1,7 +1,7 @@
 .ppdocs-shell {
   width: 100%;
   background: #f5f7f8;
-  padding: 6px;
+  padding: 16px 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   color: #283640;
@@ -10,8 +10,8 @@
 .ppdocs-topstats {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
-  margin-bottom: 12px;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
 .ppdocs-topstat-card,
@@ -165,8 +165,8 @@ letter-spacing: 0%;
 .ppdocs-main-grid {
   display: grid;
   grid-template-columns: 230px 1fr;
-  gap: 12px;
-  margin-bottom: 12px;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
 .ppdocs-sidebar {
@@ -516,7 +516,7 @@ letter-spacing: 0%;
 .ppdocs-bottom-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 16px;
 }
 
 .ppdocs-insight-card,
@@ -595,6 +595,77 @@ letter-spacing: 0%;
   margin: 0;
   font-size: 8px;
   color: #87949d;
+}
+
+.ppdocs-insight-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.ppdocs-insight-metric-card {
+  border: 1px solid #dfe8ea;
+  border-radius: 8px;
+  padding: 10px;
+  background: #ffffff;
+}
+
+.ppdocs-insight-metric-card span {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.ppdocs-insight-metric-card strong {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: #277079;
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+
+.ppdocs-insight-metric-card p {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.ppdocs-insight-checklist {
+  border: 1px dashed #cfd8dc;
+  border-radius: 8px;
+  padding: 10px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.ppdocs-insight-check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.ppdocs-insight-dot {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  border-radius: 50%;
+  background: #277079;
+  margin-top: 5px;
+}
+
+.ppdocs-insight-check-row p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.35;
+  color: #1f2937;
 }
 
 .ppdocs-insight-actions {
@@ -786,6 +857,10 @@ letter-spacing: 0%;
 @media (max-width: 768px) {
   .ppdocs-topstats,
   .ppdocs-insight-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .ppdocs-insight-metrics {
     grid-template-columns: 1fr;
   }
 
