@@ -96,7 +96,7 @@ export default function PrimePropHeader() {
         )}
       </div>
 
-      <div className="absolute right-[660px] bottom-0 h-full flex items-end">
+      <div className="absolute right-[45%] bottom-0 h-full flex items-end">
         <Image
           src="/bul1.png"
           alt="Building"

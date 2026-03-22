@@ -21,14 +21,14 @@ body {
 .pps-page-shell {
   width: 100%;
   background: #F3F5F7;
-  padding: 8px;
+  padding: 16px;
 }
 
 .pps-page-container {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  margin-top: 10px;
+  gap: 16px;
+  margin-top: 16px;
 }
 
 .pps-sidebar-shell {
@@ -79,7 +79,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
 }
 
 .pps-section-wrap {

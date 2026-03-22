@@ -86,8 +86,8 @@ export default function HomePage() {
               <div className="ppd-horizontal-divider" />
 
               <div className="ppd-chart-box">
-                <div style={{ background: '#F8FAFC' }}>
-                  <div className="ppd-chart-title" style={{ marginLeft: '10px' }}>
+                <div>
+                  <div className="ppd-chart-title">
                     Funding Progress
                   </div>
 
@@ -243,7 +243,7 @@ export default function HomePage() {
           </div>
         </section>
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: '3.8fr 1.3fr', gap: '12px', marginTop: '12px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '3.8fr 1.3fr', gap: '16px', marginTop: '16px' }}>
         <div className="flex-col">
           <div className="ppd-row-two">
             <div className="ppd-card ppd-mini-card">
@@ -277,7 +277,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="ppd-card ppd-map-card" style={{ marginTop: '14px' }}>
+          <div className="ppd-card ppd-map-card" style={{ marginTop: '16px' }}>
             <div className="ppd-chart-title">SPV Portfolio Overview</div>
 
           <div className="ppd-map-image-wrap">
@@ -327,7 +327,7 @@ export default function HomePage() {
             </div>
 
           </div>
-          <div className="ppd-opportunity-box" style={{ marginTop: '14px' }}>
+          <div className="ppd-opportunity-box" style={{ marginTop: '16px' }}>
             <div className="ppd-opportunity-top">
               <div className="ppd-activity-icon ppd-activity-blue">📈</div>
               <div>

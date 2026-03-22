@@ -11,9 +11,8 @@ body {
 
 .ppd-page-shell {
     width: 100%;
-    /* min-height: 100vh; */
     background: #f3f5f7;
-    padding: 10px 12px 14px;
+    padding: 16px;
 }
 
 .ppd-page-wrap {
@@ -181,7 +180,7 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 56px;
+    margin-bottom: 24px;
 }
 
 .ppd-logo-mark {
@@ -275,8 +274,8 @@ body {
 .ppd-dashboard-grid {
     display: grid;
     grid-template-columns: 2.25fr 1.55fr 1.3fr;
-    gap: 12px;
-    margin-top: 12px;
+    gap: 16px;
+    align-items: stretch;
 }
 
 .ppd-left-column,
@@ -285,24 +284,27 @@ body {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    min-height: 100%;
+}
+
+.ppd-left-column .ppd-investment-card,
+.ppd-right-column .ppd-distribution-card {
+    height: 100%;
+}
+
+.ppd-middle-column .ppd-performance-card {
+    flex: 1;
 }
 
 .ppd-card {
     background: #ffffff;
     border-radius: 16px;
-    box-shadow: 0px 4px 9px 0px #00000005;
-
-    box-shadow: 0px 17px 17px 0px #00000005;
-
-    box-shadow: 0px 38px 23px 0px #00000003;
-
-    box-shadow: 0px 68px 27px 0px #00000000;
-
-    box-shadow: 0px 106px 30px 0px #00000000;
+    border: 1px solid #e6eaed;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
 .ppd-investment-card {
-    padding: 14px 16px 12px;
+    padding: 20px 24px;
 }
 
 .ppd-investment-top {
@@ -335,6 +337,12 @@ body {
 
 .ppd-big-number-small {
     color: #1F2937;
+}
+
+.ppd-mini-card .ppd-big-number-small {
+    font-size: 20px;
+    margin-bottom: 6px;
+    font-weight: 600;
 }
 
 
@@ -389,15 +397,14 @@ body {
 .ppd-funding-bars {
     display: grid;
     grid-template-columns: repeat(24, 1fr);
-    gap: 2px;
-    margin: 6px 0;
+    gap: 1px;
+    margin: 8px 0;
 }
 
 .ppd-chart-box {
     background: #F8FAFC;
     border-radius: 14px;
-    padding: 18px;
-    /* border:1px solid #e6e8eb; */
+    padding: 20px 24px;
 }
 
 .ppd-chart-title {
@@ -509,20 +516,24 @@ body {
 .ppd-row-two {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 8px;
+    gap: 16px;
+    margin-bottom: 0;
 }
 
 .ppd-mini-card {
-    padding: 14px 14px 12px;
+    padding: 20px;
     min-height: 106px;
+    display: flex;
+    flex-direction: column;
 }
 
 .ppd-yield-trend-bars {
     display: flex;
     align-items: end;
-    gap: 7px;
+    justify-content: space-between; /* Add this to distribute evenly */
+    gap: 4px; /* Reduced from 7px */
     height: 54px;
-    margin: 8px 0 10px;
+    margin: 12px 0; /* Corrected spacing */
 }
 
 .ppd-yield-trend-bars span {
@@ -564,11 +575,11 @@ body {
     color: #EB6601;
     font-size: 12px;
     font-weight: 600;
-    margin-top: 22px;
+    margin-top: auto;
 }
 
 .ppd-map-card {
-    padding: 14px 14px 0;
+    padding: 20px 24px 0;
 }
 
 .ppd-map-image-wrap {
@@ -590,15 +601,22 @@ body {
     grid-template-columns: repeat(4, 1fr);
     margin-top: 10px;
     border-top: 1px solid #e4e7eb;
+    position: relative;
 }
 
 .ppd-map-stat {
-    padding: 14px 0 18px;
-    border-right: 1px solid #e4e7eb;
+    padding: 14px 12px 18px;
+    position: relative;
 }
 
-.ppd-map-stat:last-child {
-    border-right: none;
+.ppd-map-stat:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 6px;
+    bottom: 6px;
+    width: 1px;
+    background: #e4e7eb;
 }
 
 .ppd-map-stat span {
@@ -626,7 +644,7 @@ body {
 .ppd-performance-card,
 .ppd-distribution-card,
 .ppd-activity-card {
-    padding: 14px 14px 16px;
+    padding: 20px 24px;
 }
 
 .ppd-earnings-head {
@@ -699,8 +717,9 @@ body {
 .ppd-performance-labels,
 .ppd-performance-values {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    text-align: center;
+    grid-template-columns: 1.1fr 0.7fr;
+    gap: 6px;
+    text-align: left;
 }
 
 .ppd-performance-labels {
@@ -804,6 +823,13 @@ body {
     letter-spacing: 0%;
 }
 
+.ppd-payout-header span:last-child,
+.ppd-payout-row span:last-child,
+.ppd-payout-header div:last-child,
+.ppd-payout-row div:last-child {
+    text-align: right; 
+}
+
 .ppd-payout-header {
     color: #1F2937;
     padding-bottom: 8px;
@@ -850,6 +876,7 @@ body {
 .ppd-activity-item {
     display: flex;
     gap: 12px;
+    align-items: flex-start;
 }
 
 .ppd-activity-icon {
