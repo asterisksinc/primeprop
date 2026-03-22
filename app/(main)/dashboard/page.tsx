@@ -1,12 +1,12 @@
 'use client';
 
+import React, { useState } from 'react';
 import "../../primeprop-dashboard.css";
 import "../../settings-dashboard.css";
 import "../../prime-support-section.css";
 import "../../prime-raise-issue-flow.css";
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
-  BarChart, Bar, Cell
 } from 'recharts';
 
 const payoutRows = [
@@ -14,8 +14,6 @@ const payoutRows = [
   { title: "Q2 2024", status: "Projected", amount: "40,100 AED", paid: false },
   { title: "Q3 2024", status: "Projected", amount: "41,000 AED", paid: false },
   { title: "Q4 2024", status: "Projected", amount: "41,500 AED", paid: false },
-   { title: "Q4 2024", status: "Projected", amount: "41,500 AED", paid: false },
-    { title: "Q4 2024", status: "Projected", amount: "41,500 AED", paid: false },
 ];
 
 const activities = [
@@ -51,6 +49,22 @@ const activities = [
     icon: "📄",
     stage: "Action Needed",
   },
+  {
+    date: "Dec 18 2023",
+    title: "Lease Renewal Confirmed",
+    desc: "Primary tenant renewed for another 24 months",
+    type: "blue",
+    icon: "✓",
+    stage: "Completed",
+  },
+  {
+    date: "Dec 05 2023",
+    title: "Insurance Certificate Updated",
+    desc: "Updated policy file added to your documents",
+    type: "gray",
+    icon: "🛡",
+    stage: "Reviewed",
+  },
 ];
 
 const fundingProgressData = [
@@ -63,23 +77,20 @@ const fundingProgressData = [
   { month: 'Jul', progress: 97 },
 ];
 
-const yieldTrendData = [
-  { name: '1', value: 24 }, { name: '2', value: 41 }, { name: '3', value: 19 },
-  { name: '4', value: 33 }, { name: '5', value: 28 }, { name: '6', value: 42 },
-  { name: '7', value: 53 }, { name: '8', value: 49 }, { name: '9', value: 44 },
-  { name: '10', value: 28 }, { name: '11', value: 18 }, { name: '12', value: 23 },
-  { name: '13', value: 40 }, { name: '14', value: 29 }, { name: '15', value: 17 },
-  { name: '16', value: 25 }, { name: '17', value: 38 }, { name: '18', value: 52 },
-  { name: '19', value: 47 }, { name: '20', value: 42 }, { name: '21', value: 27 },
-  { name: '22', value: 13 },
-];
+const yieldPerformanceMap: Record<string, { gross: number; net: number }> = {
+  Q1: { gross: 8.1, net: 6.2 },
+  Q2: { gross: 8.4, net: 6.5 },
+  Q3: { gross: 8.0, net: 6.1 },
+  Q4: { gross: 8.6, net: 6.7 },
+};
 
-const yieldPerformanceData = [
-  { name: 'Gross', value: 8.1, fill: '#16a43b' },
-  { name: 'Net', value: 6.2, fill: '#EB6601' },
-];
+const totalFundingSticks = 20;
+const activeFundingSticks = 16;
 
 export default function HomePage() {
+  const [selectedQuarter, setSelectedQuarter] = useState<'Q1' | 'Q2' | 'Q3' | 'Q4'>('Q1');
+  const currentPerformance = yieldPerformanceMap[selectedQuarter];
+
   return (
     <main className="ppd-page-shell">
       <div className="ppd-page-wrap">
@@ -104,8 +115,11 @@ export default function HomePage() {
                   </div>
 
                   <div className="ppd-funding-bars">
-                    {Array.from({ length: 24 }).map((_, index) => (
-                      <span key={index} className="ppd-funding-stick" />
+                    {Array.from({ length: totalFundingSticks }).map((_, index) => (
+                      <span
+                        key={index}
+                        className={`ppd-funding-stick ${index < activeFundingSticks ? 'ppd-funding-stick-active' : 'ppd-funding-stick-idle'}`}
+                      />
                     ))}
                   </div>
 
@@ -193,37 +207,49 @@ export default function HomePage() {
             <div className="ppd-card ppd-performance-card">
               <div className="ppd-performance-head">
                 <div className="ppd-chart-title">Yield Performance</div>
-                <button className="ppd-quarter-btn">Q1</button>
+                <select
+                  className="ppd-quarter-select"
+                  value={selectedQuarter}
+                  onChange={(e) => setSelectedQuarter(e.target.value as 'Q1'|'Q2'|'Q3'|'Q4')}
+                >
+                  <option value="Q1">Q1</option>
+                  <option value="Q2">Q2</option>
+                  <option value="Q3">Q3</option>
+                  <option value="Q4">Q4</option>
+                </select>
               </div>
 
-              <div style={{ width: '100%', height: 120, marginTop: 8 }}>
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={yieldPerformanceData} layout="vertical" margin={{ top: 0, right: 10, left: 10, bottom: 0 }}>
-                    <XAxis type="number" domain={[0, 10]} tick={{ fontSize: 11, fill: '#6B7280' }} tickLine={false} axisLine={false} />
-                    <YAxis type="category" dataKey="name" tick={{ fontSize: 12, fill: '#1f2937' }} tickLine={false} axisLine={false} width={50} />
-                    <Tooltip
-                      contentStyle={{
-                        background: '#fff',
-                        border: '1px solid #e5e7eb',
-                        borderRadius: '8px',
-                        boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-                        fontSize: '13px',
-                        padding: '10px 14px',
-                      }}
-                      formatter={(value) => [`${value ?? 0}%`]}
-                    />
-                    <Bar dataKey="value" radius={[0, 4, 4, 0]} animationDuration={1200} animationEasing="ease-out" barSize={22}>
-                      {yieldPerformanceData.map((entry, index) => (
-                        <Cell key={index} fill={entry.fill} />
-                      ))}
-                    </Bar>
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
+              <div className="ppd-performance-graph">
+                <div className="ppd-performance-grid">
+                  <div className="ppd-performance-col">
+                    <div className="ppd-performance-col-label">Gross</div>
+                    <div className="ppd-performance-track">
+                      <div
+                        key={`gross-${selectedQuarter}`}
+                        className="ppd-performance-fill ppd-performance-fill-green"
+                        style={{ width: `${(currentPerformance.gross / 10) * 100}%` }}
+                      />
+                    </div>
+                    <div className="ppd-performance-col-value">{currentPerformance.gross}</div>
+                  </div>
 
-              <div className="ppd-performance-legend">
-                <div><span className="ppd-dot-green" /> Gross</div>
-                <div><span className="ppd-dot-orange" /> Net</div>
+                  <div className="ppd-performance-col">
+                    <div className="ppd-performance-col-label">Net</div>
+                    <div className="ppd-performance-track">
+                      <div
+                        key={`net-${selectedQuarter}`}
+                        className="ppd-performance-fill ppd-performance-fill-orange"
+                        style={{ width: `${(currentPerformance.net / 10) * 100}%` }}
+                      />
+                    </div>
+                    <div className="ppd-performance-col-value">{currentPerformance.net}</div>
+                  </div>
+                </div>
+
+                <div className="ppd-performance-legend">
+                  <div><span className="ppd-dot-green" /> Gross</div>
+                  <div><span className="ppd-dot-orange" /> Net</div>
+                </div>
               </div>
             </div>
           </div>
@@ -235,8 +261,8 @@ export default function HomePage() {
                 <div className="ppd-upi-badge">UPI Verified</div>
               </div>
 
-              <div className="ppd-date-title">Apr 15, 2024</div>
-              <div className="ppd-muted-text">₹39,000 estimated payout</div>
+              <div className="ppd-date-title mt-100">Apr 15, 2024</div>
+              <div className="ppd-muted-text mt-7">₹39,000 estimated payout</div>
               <div className="ppd-horizontal-divider" />
 
               <div className="ppd-payout-box">
@@ -267,26 +293,15 @@ export default function HomePage() {
           <div className="ppd-row-two">
             <div className="ppd-card ppd-mini-card">
               <div className="ppd-chart-title">Yield Trend (6M)</div>
-              <div style={{ width: '100%', height: 60, marginTop: 4 }}>
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={yieldTrendData} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
-                    <Bar dataKey="value" fill="#277079" radius={[10, 10, 0, 0]} animationDuration={1000} animationEasing="ease-out" />
-                    <Tooltip
-                      contentStyle={{
-                        background: '#fff',
-                        border: '1px solid #e5e7eb',
-                        borderRadius: '8px',
-                        boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-                        fontSize: '12px',
-                        padding: '8px 12px',
-                      }}
-                      formatter={(value) => [`${value ?? 0}%`, 'Yield']}
-                      cursor={{ fill: 'rgba(39, 112, 121, 0.08)' }}
-                    />
-                  </BarChart>
-                </ResponsiveContainer>
+              <div className="ppd-yield-trend-bars">
+                {[26, 42, 26, 14, 26, 44, 52, 40, 48, 26, 14, 26, 42, 26, 14, 26, 44, 52, 40, 48, 26, 14].map((height, idx) => (
+                  <span key={idx} style={{ height: `${height}px` }} />
+                ))}
               </div>
-              <div className="ppd-green-metric">+12.4% <span>vs previous period</span></div>
+              <div className="ppd-green-metric">
+                <div>+12.4%</div>
+                <span>vs previous period</span>
+              </div>
             </div>
 
             <div className="ppd-card ppd-mini-card">

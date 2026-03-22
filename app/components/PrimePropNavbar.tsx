@@ -50,26 +50,27 @@ export default function PrimePropNavbar() {
           </div>
         </div>
 
-        <div className="ppd-navbar-right">
-          <button className="ppd-bell-btn">
-            <Image
-              src="/bell.svg"
-              alt="Bell"
-              width={20}
-              height={20}
-              priority
-            />
-          </button>
+       <div className="ppd-navbar-right">
+  <button className="ppd-bell-btn">
+    <Image
+      src="/bell.svg"
+      alt="Bell"
+      width={20}
+      height={20}
+      priority
+    />
+  </button>
 
-          <Image
-            src="/user.svg"
-            alt="User"
-            width={42}
-            height={42}
-            className="ppd-user-avatar"
-            priority
-          />
-        </div>
+  <div className="ppd-user-avatar">
+    <Image
+      src="/user.svg"
+      alt="User"
+      width={42}
+      height={42}
+      priority
+    />
+  </div>
+</div>
       </div>
     </header>
   );

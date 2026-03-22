@@ -85,7 +85,7 @@ export default function PrimePropHeader() {
           ) : (
             <>
               {/* Standard Breadcrumb for Top-Level Pages */}
-              <div className="ppd-breadcrumbs text-sm text-gray-400 mb-2">
+              <div className="ppd-breadcrumbs mt-15 text-sm text-gray-400 mb-2">
                 PrimeProp &nbsp;/&nbsp;
                 <span className="text-[#1F2937]">{title}</span>
               </div>

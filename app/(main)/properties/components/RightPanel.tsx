@@ -21,7 +21,15 @@ export function RightPanel() {
   const [paymentMethod, setPaymentMethod] = useState<"upi" | "bank" | "split">("upi");
 
   const ownership = useMemo(() => ((investmentAmount / 200) * 100).toFixed(2), [investmentAmount]);
-  const annualReturn = useMemo(() => Math.round(investmentAmount * 6.4), [investmentAmount]);
+  
+  // Calculate based on scenario (multiplied directly as per original formula)
+  const scenarioMultipliers = {
+    Bear: 5.4,
+    Base: 6.4,
+    Bull: 8.4,
+  };
+  
+  const annualReturn = useMemo(() => Math.round(investmentAmount * scenarioMultipliers[scenario]), [investmentAmount, scenario]);
   const quarterlyDistribution = useMemo(() => (annualReturn / 4).toFixed(1), [annualReturn]);
 
   const scenarioYield = {
@@ -71,33 +79,42 @@ export function RightPanel() {
         
         <div className="flex flex-col gap-[8px]">
           <div className="text-[13px] text-[#6B7280]">Investment Amount</div>
-          <div className="text-[24px] font-bold text-[#EB6601]">20,00,000 AED</div>
+          <div className="text-[24px] font-bold text-[#EB6601]">{investmentAmount}L AED</div>
           <div className="flex justify-between text-[11px] text-[#9CA3AF]">
             <span>Range: 10L AED &rarr; 50L AED</span>
           </div>
           {/* Slider track */}
           <div className="mt-[4px] relative w-full h-[6px] bg-[#E5E7EB] rounded-full">
-            <div className="absolute left-0 top-0 h-full bg-[#F97316] w-[40%] rounded-l-full"></div>
-            <div className="absolute top-1/2 -translate-y-1/2 left-[40%] w-[16px] h-[16px] bg-white border-[3px] border-[#F97316] rounded-full shadow-sm"></div>
+            <div className="absolute left-0 top-0 h-full bg-[#F97316] rounded-l-full" style={{ width: `${((investmentAmount - 10) / 40) * 100}%` }}></div>
+            <input
+              type="range"
+              min="10"
+              max="50"
+              value={investmentAmount}
+              onChange={(e) => setInvestmentAmount(Number(e.target.value))}
+              className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+              style={{ zIndex: 5 }}
+            />
+            <div className="absolute top-1/2 -translate-y-1/2 w-[16px] h-[16px] bg-white border-[3px] border-[#F97316] rounded-full shadow-sm pointer-events-none" style={{ left: `calc(${((investmentAmount - 10) / 40) * 100}% - 8px)` }}></div>
           </div>
         </div>
 
         {/* Your Ownership */}
         <div className="bg-[#F3F4F6] rounded-lg p-[16px] flex flex-col gap-[4px]">
           <div className="text-[13px] text-[#4B5563]">Your Ownership</div>
-          <div className="text-[20px] font-semibold text-[#1F2937]">10.00%</div>
+          <div className="text-[20px] font-semibold text-[#1F2937]">{ownership}%</div>
         </div>
 
         {/* Returns Grid */}
         <div className="flex gap-[12px]">
           <div className="flex-1 bg-[#FFF5F0] rounded-lg p-[16px] flex flex-col gap-[4px] border border-[#FFDED1]">
             <div className="text-[13px] text-[#4B5563]">Annual Return</div>
-            <div className="text-[20px] font-bold text-[#EB6601]">128K AED</div>
-            <div className="text-[11px] text-[#6B7280]">6.4% yield</div>
+            <div className="text-[20px] font-bold text-[#EB6601]">{annualReturn}K AED</div>
+            <div className="text-[11px] text-[#6B7280]">{scenarioYield[scenario]} yield</div>
           </div>
           <div className="flex-1 bg-[#EEF2FF] rounded-lg p-[16px] flex flex-col gap-[4px] border border-[#E0E7FF]">
             <div className="text-[13px] text-[#4B5563]">Quarterly Distribut...</div>
-            <div className="text-[20px] font-bold text-[#EB6601]">₹32.0K</div>
+            <div className="text-[20px] font-bold text-[#EB6601]">{quarterlyDistribution}K AED</div>
             <div className="text-[11px] text-[#6B7280]">Every 3 Months</div>
           </div>
         </div>
@@ -106,18 +123,20 @@ export function RightPanel() {
         <div className="flex flex-col gap-[12px]">
           <div className="text-[13px] font-medium text-[#374151]">Scenario Analysis</div>
           <div className="flex gap-[8px]">
-            <div className="flex-1 bg-[#EB6601] text-white rounded-[6px] py-[8px] flex flex-col items-center justify-center cursor-pointer mb-2">
-              <div className="text-[11px] opacity-80">Bear Case</div>
-              <div className="text-[14px] font-bold">5.4%</div>
-            </div>
-            <div className="flex-1 bg-[#F9FAFB] text-[#374151] rounded-[6px] py-[8px] flex flex-col items-center justify-center border border-[#E5E7EB] cursor-pointer mb-2">
-              <div className="text-[11px] text-[#6B7280]">Base Case</div>
-              <div className="text-[14px] font-bold">6.4%</div>
-            </div>
-            <div className="flex-1 bg-[#F9FAFB] text-[#374151] rounded-[6px] py-[8px] flex flex-col items-center justify-center border border-[#E5E7EB] cursor-pointer">
-              <div className="text-[11px] text-[#6B7280]">Bull Case</div>
-              <div className="text-[14px] font-bold">8.4%</div>
-            </div>
+            {(["Bear", "Base", "Bull"] as const).map((s) => (
+              <button
+                key={s}
+                onClick={() => setScenario(s)}
+                className={`flex-1 rounded-[6px] py-[8px] flex flex-col items-center justify-center cursor-pointer transition-colors ${
+                  scenario === s
+                    ? "bg-[#EB6601] text-white mb-2"
+                    : "bg-[#F9FAFB] text-[#374151] border border-[#E5E7EB] mb-2 hover:border-[#EB6601]"
+                }`}
+              >
+                <div className="text-[11px] opacity-80">{s} Case</div>
+                <div className="text-[14px] font-bold">{scenarioYield[s]}</div>
+              </button>
+            ))}
           </div>
         </div>
 
