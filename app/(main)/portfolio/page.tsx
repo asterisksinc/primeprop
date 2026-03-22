@@ -2,9 +2,22 @@
 
 import React from 'react';
 import { Lightbulb, ArrowRight } from 'lucide-react';
-import { Filter, MapPin, Users, Download ,SlidersHorizontal } from 'lucide-react';
+import { Filter, MapPin, Users, Download, SlidersHorizontal } from 'lucide-react';
 import Link from 'next/link';
+import {
+  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend
+} from 'recharts';
 
+const portfolioPerformanceData = [
+  { quarter: 'Q1', investment: 7.5, earnings: 7.5 },
+  { quarter: 'Q2', investment: 8.5, earnings: 9.5 },
+  { quarter: 'Q3', investment: 7.2, earnings: 6.4 },
+  { quarter: 'Q4', investment: 8.2, earnings: 8.2 },
+  { quarter: 'Q5', investment: 8.5, earnings: 8.5 },
+  { quarter: 'Q6', investment: 7.0, earnings: 7.5 },
+  { quarter: 'Q7', investment: 7.0, earnings: 7.5 },
+  { quarter: 'Q8', investment: 9.0, earnings: 9.0 },
+];
 export default function DashboardComponent() {
 
 
@@ -205,10 +218,10 @@ export default function DashboardComponent() {
         );
       };
   return (
-    <div className="w-full   mx-auto py-2 font-sans flex flex-col gap-2">
+    <div className="w-full mx-auto py-2 font-sans flex flex-col gap-4">
       
       {/* Top Stats Row */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-2 ">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Card 1 */}
         <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)]">
           <div className="flex justify-between items-start mb-2">
@@ -259,86 +272,68 @@ export default function DashboardComponent() {
       </div>
 
       {/* Bottom Row */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         
         {/* Left Chart Section (Takes up 2 columns) */}
             <div className="bg-white rounded-2xl px-6 pt-6 pb-3 border border-gray-100 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] lg:col-span-2 flex flex-col h-full">
   <h3 className="text-[15px] font-bold text-[#1e293b] mb-4">Portfolio Performance</h3>
         <div className='bg-[#F8FAFC] px-6 pt-6 pb-2 rounded-2xl flex-1 flex flex-col justify-between' >
-          <div className="relative min-h-[250px] flex-1 w-full">
-
-    {/* Y-Axis Labels */}
-    <div className="absolute top-0 bottom-0 left-0 w-8 flex flex-col justify-between text-[11px] text-[#1F2937] font-medium z-10 py-[1px]">
-      {[9, 8, 7, 6, 5].map((val) => (
-        <div key={val} className="flex items-center justify-end pr-2 h-0">
-          <span className="-translate-y-1/2">{val}%</span>
-        </div>
-      ))}
-    </div>
-
-    {/* Chart Area */}
-    <div className="absolute top-0 bottom-0 left-8 right-0 bg-[#F8FAFC] border-l border-b border-[#1F29374D] rounded-tr-xl overflow-visible">
-
-      {/* Horizontal Dashed Lines */}
-      <div className="absolute inset-0 flex flex-col justify-between pointer-events-none">
-        {[0, 1, 2, 3, 4].map((i) => (
-          <div
-            key={i}
-            className={`w-full h-[1px] border-b border-dashed border-gray-200 ${i === 0 || i === 4 ? 'opacity-0' : ''}`}
-          />
-        ))}
-      </div>
-
-      {/* Vertical Dashed Lines */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[1, 2, 3, 4, 5, 6].map((i) => (
-          <div
-            key={i}
-            className="absolute top-0 bottom-0 border-l border-dashed border-gray-200"
-            style={{ left: `${(i / 7) * 100}%` }}
-          />
-        ))}
-      </div>
-
-      {/* SVG Lines */}
-      <svg
-        viewBox="0 0 1000 240"
-        className="absolute inset-0 w-full h-full overflow-visible"
-        preserveAspectRatio="none"
-      >
-        {/* Green Line - Investment Value */}
-        <polyline
-          points="0,96 142.86,36 285.71,108 428.57,54 571.43,36 714.29,120 857.14,120 1000,30"
-          fill="none"
-          stroke="#277079"
-          strokeWidth="2"
-          vectorEffect="non-scaling-stroke"
-          strokeLinejoin="round"
-          strokeLinecap="round"
-        />
-        {/* Orange Line - Net Earnings */}
-        <polyline
-          points="0,96 142.86,12 285.71,144 428.57,54 571.43,36 714.29,96 857.14,96 1000,30"
-          fill="none"
-          stroke="#EB6601"
-          strokeWidth="2"
-          vectorEffect="non-scaling-stroke"
-          strokeLinejoin="round"
-          strokeLinecap="round"
-        />
-      </svg>
-    </div>
-
-    {/* X-Axis Labels */}
-    <div className="absolute left-8 right-0 flex justify-between text-[11px] text-[#1F2937] font-medium" style={{ bottom: '-20px' }}>
-      {['Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7', 'Q8'].map((label) => (
-        <span key={label} className="text-center">{label}</span>
-      ))}
-    </div>
-  </div>
+          <div style={{ width: '100%', height: 280 }}>
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={portfolioPerformanceData} margin={{ top: 10, right: 20, left: -10, bottom: 0 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                <XAxis
+                  dataKey="quarter"
+                  tick={{ fontSize: 11, fill: '#1F2937', fontWeight: 500 }}
+                  tickLine={false}
+                  axisLine={{ stroke: '#1F29374D' }}
+                />
+                <YAxis
+                  tick={{ fontSize: 11, fill: '#1F2937', fontWeight: 500 }}
+                  tickLine={false}
+                  axisLine={{ stroke: '#1F29374D' }}
+                  tickFormatter={(v) => `${v}%`}
+                  domain={[5, 10]}
+                />
+                <Tooltip
+                  contentStyle={{
+                    background: '#fff',
+                    border: '1px solid #e5e7eb',
+                    borderRadius: '8px',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                    fontSize: '13px',
+                    padding: '10px 14px',
+                  }}
+                  formatter={(value: any, name: any) => [`${value}%`, name]}
+                />
+                <Line
+                  type="monotone"
+                  dataKey="investment"
+                  name="Investment Value"
+                  stroke="#277079"
+                  strokeWidth={2}
+                  dot={{ r: 3, fill: '#277079' }}
+                  activeDot={{ r: 6, fill: '#277079', stroke: '#fff', strokeWidth: 2 }}
+                  animationDuration={1500}
+                  animationEasing="ease-in-out"
+                />
+                <Line
+                  type="monotone"
+                  dataKey="earnings"
+                  name="Net Earnings"
+                  stroke="#EB6601"
+                  strokeWidth={2}
+                  dot={{ r: 3, fill: '#EB6601' }}
+                  activeDot={{ r: 6, fill: '#EB6601', stroke: '#fff', strokeWidth: 2 }}
+                  animationDuration={1500}
+                  animationEasing="ease-in-out"
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
 
   {/* Legend */}
-  <div className="flex justify-center items-center gap-6 mt-6 pb-1">
+  <div className="flex justify-center items-center gap-6 mt-4 pb-1">
     <div className="flex items-center gap-2">
       <div className="w-4 h-1.5 rounded-full bg-[#277079]" />
       <span className="text-[12px] font-semibold text-[#1e293b]">Investment Value</span>
@@ -464,7 +459,7 @@ export default function DashboardComponent() {
       </div>
 
       {/* Investments Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <InvestmentCard />
         <InvestmentCard />
         <InvestmentCard />

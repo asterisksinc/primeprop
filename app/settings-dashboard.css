@@ -21,7 +21,7 @@ body {
 .pps-page-shell {
   width: 100%;
   background: #F3F5F7;
-  padding: 16px;
+  padding: 16px 0;
 }
 
 .pps-page-container {

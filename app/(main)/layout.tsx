@@ -11,11 +11,11 @@ export default function MainLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-[#F8FAFC]" >
+      <body className="pp-main-body bg-[#F8FAFC]">
         <PrimePropNavbar />
         <FilterProvider>
           <PrimePropHeader />
-          {children}
+          <main className="pp-shell-main">{children}</main>
         </FilterProvider>
       </body>
     </html>
