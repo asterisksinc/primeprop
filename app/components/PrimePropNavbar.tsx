@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { User } from "lucide-react";
 import "../settings-dashboard.css";
 import "../primeprop-dashboard.css";
 import "../prime-support-section.css";
@@ -30,7 +31,7 @@ export default function PrimePropNavbar() {
               <Link
                 key={item.label}
                 href={item.href}
-                className={`ppd-nav-item ${isActive ? "ppd-nav-item-active" : ""}`}
+                className="ppd-nav-item"
               >
                 {item.label}
               </Link>
@@ -62,13 +63,7 @@ export default function PrimePropNavbar() {
   </button>
 
   <div className="ppd-user-avatar">
-    <Image
-      src="/user.svg"
-      alt="User"
-      width={42}
-      height={42}
-      priority
-    />
+    <User className="w-6 h-6 text-[#1f2937]" />
   </div>
 </div>
       </div>

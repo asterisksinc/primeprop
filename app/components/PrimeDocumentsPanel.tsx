@@ -1,7 +1,16 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { FileText, FileCheck, Award, CircleDollarSign, BarChart3, CalendarDays } from "lucide-react";
+
+const sidebarCategoryIcons: Record<string, string> = {
+  "All Documents": "/doc.svg",
+  "Investment Agreements": "/file.svg",
+  "Share Certificates": "/bank.svg",
+  "Distribution Receipts": "/payout.svg",
+  "Tax Documents": "/tax.svg",
+  "Compliance Reports": "/bank.svg",
+  Statements: "/doc1.svg",
+};
 
 type PrimeDocItem = {
   id: number;
@@ -316,6 +325,8 @@ export default function PrimeDocumentsPanel() {
   const [searchText, setSearchText] = useState("");
   const [sortOption, setSortOption] = useState("Newest First");
   const [dismissBanner, setDismissBanner] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
 
   const properties = useMemo(() => {
     return ["All Properties", ...Array.from(new Set(primeDocumentsData.map((d) => d.property)))];
@@ -405,6 +416,18 @@ export default function PrimeDocumentsPanel() {
     sortOption,
   ]);
 
+  // Calculate pagination
+  const totalPages = Math.ceil(filteredDocuments.length / itemsPerPage);
+  const paginatedDocuments = filteredDocuments.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  // Reset to page 1 when filters change
+  const handleFilterChange = () => {
+    setCurrentPage(1);
+  };
+
   const toggleMultiSelect = (
     value: string,
     selectedValues: string[],
@@ -415,6 +438,7 @@ export default function PrimeDocumentsPanel() {
     } else {
       setSelectedValues([...selectedValues, value]);
     }
+    setCurrentPage(1);
   };
 
   const clearAllFilters = () => {
@@ -425,6 +449,7 @@ export default function PrimeDocumentsPanel() {
     setSelectedYear("2026");
     setSearchText("");
     setSortOption("Newest First");
+    setCurrentPage(1);
   };
 
   return (
@@ -491,37 +516,30 @@ export default function PrimeDocumentsPanel() {
             <div className="ppdocs-sidebar-title">Document Categories</div>
 
             <div className="ppdocs-category-list">
-              {allCategories.map((category) => {
-                const getIcon = (cat: string) => {
-                  switch (cat) {
-                    case "All Documents": return <FileText size={14} />;
-                    case "Investment Agreements": return <FileCheck size={14} />;
-                    case "Share Certificates": return <Award size={14} />;
-                    case "Distribution Receipts": return <CircleDollarSign size={14} />;
-                    case "Tax Documents": return <BarChart3 size={14} />;
-                    case "Compliance Reports": return <FileText size={14} />;
-                    case "Statements": return <CalendarDays size={14} />;
-                    default: return <FileText size={14} />;
-                  }
-                };
-
-                return (
+              {allCategories.map((category) => (
                 <button
                   key={category}
                   className={`ppdocs-category-item ${
                     selectedCategory === category ? "ppdocs-category-item-active" : ""
                   }`}
-                  onClick={() => setSelectedCategory(category)}
+                  onClick={() => {
+                    setSelectedCategory(category);
+                    setCurrentPage(1);
+                  }}
                 >
                   <span className="ppdocs-category-left">
-                    <span className="ppdocs-category-icon">{getIcon(category)}</span>
+                    <img
+                      src={sidebarCategoryIcons[category]}
+                      alt=""
+                      className="ppdocs-category-icon"
+                    />
                     <span>{category}</span>
                   </span>
                   <span className="ppdocs-category-count">
                     {categoryCounts[category]}
                   </span>
                 </button>
-              )})}
+              ))}
             </div>
           </div>
 
@@ -568,7 +586,10 @@ export default function PrimeDocumentsPanel() {
             <select
               className="ppdocs-select"
               value={selectedProperty}
-              onChange={(e) => setSelectedProperty(e.target.value)}
+              onChange={(e) => {
+                setSelectedProperty(e.target.value);
+                setCurrentPage(1);
+              }}
             >
               {properties.map((property) => (
                 <option key={property} value={property}>
@@ -583,7 +604,10 @@ export default function PrimeDocumentsPanel() {
             <select
               className="ppdocs-select"
               value={selectedYear}
-              onChange={(e) => setSelectedYear(e.target.value)}
+              onChange={(e) => {
+                setSelectedYear(e.target.value);
+                setCurrentPage(1);
+              }}
             >
               {["All", ...years].map((year) => (
                 <option key={year} value={year}>
@@ -608,94 +632,145 @@ export default function PrimeDocumentsPanel() {
         </aside>
 
         <div className="ppdocs-content">
-          <div className="ppdocs-content-inner">
-            <div className="ppdocs-table-toolbar">
-              <div className="ppdocs-searchbox">
-                <span className="ppdocs-search-icon"><img src="/search1.svg" alt="" /></span>
-                <input
-                  type="text"
-                  placeholder="Search by payout ID, property, quarter"
-                  value={searchText}
-                  onChange={(e) => setSearchText(e.target.value)}
-                  className="ppdocs-search-input"
-                />
-              </div>
-
-              <div className="ppdocs-toolbar-right">
-                <select
-                  className="ppdocs-sort-select"
-                  value={sortOption}
-                  onChange={(e) => setSortOption(e.target.value)}
-                >
-                  <option>Newest First</option>
-                  <option>Oldest First</option>
-                  <option>Name A-Z</option>
-                  <option>Name Z-A</option>
-                </select>
-
-                <button className="ppdocs-view-btn">☰</button>
-                <button className="ppdocs-view-btn">▦</button>
-              </div>
+          <div className="ppdocs-table-toolbar">
+            <div className="ppdocs-searchbox">
+              <span className="ppdocs-search-icon"><img src="/search1.svg" alt="" /></span>
+              <input
+                type="text"
+                placeholder="Search by payout ID, property, quarter"
+                value={searchText}
+                onChange={(e) => {
+                  setSearchText(e.target.value);
+                  setCurrentPage(1);
+                }}
+                className="ppdocs-search-input"
+              />
             </div>
 
-            <div className="ppdocs-content-grid">
-              <div className="ppdocs-doc-list-wrap">
-                {filteredDocuments.length > 0 ? (
-                  filteredDocuments.map((item) => (
-                    <div key={item.id} className="ppdocs-doc-card">
-                      <div className="ppdocs-doc-left">
-                        <div className="ppdocs-doc-icon">
-                          <img src="/fil.svg" alt="doc" />
-                        </div>
-                        <div className="ppdocs-doc-meta">
-                          <div className="ppdocs-doc-title">{item.name}</div>
-                          <div className="ppdocs-doc-sub">{item.size} • Generated {item.generatedDate}</div>
-                        </div>
-                      </div>
+            <div className="ppdocs-toolbar-right">
+              <select
+                className="ppdocs-sort-select"
+                value={sortOption}
+                onChange={(e) => {
+                  setSortOption(e.target.value);
+                  setCurrentPage(1);
+                }}
+              >
+                <option>Newest First</option>
+                <option>Oldest First</option>
+                <option>Name A-Z</option>
+                <option>Name Z-A</option>
+              </select>
 
-                      <div className="ppdocs-doc-actions">
-                        <button className="ppdocs-doc-download" aria-label={`Download ${item.name}`}>
-                          <img src="/od.svg" alt="download" />
-                        </button>
-                      </div>
-                    </div>
-                  ))
-                ) : (
-                  <div className="ppdocs-empty-state">No documents found for the selected filters.</div>
-                )}
-
-                <div className="ppdocs-doc-footer">
-                  <div className="ppdocs-tax-ready-box">
-                    <div className="ppdocs-tax-ready-icon"><img src="/doc.svg" alt="" /></div>
-                    <div>
-                      <strong>Tax Season Ready</strong>
-                      <p>All documents are tax-ready and include necessary details for filing returns.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <aside className="ppdocs-exports-panel">
-                <div className="ppdocs-exports-head">
-                  <div className="ppdocs-chart-title">Statements &amp; Exports</div>
-                  <button className="ppdocs-linkish">View All Activity</button>
-                </div>
-
-                <div className="ppdocs-exports-list">
-                  <button className="ppdocs-export-btn"><img src="/dl.svg" alt="" /> Download Annual Statement</button>
-                  <button className="ppdocs-export-btn"><img src="/csv.svg" alt="" /> Download Custom CSV</button>
-                  <button className="ppdocs-export-btn"><img src="/zip.svg" alt="" /> Download All Receipts (ZIP)</button>
-                </div>
-
-                <div className="ppdocs-exports-options">
-                  <div className="ppdocs-exports-subtitle">Export Options</div>
-                  <label className="ppdocs-export-option"><input type="checkbox" /> <span>Include fees breakdown</span></label>
-                  <label className="ppdocs-export-option"><input type="checkbox" /> <span>Include property split</span></label>
-                  <label className="ppdocs-export-option"><input type="checkbox" /> <span>Include tax classification</span></label>
-                </div>
-              </aside>
+              <button className="ppdocs-view-btn">☰</button>
+              <button className="ppdocs-view-btn">▦</button>
             </div>
           </div>
+
+          <div className="ppdocs-table-wrap">
+            <table className="ppdocs-table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Document Name</th>
+                  <th>Category</th>
+                  <th>Property</th>
+                  <th>File Type</th>
+                  <th>Generated Date</th>
+                  <th>Status</th>
+                  <th>Size</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {paginatedDocuments.length > 0 ? (
+                  paginatedDocuments.map((item) => (
+                    <tr key={item.id}>
+                      <td>
+                        <input type="checkbox" />
+                      </td>
+                      <td className="ppdocs-cell-name">{item.name}</td>
+                      <td>{item.category}</td>
+                      <td>{item.property}</td>
+                      <td>
+                        <span className="ppdocs-filetype-pill">{item.fileType}</span>
+                      </td>
+                      <td>{item.generatedDate}</td>
+                      <td>
+                        <span
+                          className={`ppdocs-status-pill ${
+                            item.status === "Signed"
+                              ? "ppdocs-status-signed"
+                              : item.status === "Pending Signature"
+                              ? "ppdocs-status-pending"
+                              : item.status === "Generated"
+                              ? "ppdocs-status-generated"
+                              : item.status === "Available"
+                              ? "ppdocs-status-available"
+                              : "ppdocs-status-archived"
+                          }`}
+                        >
+                          {item.status}
+                        </span>
+                      </td>
+                      <td>{item.size}</td>
+                      <td>
+                        <button className="ppdocs-download-btn" aria-label="Download document">
+                          <img src="/dload.svg" alt="" />
+                        </button>
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan={9} className="ppdocs-empty-state">
+                      No documents found for the selected filters.
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Pagination Controls */}
+          {totalPages > 1 && (
+            <div className="ppdocs-pagination">
+              <button
+                className="ppdocs-pagination-btn"
+                onClick={() => setCurrentPage(1)}
+                disabled={currentPage === 1}
+              >
+                ← First
+              </button>
+              <button
+                className="ppdocs-pagination-btn"
+                onClick={() => setCurrentPage(currentPage - 1)}
+                disabled={currentPage === 1}
+              >
+                ← Prev
+              </button>
+
+              <div className="ppdocs-pagination-info">
+                Page <strong>{currentPage}</strong> of <strong>{totalPages}</strong> 
+                <span className="ppdocs-pagination-count">({filteredDocuments.length} total)</span>
+              </div>
+
+              <button
+                className="ppdocs-pagination-btn"
+                onClick={() => setCurrentPage(currentPage + 1)}
+                disabled={currentPage === totalPages}
+              >
+                Next →
+              </button>
+              <button
+                className="ppdocs-pagination-btn"
+                onClick={() => setCurrentPage(totalPages)}
+                disabled={currentPage === totalPages}
+              >
+                Last →
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
@@ -720,23 +795,7 @@ export default function PrimeDocumentsPanel() {
             </div>
           </div>
 
-          <div className="ppdocs-insight-metrics">
-            <div className="ppdocs-insight-metric-card">
-              <span>Fresh Uploads</span>
-              <strong>07</strong>
-              <p>Last 14 days</p>
-            </div>
-            <div className="ppdocs-insight-metric-card">
-              <span>Avg Review Time</span>
-              <strong>1.8d</strong>
-              <p>Across pending files</p>
-            </div>
-            <div className="ppdocs-insight-metric-card">
-              <span>Category Health</span>
-              <strong>92%</strong>
-              <p>Tax + Statements complete</p>
-            </div>
-          </div>
+        
 
           <div className="ppdocs-insight-checklist">
             <div className="ppdocs-insight-check-row">
