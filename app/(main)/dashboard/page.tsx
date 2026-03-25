@@ -6,6 +6,13 @@ import "../../settings-dashboard.css";
 import "../../prime-support-section.css";
 import "../../prime-raise-issue-flow.css";
 import {
+  DollarSign,
+  TrendingUp,
+  Building2,
+  FileText,
+  ShieldCheck,
+} from 'lucide-react';
+import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
 } from 'recharts';
 
@@ -22,7 +29,7 @@ const activities = [
     title: "Q1 Distribution Processed",
     desc: "₹39,200 credited to your UPI",
     type: "green",
-    icon: "$",
+    icon: DollarSign,
     stage: "Completed",
   },
   {
@@ -30,7 +37,7 @@ const activities = [
     title: "Annual Yield Update",
     desc: "Net yield adjusted to 6.4%",
     type: "orange",
-    icon: "↗",
+    icon: TrendingUp,
     stage: "Reviewed",
   },
   {
@@ -38,7 +45,7 @@ const activities = [
     title: "Asset Funding Completed",
     desc: "JVC Tower SPV fully funded",
     type: "green",
-    icon: "⌘",
+    icon: Building2,
     stage: "Completed",
   },
   {
@@ -46,7 +53,7 @@ const activities = [
     title: "New Document Available",
     desc: "Tax certificate ready for download",
     type: "gray",
-    icon: "📄",
+    icon: FileText,
     stage: "Action Needed",
   },
   {
@@ -54,7 +61,7 @@ const activities = [
     title: "Lease Renewal Confirmed",
     desc: "Primary tenant renewed for another 24 months",
     type: "blue",
-    icon: "✓",
+    icon: ShieldCheck,
     stage: "Completed",
   },
   {
@@ -62,7 +69,23 @@ const activities = [
     title: "Insurance Certificate Updated",
     desc: "Updated policy file added to your documents",
     type: "gray",
-    icon: "🛡",
+    icon: ShieldCheck,
+    stage: "Reviewed",
+  },
+  {
+    date: "Nov 28 2023",
+    title: "Quarterly Statement Issued",
+    desc: "Q4 statement is ready in your document vault",
+    type: "gray",
+    icon: FileText,
+    stage: "Available",
+  },
+  {
+    date: "Nov 12 2023",
+    title: "Compliance Review Completed",
+    desc: "All ownership records verified and up to date",
+    type: "blue",
+    icon: ShieldCheck,
     stage: "Reviewed",
   },
 ];
@@ -365,9 +388,13 @@ export default function HomePage() {
             </div>
 
             <div className="ppd-activity-list">
-              {activities.map((item, index) => (
+              {activities.map((item, index) => {
+                const Icon = item.icon;
+                return (
                 <div className="ppd-activity-item" key={index}>
-                  <div className={`ppd-activity-icon ppd-activity-${item.type}`}>{item.icon}</div>
+                  <div className={`ppd-activity-icon ppd-activity-${item.type}`}>
+                    <Icon className="ppd-activity-svg" strokeWidth={2.2} />
+                  </div>
                   <div className="ppd-activity-content">
                     <div className="ppd-activity-top">
                       <div className="ppd-activity-title">{item.title}</div>
@@ -377,7 +404,8 @@ export default function HomePage() {
                     <span className="ppd-activity-tag">{item.stage}</span>
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 

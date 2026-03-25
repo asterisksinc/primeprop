@@ -54,13 +54,13 @@ export default function PrimePropHeader() {
       <section className="ppd-hero-banner" style={{ position: "relative" }}>
         <div className="ppd-hero-left">
           <div className="ppd-logo-row">
-            <Image
+            {/* <Image
               src="/logo.png"
               alt="Logo"
               width={178}
               height={32}
               priority
-            />
+            /> */}
           </div>
 
           {isSlugPage ? (

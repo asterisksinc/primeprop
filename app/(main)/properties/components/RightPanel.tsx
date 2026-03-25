@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { FileText, Target, UserRound } from "lucide-react";
 
 type ReviewFlowStep = 1 | 2 | 3 | 4 | "success";
 
@@ -31,6 +32,39 @@ export function RightPanel() {
   
   const annualReturn = useMemo(() => Math.round(investmentAmount * scenarioMultipliers[scenario]), [investmentAmount, scenario]);
   const quarterlyDistribution = useMemo(() => (annualReturn / 4).toFixed(1), [annualReturn]);
+
+  const activities = [
+    {
+      title: "Yield Updated",
+      desc: "Downtown Office SPV yield increased to 8.2%",
+      time: "2 hours ago",
+      icon: FileText,
+    },
+    {
+      title: "New Investor Joined",
+      desc: "3 new commitments totaling ₹60L",
+      time: "5 hours ago",
+      icon: UserRound,
+    },
+    {
+      title: "Document Uploaded",
+      desc: "Q4 Financial Report now available",
+      time: "1 day ago",
+      icon: FileText,
+    },
+    {
+      title: "Funding Milestone",
+      desc: "75% funding target achieved",
+      time: "2 days ago",
+      icon: Target,
+    },
+    {
+      title: "Lease Signed",
+      desc: "New tenant secured - 3 year contract",
+      time: "3 days ago",
+      icon: FileText,
+    },
+  ];
 
   const scenarioYield = {
     Bear: "5.4%",
@@ -181,7 +215,7 @@ export function RightPanel() {
         </div>
 
         <div className="flex gap-[12px]">
-          <div className="flex-1 bg-[#FEF2F2] rounded-lg p-[12px] flex items-center gap-[12px]">
+          <div className="flex-1 bg-[#FFF7ED] rounded-lg p-[12px] flex items-center gap-[12px]">
             <div className="w-[32px] h-[32px] rounded-full bg-[#FCA5A5] flex items-center justify-center flex-shrink-0">
               <svg className="w-[16px] h-[16px] text-[#991B1B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -192,7 +226,7 @@ export function RightPanel() {
               <div className="text-[13px] font-bold text-[#111827]">13 Investors</div>
             </div>
           </div>
-          <div className="flex-1 bg-[#EEF2FF] rounded-lg p-[12px] flex items-center gap-[12px]">
+          <div className="flex-1 bg-[#EEF3F4] rounded-lg p-[12px] flex items-center gap-[12px]">
             <div className="w-[32px] h-[32px] rounded-full bg-[#EB6601] flex items-center justify-center flex-shrink-0">
               <svg className="w-[16px] h-[16px] text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -205,7 +239,7 @@ export function RightPanel() {
           </div>
         </div>
 
-        <div className="bg-[#F0FDFA] rounded-lg p-[12px] flex items-center gap-[12px] border border-[#CCFBF1]">
+        <div className="bg-[#EEF3F4] rounded-lg p-[12px] flex items-center gap-[12px] border border-[#CCFBF1]">
           <div className="w-[32px] h-[32px] rounded-full bg-[#EB6601] flex items-center justify-center flex-shrink-0">
             <svg className="w-[16px] h-[16px] text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
@@ -235,51 +269,26 @@ export function RightPanel() {
           <button className="text-[13px] text-[#EB6601] font-medium hover:underline">View All Activity</button>
         </div>
         
-        <div className="flex flex-col gap-[16px] relative">
-          <div className="absolute left-[15px] top-[16px] bottom-[16px] w-[2px]" style={{ backgroundColor: "rgba(31,41,55,0.1)" }}></div>
-          
-          {[
-            { title: "Yield Updated", desc: "Downtown Office SPV yield increased to 8.2%", time: "2 hours ago", iconColor: "#277079", bgColor: "rgba(39,112,121,0.1)", icon: "yield" },
-            { title: "New Investor Joined", desc: "3 new commitments totaling ₹60L", time: "5 hours ago", iconColor: "#277079", bgColor: "rgba(39,112,121,0.1)", icon: "user" },
-            { title: "Document Uploaded", desc: "Q4 Financial Report now available", time: "1 day ago", iconColor: "#277079", bgColor: "rgba(39,112,121,0.1)", icon: "doc" },
-            { title: "Funding Milestone", desc: "75% funding target achieved", time: "2 days ago", iconColor: "#277079", bgColor: "rgba(39,112,121,0.1)", icon: "target" },
-            { title: "Lease Signed", desc: "New tenant secured - 3 year contract", time: "3 days ago", iconColor: "#277079", bgColor: "rgba(39,112,121,0.1)", icon: "doc" }
-          ].map((item, i) => (
-            <div key={i} className="flex gap-[16px] relative z-10">
-              <div className="w-[40px] h-[40px] rounded-full flex items-center justify-center flex-shrink-0 text-white border-2 border-white shadow-sm" style={{ backgroundColor: item.iconColor }}>
-                {item.icon === "yield" && (
-                  <svg className="w-[20px] h-[20px]" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/>
-                    <polyline points="13 2 13 9 20 9"/>
-                  </svg>
-                )}
-                {item.icon === "user" && (
-                  <svg className="w-[20px] h-[20px]" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"/>
-                  </svg>
-                )}
-                {item.icon === "doc" && (
-                  <svg className="w-[20px] h-[20px]" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M9 12h6m-6 4h6m2-13H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2z"/>
-                  </svg>
-                )}
-                {item.icon === "target" && (
-                  <svg className="w-[20px] h-[20px]" fill="currentColor" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10"/>
-                    <circle cx="12" cy="12" r="6" fill="#F9FAFB"/>
-                    <circle cx="12" cy="12" r="2" fill="currentColor"/>
-                  </svg>
-                )}
-              </div>
-              <div className="flex-1 rounded-[8px] p-[12px] border" style={{ backgroundColor: item.bgColor, borderColor: "rgba(31,41,55,0.1)" }}>
-                <div className="flex justify-between items-start mb-[4px]">
-                  <div className="text-[13px] font-semibold text-[#1F2937]">{item.title}</div>
-                  <div className="text-[11px] text-[#6B7280]">{item.time}</div>
+        <div className="flex flex-col gap-[18px] relative">
+          <div className="absolute left-[20px] top-[18px] bottom-[18px] w-[2px] rounded-full" style={{ backgroundColor: "rgba(31,41,55,0.08)" }}></div>
+
+          {activities.map((item, i) => {
+            const Icon = item.icon;
+            return (
+              <div key={i} className="flex gap-[16px] relative z-10 items-start">
+                <div className="w-[40px] h-[40px] rounded-full flex items-center justify-center flex-shrink-0 text-white border-[3px] border-white shadow-sm bg-[#277079] mt-[2px]">
+                  <Icon className="w-[18px] h-[18px] text-white" strokeWidth={2.2} />
                 </div>
-                <div className="text-[12px] text-[#6B7280]">{item.desc}</div>
+                <div className="flex-1 rounded-[10px] p-[12px] border border-[#D9E3E5] bg-[#EEF3F4]">
+                  <div className="flex justify-between items-start mb-[4px] gap-[12px]">
+                    <div className="text-[13px] font-semibold text-[#111827]">{item.title}</div>
+                    <div className="text-[11px] text-[#6B7280] whitespace-nowrap">{item.time}</div>
+                  </div>
+                  <div className="text-[12px] text-[#6B7280] leading-[1.35]">{item.desc}</div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>
