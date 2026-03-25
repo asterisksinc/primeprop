@@ -36,6 +36,12 @@ body {
     width: 100%;
     max-width: var(--pp-shell-max-width);
     margin: 0 auto;
+
+.ppd-activity-svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
     padding: 0 16px 16px;
 }
 
@@ -195,6 +201,7 @@ body {
     height: 42px;
     border-radius: 10px;
     overflow: hidden;
+    margin-top: 0;
     box-shadow: 0 7px 18px rgba(12, 27, 54, 0.06);
 }
 
@@ -204,6 +211,14 @@ body {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 7px 18px rgba(12, 27, 54, 0.06);
+    display: block;
+}
+
+.ppd-user-avatar svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin-top: 0;
 }
 
 .ppd-hero-banner {
