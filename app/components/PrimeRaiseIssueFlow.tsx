@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { ChangeEvent, useMemo, useState } from "react";
 
 type IssueCategory =
   | "Payout Issue"
@@ -78,7 +78,7 @@ type PrimeRaiseIssueFlowProps = {
 export default function PrimeRaiseIssueFlow({
   onClose,
 }: PrimeRaiseIssueFlowProps) {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState<1 | 2 | 3 | 4 | 5 | 6>(1);
 
   const [category, setCategory] = useState<IssueCategory>("");
   const [specificProblem, setSpecificProblem] = useState<SpecificProblem>("");
@@ -88,6 +88,8 @@ export default function PrimeRaiseIssueFlow({
   const [subject, setSubject] = useState("");
   const [description, setDescription] = useState("");
   const [contactMethod, setContactMethod] = useState("Email");
+  const [attachments, setAttachments] = useState<string[]>([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const problemOptions = useMemo(() => {
     switch (category) {
@@ -108,11 +110,10 @@ export default function PrimeRaiseIssueFlow({
     }
   }, [category]);
 
-  const canContinueStep1 = !!category;
-  const canContinueStep2 = !!specificProblem;
+  const canContinueStep1 = true;
+  const canContinueStep2 = true;
   const canContinueStep3 = true;
-  const canContinueStep4 =
-    subject.trim().length >= 5 && description.trim().length >= 20;
+  const canContinueStep4 = true;
 
   const stepNames = [
     "Select Category",
@@ -120,6 +121,7 @@ export default function PrimeRaiseIssueFlow({
     "Context",
     "Details",
     "Review",
+    "Submitted",
   ] as const;
 
   const closeFlow = () => {
@@ -133,8 +135,30 @@ export default function PrimeRaiseIssueFlow({
     else if (step === 4 && canContinueStep4) setStep(5);
   };
 
+  const handleAttachmentUpload = (event: ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+    if (!files?.length) return;
+
+    const fileNames = Array.from(files).map((file) => file.name);
+    setAttachments((prev) => [...prev, ...fileNames]);
+
+    // Allow selecting the same file again for simulation.
+    event.target.value = "";
+  };
+
+  const handleSubmit = () => {
+    setIsSubmitting(true);
+    window.setTimeout(() => {
+      setIsSubmitting(false);
+      setStep(6);
+    }, 700);
+  };
+
   const handleBack = () => {
-    if (step > 1) setStep(step - 1);
+    if (step === 2) setStep(1);
+    else if (step === 3) setStep(2);
+    else if (step === 4) setStep(3);
+    else if (step === 5) setStep(4);
   };
 
   return (
@@ -165,7 +189,7 @@ export default function PrimeRaiseIssueFlow({
                 ◎
               </div>
               <div className="prm-issueflow-steptext">
-                <span className="prm-issueflow-stepcount">Step {step}/5</span>
+                <span className="prm-issueflow-stepcount">Step {step}/6</span>
                 <span className="prm-issueflow-stepname">{stepNames[step - 1]}</span>
               </div>
             </div>
@@ -208,6 +232,16 @@ export default function PrimeRaiseIssueFlow({
               }`}
             >
               👁
+            </div>
+
+            <div className="prm-issueflow-stepdivider" />
+
+            <div
+              className={`prm-issueflow-stepicon ${
+                step >= 6 ? "prm-issueflow-stepicon-active" : ""
+              }`}
+            >
+              ✓
             </div>
           </div>
         </div>
@@ -349,15 +383,34 @@ export default function PrimeRaiseIssueFlow({
               </div>
 
               <div className="prm-issueflow-fieldwrap">
-                <label className="prm-issueflow-label">Attachments</label>
+                <label className="prm-issueflow-label">
+                  Attachments <span className="prm-issueflow-reviewlabel">(Optional)</span>
+                </label>
                 <div className="prm-issueflow-uploadbox">
                   <div className="prm-issueflow-uploadicon">⇪</div>
-                  <div className="prm-issueflow-uploadtitle">
+                  <label htmlFor="issue-attachments" className="prm-issueflow-uploadtitle cursor-pointer">
                     Click to upload or drag and drop
-                  </div>
+                  </label>
+                  <input
+                    id="issue-attachments"
+                    type="file"
+                    multiple
+                    className="hidden"
+                    onChange={handleAttachmentUpload}
+                  />
                   <div className="prm-issueflow-uploadsub">
                     PDF, PNG, JPG, CSV (max 10MB each)
                   </div>
+
+                  {attachments.length > 0 && (
+                    <div className="mt-3 text-left">
+                      {attachments.map((name, idx) => (
+                        <div key={`${name}-${idx}`} className="prm-issueflow-reviewvalue">
+                          {name}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -407,6 +460,12 @@ export default function PrimeRaiseIssueFlow({
                       {property || "Not selected"}
                     </p>
                   </div>
+                  <div>
+                    <span className="prm-issueflow-reviewlabel">Attachments</span>
+                    <p className="prm-issueflow-reviewvalue">
+                      {attachments.length ? attachments.join(", ") : "No attachment uploaded"}
+                    </p>
+                  </div>
                 </div>
 
                 <div className="prm-issueflow-reviewdesc">
@@ -425,11 +484,34 @@ export default function PrimeRaiseIssueFlow({
               </div>
             </div>
           )}
+
+          {step === 6 && (
+            <div className="prm-issueflow-panel">
+              <div className="prm-issueflow-sectiontitle">Thank You</div>
+
+              <div className="prm-issueflow-responsebox">
+                <div className="prm-issueflow-responseicon">✓</div>
+                <div>
+                  <div className="prm-issueflow-responsetitle">Issue Submitted Successfully</div>
+                  <div className="prm-issueflow-responsetext">
+                    Your request has been logged. Our team will get back to you shortly.
+                  </div>
+                </div>
+              </div>
+
+              <div className="prm-issueflow-reviewcard">
+                <div className="prm-issueflow-reviewlabel">Reference ID</div>
+                <div className="prm-issueflow-reviewvalue">
+                  SUP-{String(Date.now()).slice(-6)}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="prm-issueflow-footer">
           <div className="prm-issueflow-footer-left">
-            {step > 1 && (
+            {step > 1 && step < 6 && (
               <button
                 type="button"
                 className="prm-issueflow-btn-secondary"
@@ -441,23 +523,28 @@ export default function PrimeRaiseIssueFlow({
           </div>
 
           <div className="prm-issueflow-footer-right">
-            <button type="button" className="prm-issueflow-btn-outline">
-              Save Draft
-            </button>
+            {step < 6 && (
+              <button type="button" className="prm-issueflow-btn-outline">
+                Save Draft
+              </button>
+            )}
 
             {step < 5 ? (
               <button
                 type="button"
                 className="prm-issueflow-btn-primary"
                 onClick={handleContinue}
-                disabled={
-                  (step === 1 && !canContinueStep1) ||
-                  (step === 2 && !canContinueStep2) ||
-                  (step === 3 && !canContinueStep3) ||
-                  (step === 4 && !canContinueStep4)
-                }
               >
                 Continue
+              </button>
+            ) : step === 5 ? (
+              <button
+                type="button"
+                className="prm-issueflow-btn-primary"
+                onClick={handleSubmit}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Submitting..." : "Submit Issue"}
               </button>
             ) : (
               <button
@@ -465,7 +552,7 @@ export default function PrimeRaiseIssueFlow({
                 className="prm-issueflow-btn-primary"
                 onClick={closeFlow}
               >
-                Submit Issue
+                Close
               </button>
             )}
           </div>

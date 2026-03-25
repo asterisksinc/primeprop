@@ -231,28 +231,49 @@ export function RightPanel() {
       {/* Property Activity */}
       <div className="bg-white rounded-[12px] p-[24px] border border-[#E5E7EB] flex flex-col gap-[20px]">
         <div className="flex justify-between items-center">
-          <div className="text-[16px] font-semibold text-[#111827]">Property Activity</div>
+          <div className="text-[16px] font-semibold text-[#1F2937]">Property Activity</div>
           <button className="text-[13px] text-[#EB6601] font-medium hover:underline">View All Activity</button>
         </div>
         
         <div className="flex flex-col gap-[16px] relative">
-          <div className="absolute left-[15px] top-[16px] bottom-[16px] w-[2px] bg-[#E5E7EB]"></div>
+          <div className="absolute left-[15px] top-[16px] bottom-[16px] w-[2px]" style={{ backgroundColor: "rgba(31,41,55,0.1)" }}></div>
           
           {[
-            { title: "Yield Updated", desc: "Downtown Office SPV yield increased to 8.2%", time: "2 hours ago", icon: "yield" },
-            { title: "New Investor Joined", desc: "3 new commitments totaling ₹60L", time: "5 hours ago", icon: "user" },
-            { title: "Document Uploaded", desc: "Q4 Financial Report now available", time: "1 day ago", icon: "doc" },
-            { title: "Funding Milestone", desc: "75% funding target achieved", time: "2 days ago", icon: "target" },
-            { title: "Lease Signed", desc: "New tenant secured - 3 year contract", time: "3 days ago", icon: "doc2" }
+            { title: "Yield Updated", desc: "Downtown Office SPV yield increased to 8.2%", time: "2 hours ago", iconColor: "#277079", bgColor: "rgba(39,112,121,0.1)", icon: "yield" },
+            { title: "New Investor Joined", desc: "3 new commitments totaling ₹60L", time: "5 hours ago", iconColor: "#277079", bgColor: "rgba(39,112,121,0.1)", icon: "user" },
+            { title: "Document Uploaded", desc: "Q4 Financial Report now available", time: "1 day ago", iconColor: "#277079", bgColor: "rgba(39,112,121,0.1)", icon: "doc" },
+            { title: "Funding Milestone", desc: "75% funding target achieved", time: "2 days ago", iconColor: "#277079", bgColor: "rgba(39,112,121,0.1)", icon: "target" },
+            { title: "Lease Signed", desc: "New tenant secured - 3 year contract", time: "3 days ago", iconColor: "#277079", bgColor: "rgba(39,112,121,0.1)", icon: "doc" }
           ].map((item, i) => (
             <div key={i} className="flex gap-[16px] relative z-10">
-              <div className="w-[32px] h-[32px] rounded-full bg-[#EB6601] flex items-center justify-center flex-shrink-0 text-white border-2 border-white shadow-sm">
-                {/* Simplified icons for space */}
-                <div className="w-[4px] h-[4px] bg-white rounded-full"></div>
+              <div className="w-[40px] h-[40px] rounded-full flex items-center justify-center flex-shrink-0 text-white border-2 border-white shadow-sm" style={{ backgroundColor: item.iconColor }}>
+                {item.icon === "yield" && (
+                  <svg className="w-[20px] h-[20px]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/>
+                    <polyline points="13 2 13 9 20 9"/>
+                  </svg>
+                )}
+                {item.icon === "user" && (
+                  <svg className="w-[20px] h-[20px]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"/>
+                  </svg>
+                )}
+                {item.icon === "doc" && (
+                  <svg className="w-[20px] h-[20px]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 12h6m-6 4h6m2-13H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2z"/>
+                  </svg>
+                )}
+                {item.icon === "target" && (
+                  <svg className="w-[20px] h-[20px]" fill="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10"/>
+                    <circle cx="12" cy="12" r="6" fill="#F9FAFB"/>
+                    <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                  </svg>
+                )}
               </div>
-              <div className="flex-1 bg-[#F9FAFB] rounded-[8px] p-[12px] border border-[#E5E7EB]">
+              <div className="flex-1 rounded-[8px] p-[12px] border" style={{ backgroundColor: item.bgColor, borderColor: "rgba(31,41,55,0.1)" }}>
                 <div className="flex justify-between items-start mb-[4px]">
-                  <div className="text-[13px] font-semibold text-[#111827]">{item.title}</div>
+                  <div className="text-[13px] font-semibold text-[#1F2937]">{item.title}</div>
                   <div className="text-[11px] text-[#6B7280]">{item.time}</div>
                 </div>
                 <div className="text-[12px] text-[#6B7280]">{item.desc}</div>
@@ -755,17 +776,25 @@ export function RightPanel() {
                 {step === 2 && (
                   <button 
                     onClick={() => setStep(3)} 
-                    disabled={!canContinueStep2}
-                    className="px-5 py-2 text-sm font-medium rounded-lg bg-[#EB6601] text-white hover:bg-[#d85e01] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-5 py-2 text-sm font-medium rounded-lg bg-[#EB6601] text-white hover:bg-[#d85e01] transition-colors"
                   >
                     Sign & Continue
                   </button>
                 )}
                 {step === 3 && (
                   <button 
-                    onClick={() => setStep(4)} 
-                    disabled={!isBankVerified}
-                    className="px-5 py-2 text-sm font-medium rounded-lg bg-[#EB6601] text-white hover:bg-[#d85e01] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    onClick={() => {
+                      if (!isBankVerified) {
+                        setAccountHolder((prev) => prev || "Demo Investor");
+                        setBankName((prev) => prev || "Demo Bank");
+                        setAccountNumber((prev) => prev || "1234567890");
+                        setConfirmAccountNumber((prev) => prev || "1234567890");
+                        setIfscCode((prev) => prev || "DEMO0001234");
+                        setIsBankVerified(true);
+                      }
+                      setStep(4);
+                    }} 
+                    className="px-5 py-2 text-sm font-medium rounded-lg bg-[#EB6601] text-white hover:bg-[#d85e01] transition-colors"
                   >
                     Continue to Review
                   </button>
