@@ -2,8 +2,8 @@
 import React from 'react';
 
 interface HeroBadgeProps {
-  text: string;
-  icon: React.ReactNode;
+  text?: string;
+  icon?: React.ReactNode ;
 }
 
 export default function HeroBadge({ text, icon }: HeroBadgeProps) {

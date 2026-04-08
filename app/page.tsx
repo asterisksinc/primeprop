@@ -1,5 +1,4 @@
-import { redirect } from "next/navigation";
-import Sample from "./components/landing/Sample";
+
 import PrimeStatsSection from "./components/landing/PrimeStatsSection";
 import PrimeDigitalGateway from "./components/landing/PrimeDigitalGateway";
 import PrimeTrustedCompanies from "./components/landing/PrimeTrustedCompanies";
