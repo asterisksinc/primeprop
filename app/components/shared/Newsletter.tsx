@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function Newsletter() {
   return (
-    <section className="w-full flex justify-center px-5 py-[80px]">
+    <section className="w-full flex justify-center px-5 py-[80px] bg-white">
       <div 
         className="w-full max-w-[1200px] h-[448px] rounded-[24px] overflow-hidden relative bg-white flex items-center justify-center"
         style={{
