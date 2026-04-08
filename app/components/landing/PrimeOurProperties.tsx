@@ -61,7 +61,7 @@ export default function PrimeOurProperties() {
                 <p className="text-xs sm:text-sm md:text-base text-gray-600 text-center max-w-md">Start building wealth in just 4 simple steps</p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 my-6 sm:my-8 md:my-10 px-4 sm:px-6 md:px-8 lg:px-10 w-full max-w-7xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3  md:gap-6 my-6  md:my-10 px-4  md:px-8 lg:px-10 w-full max-w-7xl">
                 {properties.map((property) => (
                     <div key={property.id} className="bg-white border border-gray-200 rounded-lg sm:rounded-xl md:rounded-2xl p-2 sm:p-3 w-full overflow-hidden shadow-xs hover:shadow-md transition-shadow">
                         <div className="relative">
@@ -76,7 +76,7 @@ export default function PrimeOurProperties() {
                         <div className="mt-1">
                             <h1 className="text-[16px] ">{property.title}</h1>
                         </div>
-                        <div className="flex flex-col items-center justify-center gap-1 bg-[#EB6601]/20 py-3 sm:py-4 rounded-lg sm:rounded-xl border border-[#EB6601]/30 mt-2 sm:mt-3">
+                        <div className="flex flex-col items-center justify-center gap-1 bg-[#EB6601]/20 py-3 sm:py-4 rounded-lg  border border-[#EB6601]/30 mt-2 sm:mt-3">
                             <Image src="/landing-assets/lock.svg" width={16} height={16} alt="lock" />
                             <p className="text-[11px] sm:text-[12px] font-medium">Listing Price</p>
                         </div>
