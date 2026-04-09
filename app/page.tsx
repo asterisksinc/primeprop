@@ -7,22 +7,25 @@ import PrimeChooseUs from "./components/landing/PrimeChoseUs";
 import PrimeOurProperties from "./components/landing/PrimeOurProperties";
 import PrimeTestimonials from "./components/landing/PrimeTestimonials";
 import PrimeFAQ from "./components/landing/PrimeFAQ";
-import { FAQ, Footer, Newsletter } from "./components/shared";
-import PrimePropNavbar from "./components/PrimePropNavbar";
+import { Footer, Header, Newsletter } from "./components/shared";
 
 export default function Home() {
- return(
-   <main>
-    <PrimeStatsSection />
-    <PrimeDigitalGateway />
-    <PrimeTrustedCompanies />
-    <PrimeMoneyWork />
-    <PrimeChooseUs />
-    <PrimeOurProperties />
-    <PrimeTestimonials />
-    <PrimeFAQ />
-    <Newsletter />
-    <Footer />
-  </main>
- )
+  return (
+    <>
+
+      <main>
+        <Header />
+        <PrimeStatsSection />
+        <PrimeDigitalGateway />
+        <PrimeTrustedCompanies />
+        <PrimeMoneyWork />
+        <PrimeChooseUs />
+        <PrimeOurProperties />
+        <PrimeTestimonials />
+        <PrimeFAQ />
+        <Newsletter />
+        <Footer />
+      </main>
+    </>
+  )
 }
