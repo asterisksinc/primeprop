@@ -46,6 +46,7 @@ const CardItems: CardItemProps[] = [
 ];
 
 export default function PrimeChooseUs() {
+  
   return (
     <section className="bg-white py-12 sm:py-16 md:py-24 lg:py-32 text-primary">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10">

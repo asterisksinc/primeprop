@@ -38,13 +38,12 @@ export default function Header({ activeLink = 'Home' }: HeaderProps) {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-30 px-5 pt-[24px]">
-      <div className="mx-auto max-w-[1200px] h-[68px] relative">
+      <div className=" mx-auto max-w-[1200px] h-[68px] relative">
         <div
-          className={`absolute inset-0 flex items-center justify-between transition-all duration-500 ease-in-out ${
-            showFullNavbar
-              ? 'opacity-0 scale-[0.98] translate-y-[-8px] pointer-events-none'
-              : 'opacity-100 scale-100 translate-y-0 pointer-events-auto'
-          }`}
+          className={` absolute inset-0 flex items-center justify-between transition-all duration-500 ease-in-out ${showFullNavbar
+            ? 'opacity-0 scale-[0.98] translate-y-[-8px] pointer-events-none'
+            : 'opacity-100 scale-100 translate-y-0 pointer-events-auto'
+            }`}
         >
           <button
             type="button"
@@ -73,7 +72,7 @@ export default function Header({ activeLink = 'Home' }: HeaderProps) {
               onClick={() => setMenuOpen((prev) => !prev)}
               className="h-[58px] px-[22px] rounded-[999px] bg-[#0B0B10] text-white shadow-[0_10px_24px_rgba(0,0,0,0.14)] flex items-center gap-[12px] transition-transform duration-500 ease-in-out hover:scale-[1.02]"
             >
-             
+
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
                 <path d="M4 7h16" />
                 <path d="M4 12h16" />
@@ -82,22 +81,20 @@ export default function Header({ activeLink = 'Home' }: HeaderProps) {
             </button>
 
             <div
-              className={`absolute right-0 top-[68px] w-[220px] rounded-[18px] border border-[#ECECEC] bg-white p-[8px] shadow-[0_20px_45px_rgba(0,0,0,0.14)] transition-all duration-300 ease-in-out ${
-                menuOpen
-                  ? 'opacity-100 translate-y-0 pointer-events-auto'
-                  : 'opacity-0 translate-y-[-8px] pointer-events-none'
-              }`}
+              className={`absolute right-0 top-[68px] w-[220px] rounded-[18px] border border-[#ECECEC] bg-white p-[8px] shadow-[0_20px_45px_rgba(0,0,0,0.14)] transition-all duration-300 ease-in-out ${menuOpen
+                ? 'opacity-100 translate-y-0 pointer-events-auto'
+                : 'opacity-0 translate-y-[-8px] pointer-events-none'
+                }`}
             >
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className={`flex h-[42px] items-center rounded-[12px] px-[14px] text-[15px] transition-colors ${
-                    link.name === activeLink
-                      ? 'bg-[#FFF5EE] text-[#FE5919] font-semibold'
-                      : 'text-[#111111] font-medium hover:bg-[#F7F7F7]'
-                  }`}
+                  className={`flex h-[42px] items-center rounded-[12px] px-[14px] text-[15px] transition-colors ${link.name === activeLink
+                    ? 'bg-[#FFF5EE] text-[#FE5919] font-semibold'
+                    : 'text-[#111111] font-medium hover:bg-[#F7F7F7]'
+                    }`}
                 >
                   {link.name}
                 </Link>
@@ -106,12 +103,10 @@ export default function Header({ activeLink = 'Home' }: HeaderProps) {
           </div>
         </div>
 
+
+        {/* Desktop Navigation */}
         <div
-          className={`absolute inset-0 transition-all duration-500 ease-in-out ${
-            showFullNavbar
-              ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto'
-              : 'opacity-0 scale-[0.98] translate-y-[10px] pointer-events-none'
-          }`}
+          className='hidden sm:block absolute inset-0 '
         >
           <div className="flex items-center justify-between bg-white rounded-[78px] py-[10px] pr-[10px] pl-[40px] h-[68px] w-full border border-white/70 backdrop-blur-md shadow-[0_14px_38px_rgba(0,0,0,0.12)]">
             <Link href="/" className="flex items-center">
@@ -119,23 +114,22 @@ export default function Header({ activeLink = 'Home' }: HeaderProps) {
               <span className="text-[#FE5919] text-[24px] font-bold">X</span>
             </Link>
 
-            <nav className="flex items-center gap-[24px]">
+            <nav className="flex items-center gap-[24px] pl-20">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-[16px] leading-[20px] transition-colors ${
-                    link.name === activeLink
-                      ? 'text-[#FE5919] font-semibold underline'
-                      : 'text-[#111111] font-medium hover:text-[#FE5919]'
-                  }`}
+                  className={`text-[16px] leading-[20px] transition-colors ${link.name === activeLink
+                    ? 'text-[#FE5919] font-semibold underline'
+                    : 'text-[#111111] font-medium hover:text-[#FE5919]'
+                    }`}
                 >
                   {link.name}
                 </Link>
               ))}
             </nav>
 
-            <div className="flex items-center h-[48px]">
+            <div className="flex items-center h-[48px] gap-6">
               <button className="bg-[#FF6500] text-white h-[48px] px-[16px] rounded-[69px] text-[16px] leading-[20px] font-semibold flex items-center gap-[8px] hover:bg-[#e65b00] transition-colors">
                 Get Started
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
