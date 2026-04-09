@@ -56,22 +56,24 @@ type StepCardProps = {
     reverse?: boolean;
 }
 
+// Cards components
+
 function Stepcard({ step, reverse = false }: StepCardProps) {
     return (
-        <div className="bg-[#F5F5F5] border border-gray-200 rounded-xl md:rounded-2xl p-4 md:p-8 lg:p-12">
-            <div className="grid md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 items-center">
+        <div className="bg-[#F5F5F5] border border-gray-200 rounded-xl md:rounded-2xl p-4 md:p-12">
+            <div className="grid md:grid-cols-2 gap-4 md:gap-8 items-center">
 
                 {/* -- Text -- */}
                 <div className={reverse ? "md:order-2" : ""}>
-                    
-
+                
+                    {/* Step Badge */}
                     <div className="relative inline-block">
                         <img src="/landing-assets/stepBadge.svg" alt="stepBadge" />
-                        <p className="uppercase text-[11px] md:text-[14px] absolute inset-0 left-[8px] md:left-[10px] top-[2px] md:top-[3px]">Step {step.number}</p>
+                        <p className="uppercase text-[14px] md:text-[14px] absolute font-semibold tracking-wide inset-0 left-[9px] md:left-[10px] top-[3px] md:top-[3px]">Step {step.number}</p>
                     </div>
 
-                    <h3 className="text-xl md:text-2xl lg:text-3xl text-primary font-semibold mt-6 md:mt-8 lg:mt-10">{step.title}</h3>
-                    <p className="text-primary text-xs md:text-sm lg:text-base mb-4 max-w-sm mt-2 md:mt-3">{step.description}</p>
+                    <h3 className="text-4xl md:text-5xl text-primary font-semibold mt-4 md:mt-10">{step.title}</h3>
+                    <p className="text-primary text-xs md:text-sm lg:text-base mb-4 max-w-sm md:max-w-lg mt-2 ">{step.description}</p>
 
                     <button className="bg-accent text-white text-xs md:text-sm px-3 md:px-4 py-2 rounded-full flex gap-2 items-center">{step.cta}
                         <img className="w-2 md:w-3 h-2 md:h-3" src="/landing-assets/arrow.svg" alt="" />
@@ -88,10 +90,6 @@ function Stepcard({ step, reverse = false }: StepCardProps) {
             </div>
 
             </div>
-
-
-           
-
         </div>
     )
 }
@@ -100,16 +98,17 @@ function Stepcard({ step, reverse = false }: StepCardProps) {
 export default function PrimeDigitalGateway() {
 
     return (
-        <section className="py-10 md:py-16 lg:py-20 bg-white">
+        <section className="md:py-10 bg-white">
             <div className="max-w-6xl mx-auto bg-red px-4 md:px-6">
 
                 {/* -- Header -- */}
                 <div className="text-center mb-8 md:mb-12 text-black">
                     <HeroBadge text="LOREM IPSUM"/>
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold max-w-2xl mx-auto px-2">Your digital gateway to fractional ownership in Dubai's real estate market.</h2>
+                    <h2 className="text-xl md:text-4xl font-medium max-w-2xl mx-auto px-2">Your digital gateway to fractional ownership in Dubai's real estate market.</h2>
                     <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-[18px]">Start building wealth in just 4 simple steps</p>
                 </div>
 
+                {/* Cards */}
                 <div className="flex flex-col gap-4 md:gap-5 lg:gap-6">
                     {steps.map((step, index)=> (
                         <Stepcard 
