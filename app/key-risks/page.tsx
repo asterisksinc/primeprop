@@ -1,6 +1,8 @@
 'use client';
 import React from 'react';
 import { Header, Footer, Newsletter, HeroBadge, HeroBackground, DownloadApp } from '../components/shared';
+import DownloadAppBanner from '../components/shared/DownloadAppBanner';
+import Navbar from '../components/shared/Navbar';
 
 export default function KeyRisksPage() {
   return (
@@ -12,12 +14,12 @@ export default function KeyRisksPage() {
         `}</style>
       </head>
       <body className="m-0 p-0 bg-white">
+            <Navbar activeLink="Key Risks" />
         <div className="min-h-screen text-[#111111] overflow-x-hidden">
           
           {/* Hero Section */}
           <div className="relative">
             <HeroBackground />
-            <Header activeLink="Key Risks" />
 
             {/* Hero Content */}
             <section className="relative z-10 text-center pt-[70px] pb-[100px]">
@@ -124,7 +126,7 @@ export default function KeyRisksPage() {
 
           <div className="bg-white pt-[60px]">
             {/* Download App Section */}
-            <DownloadApp />
+            <DownloadAppBanner />
 
             {/* Newsletter Section */}
             <Newsletter />
