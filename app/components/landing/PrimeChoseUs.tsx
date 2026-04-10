@@ -46,14 +46,14 @@ const CardItems: CardItemProps[] = [
 ];
 
 export default function PrimeChooseUs() {
-  
+
   return (
     <section className="bg-white py-12 sm:py-16 md:py-24 lg:py-32 text-primary">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
         <HeroBadge text="LOREM IPSUM" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mt-2">
           <h1
-            className="text-xl sm:text-2xl md:text-3xl font-semibold"
+            className="text-3xl md:text-3xl font-semibold"
             
           >
             Here's why 50,000+ others chose PRYPCO Blocks
@@ -65,16 +65,17 @@ export default function PrimeChooseUs() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3 sm:gap-4 md:gap-5 py-12 sm:py-16 md:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-3 md:gap-5 py-12 md:py-20">
+
           {CardItems.map((item) => {
             const isWide = item.isWide === true;
             return (
               <div
                 key={item.id}
-                className={`bg-gray-100 border border-gray-200 flex flex-col p-6 sm:p-8 md:p-10 rounded-xl sm:rounded-2xl overflow-hidden ${isWide ? "md:col-span-2 md:grid md:grid-cols-1 lg:grid-cols-2 md:gap-8 md:items-start" : "flex flex-col"}`}
+                className={`bg-gray-100 border border-gray-200 flex flex-col p-4 md:p-10 rounded-xl sm:rounded-2xl overflow-hidden ${isWide ? "md:col-span-2 md:grid md:grid-cols-1 lg:grid-cols-2 md:gap-8 md:items-start" : "flex flex-col"}`}
               >
                 <div className={`${isWide ? "md:py-6" : ""}`}>
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-medium">{item.title}</h3>
+                    <h3 className="text-xl md:text-2xl font-medium">{item.title}</h3>
                 <p className="text-xs sm:text-sm text-gray-500 mt-2">{item.description}</p>
                 </div>
                 <div className={`bg-gradient-to-b from-white to-gray-100 h-32 sm:h-40 md:h-64 lg:h-[20em] mt-4 sm:mt-5 md:mt-5 rounded-lg sm:rounded-2xl overflow-hidden ${ isWide ? "md:order-2" : ""}`}>
@@ -83,6 +84,7 @@ export default function PrimeChooseUs() {
               </div>
             );
           })}
+
         </div>
       </div>
     </section>

@@ -1,13 +1,14 @@
 'use client';
 import React from 'react';
 import { Header, Footer, Newsletter, HeroBadge, HeroBackground } from '../components/shared';
+import Navbar from '../components/shared/Navbar';
 
 const propertyCards = Array.from({ length: 15 }).map((_, index) => ({
   id: index + 1,
   title: 'Three Bedroom + Maid\'s Room Villa',
   location: 'Arabian Ranches',
   type: 'Villa',
-  image: '/bul1.png'
+  image: '/landing-assets/property.png'
 }));
 
 function PropertyCard({ title, location, type, image }: { title: string; location: string; type: string; image: string }) {
@@ -50,17 +51,13 @@ function PropertyCard({ title, location, type, image }: { title: string; locatio
 
 export default function PropertiesPage() {
   return (
-    <html lang="en">
-      <head>
-        <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@400&display=swap" rel="stylesheet" />
-      </head>
-      <body className="m-0 bg-white p-0" style={{ fontFamily: '"Figtree", sans-serif' }}>
+      <body className="bg-white font-figtree" >
+            <Navbar activeLink="Properties" />
         <div className="min-h-screen overflow-x-hidden text-[#111111]">
           <div className="relative">
             <HeroBackground />
-            <Header activeLink="Properties" />
 
-            <section className="relative z-10 pb-[90px] pt-[70px] text-center">
+            <section className="relative z-10 pb-[90px] pt-[150px] text-center">
               <div className="mb-[20px] flex justify-center">
                 <HeroBadge
                   text="Top Analysis"
@@ -79,9 +76,9 @@ export default function PropertiesPage() {
             </section>
           </div>
 
-          <div className="relative z-10 mt-[-20px] w-full rounded-t-[24px] bg-[#F3F3F3] pb-[70px] pt-[48px]">
-            <div className="mx-auto max-w-[1200px] px-5">
-              <div className="grid grid-cols-1 gap-[14px] md:grid-cols-2 xl:grid-cols-3">
+          <div className="relative z-10 mt-[-20px] w-full rounded-t-[24px] bg-white pb-[70px] pt-[88px]">
+            <div className="mx-auto max-w-[1200px]">
+              <div className="grid grid-cols-1 gap-[30px] md:grid-cols-2 xl:grid-cols-3 px-5 md:px-1">
                 {propertyCards.map((card) => (
                   <PropertyCard key={card.id} title={card.title} location={card.location} type={card.type} image={card.image} />
                 ))}
@@ -89,12 +86,11 @@ export default function PropertiesPage() {
             </div>
           </div>
 
-          <div className="bg-[#F3F3F3] pb-[80px] pt-[36px]">
+          <div className=" pb-[80px] pt-[36px]">
             <Newsletter />
             <Footer />
           </div>
         </div>
       </body>
-    </html>
   );
 }

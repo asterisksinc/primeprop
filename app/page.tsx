@@ -25,6 +25,7 @@ export default function Home() {
         <PrimeTestimonials />
         <PrimeFAQ />
         <Newsletter />
+        <Footer />
       </main>
     </>
   )

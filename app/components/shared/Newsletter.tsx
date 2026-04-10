@@ -81,9 +81,10 @@ export default function Newsletter() {
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center gap-[30px]" style={{ maxWidth: '656px' }}>
+          
           {/* Header */}
-          <div className="flex flex-col items-center gap-[14px]">
-            <h2 className="text-[40px] font-semibold text-[#000000] leading-[48px] text-center" style={{ letterSpacing: '-1.2px' }}>
+          <div className="flex flex-col items-center gap-[14px] text-center">
+            <h2 className=" text-[40px]  max-w-xs mx-auto md:max-w-3xl md:text-[40px] font-semibold text-[#000000] leading-[48px] text-center" style={{ letterSpacing: '-1.2px' }}>
               Subscribe to Our Newsletter.
             </h2>
             <p className="text-[14px] font-normal text-[#000000] leading-[20px] text-center" style={{ letterSpacing: '-0.14px', maxWidth: '476px' }}>
@@ -92,7 +93,7 @@ export default function Newsletter() {
           </div>
 
           {/* Form */}
-          <div className="flex flex-col gap-[24px] w-full" style={{ maxWidth: '460px' }}>
+          <div className="flex flex-col gap-[24px] max-w-[360px] md:max-w-[560px] w-full">
             {/* Email Input Group */}
             <div className="flex flex-col gap-[8px] w-full">
               <label className="text-[14px] font-medium text-[#111111] leading-[20px]" style={{ letterSpacing: '-0.14px' }}>

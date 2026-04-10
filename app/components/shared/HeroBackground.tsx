@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function HeroBackground() {
   return (
-    <div className="absolute inset-x-0 top-0 overflow-hidden pointer-events-none" style={{ height: '945px' }}>
+    <div className="absolute bg-white inset-x-0 top-0 overflow-hidden pointer-events-none" style={{ height: '945px' }}>
       {/* Ellipse 4 - Cyan */}
       <div 
         className="absolute"

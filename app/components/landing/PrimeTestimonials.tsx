@@ -81,7 +81,7 @@ export default function PrimeTestimonials() {
                                 </div>
                             </div>
                             <div>
-                                <p className="py-3 sm:py-4 md:py-5 text-xs sm:text-sm leading-relaxed line-clamp-3">{testimonial.review}</p>
+                                <p className="py-3 sm:py-4 md:py-5 text-xs sm:text-sm leading-relaxed ">{testimonial.review}</p>
                             </div>
                             <div className="flex items-center gap-2">
                                 <img src="/landing-assets/review.svg" alt="rating" className="w-auto h-4" />

@@ -75,6 +75,7 @@ function Stepcard({ step, reverse = false }: StepCardProps) {
                     <h3 className="text-4xl md:text-5xl text-primary font-semibold mt-4 md:mt-10">{step.title}</h3>
                     <p className="text-primary text-xs md:text-sm lg:text-base mb-4 max-w-sm md:max-w-lg mt-2 ">{step.description}</p>
 
+                    {/* Button */}
                     <button className="bg-accent text-white text-xs md:text-sm px-3 md:px-4 py-2 rounded-full flex gap-2 items-center">{step.cta}
                         <img className="w-2 md:w-3 h-2 md:h-3" src="/landing-assets/arrow.svg" alt="" />
                     </button>
