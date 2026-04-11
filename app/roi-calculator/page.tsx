@@ -50,7 +50,7 @@ export default function ROICalculatorPage() {
 
   return (
     <section className="m-0 p-0 bg-white">
-        <Navbar activeLink="roi-calculator" />
+        <Navbar activeLink="roi-calculator" isFixed={false} />
         <div className="min-h-screen text-[#111111] overflow-x-hidden" style={{ fontFamily: '"Figtree", sans-serif' }}>
           
           {/* Hero Section */}
@@ -97,9 +97,9 @@ export default function ROICalculatorPage() {
 
         {/* Monthly Deposit */}
         <div className="mb-[24px]">
-          <label className="block text-[13px] font-semibold text-[#111111] mb-[12px]">
+          <p className="block text-[13px] font-semibold text-[#111111] mb-[12px]">
             Monthly Deposit
-          </label>
+          </p>
           <div className="flex items-center justify-between border border-[#DADADA] rounded-[8px] px-[16px] h-[52px] mb-[16px] bg-white">
             <span className="text-[18px] font-bold text-[#111111]">
               {formatCurrency(monthlyDeposit)}
@@ -135,9 +135,9 @@ export default function ROICalculatorPage() {
 
           {/* Timeframe */}
           <div className="flex-1 min-w-0">
-            <label className="block text-[13px] font-semibold text-[#111111] mb-[10px]">
+            <p className="block text-[13px] font-semibold text-[#111111] mb-[10px]">
               Timeframe
-            </label>
+            </p>
             <div className="relative">
               <select
                 value={timeframe}
@@ -161,9 +161,9 @@ export default function ROICalculatorPage() {
 
           {/* Net Yield */}
           <div className="flex-1 min-w-0">
-            <label className="block text-[13px] font-semibold text-[#111111] mb-[10px]">
+            <p className="block text-[13px] font-semibold text-[#111111] mb-[10px]">
               Net Yield
-            </label>
+            </p>
             <div className="flex items-center gap-[6px] sm:gap-[8px]">
               <button
                 onClick={() => setNetYield(Math.max(1, netYield - 1))}
