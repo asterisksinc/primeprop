@@ -4,9 +4,10 @@ import { useState } from "react";
 
 interface NavbarProps {
     activeLink?: string;
+    isFixed?: boolean;
 }
 
-export default function Navbar({ activeLink = "Home" }: NavbarProps) {
+export default function Navbar({ activeLink = "Home", isFixed = true }: NavbarProps) {
     const [menuOpen, setMenuOpen] = useState(false);
     const navLinks = [
         { name: "Home", href: "/" },
@@ -16,8 +17,12 @@ export default function Navbar({ activeLink = "Home" }: NavbarProps) {
         { name: "Key Risks", href: "/key-risks" },
     ];
 
+    const navPositionClass = isFixed
+        ? "fixed top-0 left-0 right-0 z-30"
+        : "relative z-30";
+
     return (
-        <nav className="fixed top-0 left-0 right-0 z-30 px-5 pt-[2em]">
+        <nav className={`${navPositionClass} px-5 pt-[2em]`}>
             <div className="max-w-sm sm:max-w-6xl mx-auto ">
                 {/* Logo */}
                 <div className="bg-white flex items-center justify-between border p-2 sm:p-4 pl-7 sm:px-10 rounded-full shadow-lg">
