@@ -9,6 +9,7 @@ import PrimeTestimonials from "./components/landing/PrimeTestimonials";
 import PrimeFAQ from "./components/landing/PrimeFAQ";
 import { Footer, Header, Newsletter } from "./components/shared";
 import Navbar from "./components/shared/Navbar";
+import PrimeHero from "./components/landing/PrimeHero";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
 
       <main>
         <Navbar />
+        <PrimeHero />
         <PrimeStatsSection />
         <PrimeDigitalGateway />
         <PrimeTrustedCompanies />
