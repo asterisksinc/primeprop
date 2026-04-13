@@ -1,4 +1,4 @@
-
+import { cookies } from "next/headers";
 import PrimeStatsSection from "./components/landing/PrimeStatsSection";
 import PrimeDigitalGateway from "./components/landing/PrimeDigitalGateway";
 import PrimeTrustedCompanies from "./components/landing/PrimeTrustedCompanies";
@@ -7,11 +7,20 @@ import PrimeChooseUs from "./components/landing/PrimeChoseUs";
 import PrimeOurProperties from "./components/landing/PrimeOurProperties";
 import PrimeTestimonials from "./components/landing/PrimeTestimonials";
 import PrimeFAQ from "./components/landing/PrimeFAQ";
-import { Footer, Header, Newsletter } from "./components/shared";
+import { Footer, Newsletter } from "./components/shared";
 import Navbar from "./components/shared/Navbar";
 import PrimeHero from "./components/landing/PrimeHero";
+import { redirect } from "next/navigation";
 
-export default function Home() {
+export default async function Home() {
+
+  const cookieStore = await cookies();
+  const token = cookieStore.get("token")?.value;
+
+  if (!token) {
+    redirect("/login"); // 🔥 not logged in → go login
+  }
+
   return (
     <>
 
