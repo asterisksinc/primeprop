@@ -18,7 +18,7 @@ export default async function Home() {
   const token = cookieStore.get("token")?.value;
 
   if (!token) {
-    redirect("/login"); // 🔥 not logged in → go login
+    redirect("/signin"); // 🔥 not logged in → go login
   }
 
   return (
