@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 type PrimeAuthStep =
   | "signin"
@@ -11,13 +12,14 @@ type PrimeAuthStep =
   | "password-updated";
 
 export default function PrimeAuthFlow() {
+  const router = useRouter();
   const [step, setStep] = useState<PrimeAuthStep>("signin");
   const [email, setEmail] = useState("John@investor.com");
   const [password, setPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [rememberDevice, setRememberDevice] = useState(true);
-  const [otp, setOtp] = useState(["", "", "", "", "", ""]);
+  const [otp, setOtp] = useState(["1", "2", "3", "4", "5", "6"]);
 
   const handleOtpChange = (value: string, index: number) => {
     const cleanValue = value.replace(/[^0-9]/g, "").slice(0, 1);
@@ -109,7 +111,11 @@ export default function PrimeAuthFlow() {
           <button
             type="button"
             className="prime-auth-v1-primary-btn"
-            onClick={() => setStep("verify-identity")}
+            onClick={() => {
+              // Simulate authentication success
+              document.cookie = "token=demo-token; path=/; max-age=86400"; // 24 hours
+              router.push("/dashboard");
+            }}
           >
             Sign In
           </button>
@@ -187,7 +193,11 @@ export default function PrimeAuthFlow() {
           <button
             type="button"
             className="prime-auth-v1-primary-btn"
-            onClick={() => setStep("signin")}
+            onClick={() => {
+              // Simulate authentication success
+              document.cookie = "token=demo-token; path=/; max-age=86400"; // 24 hours
+              router.push("/dashboard");
+            }}
           >
             Verify & Continue
           </button>
