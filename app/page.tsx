@@ -14,11 +14,11 @@ import { redirect } from "next/navigation";
 
 export default async function Home() {
 
-  const cookieStore = await cookies();
-  const token = cookieStore.get("token")?.value;
+  const cookie = await cookies();
+  const token = cookie.get("token")?.value;
 
   if (!token) {
-    redirect("/signin"); // 🔥 not logged in → go login
+    redirect("/signin"); 
   }
 
   return (
